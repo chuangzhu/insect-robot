@@ -424,6 +424,90 @@
 <smd name="2" x="-3.81" y="5" dx="3" dy="1" layer="1" rot="R90"/>
 <smd name="3" x="-1.27" y="5" dx="3" dy="1" layer="1" rot="R90"/>
 </package>
+<package name="PW0316">
+<smd name="1" x="-3" y="1.75" dx="1.27" dy="0.635" layer="1"/>
+<smd name="2" x="-3" y="0.75" dx="1.27" dy="0.635" layer="1"/>
+<smd name="3" x="-3" y="-0.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="4" x="-3" y="-1.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="5" x="-3" y="-2.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="6" x="-3" y="-3.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="7" x="-3" y="-4.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="8" x="3" y="-4.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="9" x="3" y="-3.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="10" x="3" y="-2.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="11" x="3" y="-1.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="12" x="3" y="-0.25" dx="1.27" dy="0.635" layer="1"/>
+<smd name="13" x="3" y="0.75" dx="1.27" dy="0.635" layer="1"/>
+<smd name="14" x="3" y="1.75" dx="1.27" dy="0.635" layer="1"/>
+<wire x1="-3.25" y1="-5" x2="-3.25" y2="5" width="0.127" layer="51"/>
+<wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="51"/>
+<wire x1="3.25" y1="5" x2="3.25" y2="-5" width="0.127" layer="51"/>
+<wire x1="3.25" y1="-5" x2="-3.25" y2="-5" width="0.127" layer="51"/>
+<text x="-2" y="-3" size="0.8128" layer="51" font="vector">&gt;NAME</text>
+<text x="-2" y="-4" size="0.8128" layer="51" font="vector">&gt;VALUE</text>
+</package>
+<package name="SMD0201">
+<description>Surface mount device - 0201 - 0.6mm x 0.3mm (0.024" × 0.012")</description>
+<smd name="1" x="-0.255" y="0" dx="0.28" dy="0.43" layer="1"/>
+<smd name="2" x="0.255" y="0" dx="0.28" dy="0.43" layer="1"/>
+<text x="-0.635" y="0.635" size="0.6096" layer="25" font="vector">&gt;NAME</text>
+<text x="-0.635" y="-1.27" size="0.6096" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="-0.3" y1="-0.15" x2="-0.15" y2="0.15" layer="51"/>
+<rectangle x1="0.15" y1="-0.15" x2="0.3" y2="0.15" layer="51"/>
+<rectangle x1="-0.15" y1="-0.15" x2="0.15" y2="0.15" layer="21"/>
+</package>
+<package name="SMD0402">
+<description>Surface mount device - 0402 - 1.0mm x 0.5mm (0.039" x 0.020")</description>
+<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
+<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
+<smd name="1" x="-0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<text x="-0.635" y="0.762" size="0.6096" layer="25" font="vector">&gt;NAME</text>
+<text x="-0.635" y="-1.397" size="0.6096" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
+<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
+<package name="SMD0603">
+<description>Surface mount device - 0603 - 1.6mm x 0.8mm (0.063" x 0.031")</description>
+<wire x1="-0.16" y1="-0.356" x2="0.16" y2="-0.356" width="0.1524" layer="21"/>
+<smd name="1" x="-0.85" y="0" dx="1" dy="1.1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1" dy="1.1" layer="1"/>
+<text x="-1.27" y="1.27" size="0.6096" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.27" y="-1.27" size="0.6096" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="0.4318" y1="-0.4318" x2="0.8382" y2="0.4318" layer="51"/>
+<rectangle x1="-0.8382" y1="-0.4318" x2="-0.4318" y2="0.4318" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="0.16" y1="0.356" x2="-0.16" y2="0.356" width="0.1524" layer="21"/>
+<wire x1="0.16" y1="0.356" x2="0.432" y2="0.356" width="0.1524" layer="51"/>
+<wire x1="-0.432" y1="0.356" x2="-0.16" y2="0.356" width="0.1524" layer="51"/>
+<wire x1="-0.432" y1="-0.356" x2="-0.16" y2="-0.356" width="0.1524" layer="51"/>
+<wire x1="0.16" y1="-0.356" x2="0.432" y2="-0.356" width="0.1524" layer="51"/>
+</package>
+<package name="SMD0805">
+<description>Surface mount device - 0805 - 2.0mm x 1.25mm (0.079" x 0.049")</description>
+<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<smd name="1" x="-0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<text x="-1.27" y="1.27" size="0.6096" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.27" y="-1.905" size="0.6096" layer="27" font="vector">&gt;VALUE</text>
+</package>
+<package name="SMD1206">
+<description>Surface mount device - 1206 - 3.2mm x 1.6mm (0.13" x 0.063")</description>
+<wire x1="0.9525" y1="-0.8128" x2="-0.9652" y2="-0.8128" width="0.1524" layer="51"/>
+<wire x1="0.9525" y1="0.8128" x2="-0.9652" y2="0.8128" width="0.1524" layer="51"/>
+<smd name="2" x="1.422" y="0" dx="1.6" dy="1.803" layer="1"/>
+<smd name="1" x="-1.422" y="0" dx="1.6" dy="1.803" layer="1"/>
+<text x="-1.397" y="1.143" size="0.6096" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.397" y="-1.778" size="0.6096" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="-1.6891" y1="-0.8763" x2="-0.9525" y2="0.8763" layer="51"/>
+<rectangle x1="0.9525" y1="-0.8763" x2="1.6891" y2="0.8763" layer="51"/>
+<rectangle x1="-0.3" y1="-0.7" x2="0.3" y2="0.7" layer="35"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA168/328P">
@@ -501,6 +585,47 @@
 <pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="3" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+<symbol name="PW0316">
+<pin name="GND" x="-17.78" y="-7.62" length="middle"/>
+<pin name="VCC3.3" x="-17.78" y="-5.08" length="middle"/>
+<pin name="CLK" x="-17.78" y="0" length="middle"/>
+<pin name="DIO" x="-17.78" y="2.54" length="middle"/>
+<pin name="RST" x="17.78" y="7.62" length="middle" rot="R180"/>
+<pin name="LINK" x="17.78" y="-5.08" length="middle" rot="R180"/>
+<pin name="UART_TX" x="17.78" y="5.08" length="middle" rot="R180"/>
+<pin name="UART_RX" x="17.78" y="2.54" length="middle" rot="R180"/>
+<pin name="BRTS" x="17.78" y="0" length="middle" rot="R180"/>
+<pin name="BCTS" x="17.78" y="-2.54" length="middle" rot="R180"/>
+<pin name="ADV" x="17.78" y="-7.62" length="middle" rot="R180"/>
+<pin name="VPP" x="-17.78" y="5.08" length="middle"/>
+<pin name="EXT_RF" x="-17.78" y="7.62" length="middle"/>
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-10.16" x2="12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-10.16" x2="12.7" y2="10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
+<text x="-12.7" y="10.16" size="1.778" layer="95">&gt;NAME</text>
+<text x="-12.7" y="-12.7" size="1.778" layer="95">&gt;VALUE</text>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+</symbol>
+<symbol name="RES">
+<wire x1="2.54" y1="0" x2="2.159" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="2.159" y1="-1.016" x2="1.524" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="1.016" x2="0.889" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="0.889" y1="-1.016" x2="0.254" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="0.254" y1="1.016" x2="-0.381" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-1.016" x2="-1.016" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="1.016" x2="-1.651" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-1.651" y1="-1.016" x2="-2.286" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.286" y1="1.016" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="1" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -677,6 +802,88 @@
 </device>
 </devices>
 </deviceset>
+<deviceset name="PW0316" prefix="U">
+<description>&lt;b&gt;BCTS&lt;/b&gt;: data arrived signal, uses for wake up the master;&lt;br/&gt;
+&lt;b&gt;BRTS&lt;/b&gt;: data send request, uses for wake up this module.</description>
+<gates>
+<gate name="P" symbol="PW0316" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PW0316">
+<connects>
+<connect gate="P" pin="ADV" pad="11"/>
+<connect gate="P" pin="BCTS" pad="12"/>
+<connect gate="P" pin="BRTS" pad="9"/>
+<connect gate="P" pin="CLK" pad="2"/>
+<connect gate="P" pin="DIO" pad="3"/>
+<connect gate="P" pin="EXT_RF" pad="14"/>
+<connect gate="P" pin="GND" pad="1 6"/>
+<connect gate="P" pin="LINK" pad="7"/>
+<connect gate="P" pin="RST" pad="4"/>
+<connect gate="P" pin="UART_RX" pad="10"/>
+<connect gate="P" pin="UART_TX" pad="8"/>
+<connect gate="P" pin="VCC3.3" pad="5"/>
+<connect gate="P" pin="VPP" pad="13"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RES" prefix="R" uservalue="yes">
+<description>Resistor</description>
+<gates>
+<gate name="A" symbol="RES" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0201" package="SMD0201">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0402" package="SMD0402">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0603" package="SMD0603">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0805" package="SMD0805">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-1206" package="SMD1206">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="Seeed-OPL-Button">
@@ -766,6 +973,11 @@
 <part name="SUPPLY4" library="MyLibrary" deviceset="GND" device=""/>
 <part name="HD1" library="MyLibrary" deviceset="HEADER1X3" device="-SMD-LYING"/>
 <part name="SUPPLY5" library="MyLibrary" deviceset="GND" device=""/>
+<part name="U2" library="MyLibrary" deviceset="PW0316" device=""/>
+<part name="SUPPLY6" library="MyLibrary" deviceset="VBAT" device=""/>
+<part name="SUPPLY7" library="MyLibrary" deviceset="GND" device=""/>
+<part name="R1" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
+<part name="R2" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
 </parts>
 <sheets>
 <sheet>
@@ -781,6 +993,17 @@
 <instance part="SUPPLY4" gate="GND" x="-60.96" y="25.4" rot="R90"/>
 <instance part="HD1" gate="A" x="-78.74" y="12.7"/>
 <instance part="SUPPLY5" gate="GND" x="-96.52" y="12.7" rot="R270"/>
+<instance part="U2" gate="P" x="-93.98" y="-17.78"/>
+<instance part="SUPPLY6" gate="VBAT" x="-119.38" y="-22.86" rot="R90"/>
+<instance part="SUPPLY7" gate="GND" x="-111.76" y="-27.94"/>
+<instance part="R1" gate="A" x="-71.12" y="-12.7" smashed="yes">
+<attribute name="NAME" x="-76.2" y="-12.7" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-68.58" y="-12.7" size="1.778" layer="96"/>
+</instance>
+<instance part="R2" gate="A" x="-71.12" y="-20.32" smashed="yes">
+<attribute name="NAME" x="-76.2" y="-20.32" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-68.58" y="-20.32" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -801,6 +1024,11 @@
 <pinref part="SW1" gate="G$1" pin="A"/>
 <wire x1="-83.82" y1="33.02" x2="-87.63" y2="33.02" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U2" gate="P" pin="VCC3.3"/>
+<pinref part="SUPPLY6" gate="VBAT" pin="VBAT"/>
+<wire x1="-111.76" y1="-22.86" x2="-116.84" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -820,6 +1048,10 @@
 <pinref part="HD1" gate="A" pin="2"/>
 <wire x1="-81.28" y1="12.7" x2="-93.98" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U2" gate="P" pin="GND"/>
+<pinref part="SUPPLY7" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="BAT-COM" class="0">
@@ -846,6 +1078,68 @@
 <pinref part="HD1" gate="A" pin="3"/>
 <wire x1="-81.28" y1="10.16" x2="-88.9" y2="10.16" width="0.1524" layer="91"/>
 <label x="-88.9" y="10.16" size="1.778" layer="95" font="vector" rot="R180"/>
+</segment>
+</net>
+<net name="RXD" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PD0(RXD)"/>
+<wire x1="35.56" y1="20.32" x2="43.18" y2="20.32" width="0.1524" layer="91"/>
+<label x="43.18" y="20.32" size="1.778" layer="95" font="vector"/>
+</segment>
+<segment>
+<pinref part="R1" gate="A" pin="1"/>
+<wire x1="-66.04" y1="-12.7" x2="-60.96" y2="-12.7" width="0.1524" layer="91"/>
+<label x="-60.96" y="-12.7" size="1.778" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="TXD" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PD1(TXD)"/>
+<wire x1="35.56" y1="17.78" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
+<label x="43.18" y="17.78" size="1.778" layer="95" font="vector"/>
+</segment>
+<segment>
+<pinref part="U2" gate="P" pin="UART_RX"/>
+<wire x1="-76.2" y1="-15.24" x2="-60.96" y2="-15.24" width="0.1524" layer="91"/>
+<label x="-60.96" y="-15.24" size="1.778" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="BRTS" class="0">
+<segment>
+<pinref part="U2" gate="P" pin="BRTS"/>
+<wire x1="-76.2" y1="-17.78" x2="-60.96" y2="-17.78" width="0.1524" layer="91"/>
+<label x="-60.96" y="-17.78" size="1.778" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="R-BCTS" class="0">
+<segment>
+<pinref part="U2" gate="P" pin="BCTS"/>
+<pinref part="R2" gate="A" pin="2"/>
+</segment>
+</net>
+<net name="BCTS" class="0">
+<segment>
+<pinref part="R2" gate="A" pin="1"/>
+<wire x1="-66.04" y1="-20.32" x2="-60.96" y2="-20.32" width="0.1524" layer="91"/>
+<label x="-60.96" y="-20.32" size="1.778" layer="95" font="vector"/>
+</segment>
+<segment>
+<pinref part="U1" gate="P" pin="PD2(INT0)"/>
+<wire x1="35.56" y1="15.24" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
+<label x="43.18" y="15.24" size="1.778" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="R-TX" class="0">
+<segment>
+<pinref part="U2" gate="P" pin="UART_TX"/>
+<pinref part="R1" gate="A" pin="2"/>
+</segment>
+</net>
+<net name="LINK" class="0">
+<segment>
+<pinref part="U2" gate="P" pin="LINK"/>
+<wire x1="-76.2" y1="-22.86" x2="-60.96" y2="-22.86" width="0.1524" layer="91"/>
+<label x="-60.96" y="-22.86" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 </nets>
