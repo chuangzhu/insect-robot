@@ -603,6 +603,70 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <vertex x="-1.05" y="-2.2"/>
 </polygon>
 </package>
+<package name="3528-4">
+<smd name="3" x="-1.4" y="0.8" dx="1.2" dy="0.95" layer="1"/>
+<smd name="2" x="-1.4" y="-0.8" dx="1.2" dy="0.95" layer="1"/>
+<smd name="1" x="1.4" y="-0.8" dx="1.2" dy="0.95" layer="1"/>
+<smd name="4" x="1.4" y="0.8" dx="1.2" dy="0.95" layer="1"/>
+<wire x1="-1.6" y1="-0.15" x2="-1.6" y2="0.15" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="1.4" x2="0.6" y2="1.4" width="0.127" layer="21"/>
+<wire x1="1.6" y1="0.15" x2="1.6" y2="0" width="0.127" layer="21"/>
+<wire x1="1.6" y1="0" x2="1.6" y2="-0.15" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="-1.4" x2="0.2" y2="-1.4" width="0.127" layer="21"/>
+<polygon width="0" layer="51">
+<vertex x="0.95" y="1.1"/>
+<vertex x="1.75" y="1.1"/>
+<vertex x="1.75" y="0.4"/>
+<vertex x="0.95" y="0.4"/>
+</polygon>
+<polygon width="0" layer="51">
+<vertex x="0.95" y="-0.4"/>
+<vertex x="1.75" y="-0.4"/>
+<vertex x="1.75" y="-1.1"/>
+<vertex x="0.95" y="-1.1"/>
+</polygon>
+<polygon width="0" layer="51">
+<vertex x="-1.75" y="-0.4"/>
+<vertex x="-0.95" y="-0.4"/>
+<vertex x="-0.95" y="-1.1"/>
+<vertex x="-1.75" y="-1.1"/>
+</polygon>
+<polygon width="0" layer="51">
+<vertex x="-1.75" y="1.1"/>
+<vertex x="-0.95" y="1.1"/>
+<vertex x="-0.95" y="0.4"/>
+<vertex x="-1.75" y="0.4"/>
+</polygon>
+<text x="-1.8" y="1.6" size="0.8128" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.8" y="-2.4" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+<wire x1="0.2" y1="-1.4" x2="0.6" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="1.6" y1="0" x2="1.45" y2="-0.15" width="0.127" layer="21"/>
+<wire x1="0.2" y1="-1.4" x2="0.6" y2="-1" width="0.127" layer="21"/>
+</package>
+<package name="RP0603">
+<rectangle x1="-1.6" y1="0.5" x2="-0.95" y2="0.8" layer="51"/>
+<rectangle x1="-0.65" y1="0.5" x2="-0.15" y2="0.8" layer="51"/>
+<rectangle x1="0.15" y1="0.5" x2="0.65" y2="0.8" layer="51"/>
+<rectangle x1="0.95" y1="0.5" x2="1.6" y2="0.8" layer="51"/>
+<rectangle x1="-1.6" y1="-0.8" x2="-0.95" y2="-0.5" layer="51"/>
+<rectangle x1="-0.65" y1="-0.8" x2="-0.15" y2="-0.5" layer="51"/>
+<rectangle x1="0.15" y1="-0.8" x2="0.65" y2="-0.5" layer="51"/>
+<rectangle x1="0.95" y1="-0.8" x2="1.6" y2="-0.5" layer="51"/>
+<smd name="1" x="-1.275" y="0.85" dx="0.9" dy="0.7" layer="1" rot="R90"/>
+<smd name="2" x="-1.275" y="-0.85" dx="0.9" dy="0.7" layer="1" rot="R90"/>
+<smd name="7" x="1.275" y="0.85" dx="0.9" dy="0.7" layer="1" rot="R90"/>
+<smd name="8" x="1.275" y="-0.85" dx="0.9" dy="0.7" layer="1" rot="R90"/>
+<smd name="3" x="-0.4" y="0.85" dx="0.9" dy="0.55" layer="1" rot="R90"/>
+<smd name="4" x="-0.4" y="-0.85" dx="0.9" dy="0.55" layer="1" rot="R90"/>
+<smd name="5" x="0.4" y="0.85" dx="0.9" dy="0.55" layer="1" rot="R90"/>
+<smd name="6" x="0.4" y="-0.85" dx="0.9" dy="0.55" layer="1" rot="R90"/>
+<wire x1="-1.8" y1="0.8" x2="-1.8" y2="-0.8" width="0.127" layer="21"/>
+<wire x1="1.8" y1="-0.8" x2="1.8" y2="0.8" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="0.8" x2="1.8" y2="0.8" width="0.127" layer="51"/>
+<wire x1="-1.8" y1="-0.8" x2="1.8" y2="-0.8" width="0.127" layer="51"/>
+<text x="-1.905" y="1.905" size="0.8128" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.905" y="-2.54" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA168/328P">
@@ -728,7 +792,7 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <wire x1="0" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="-2.54" x2="0" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<pin name="G" x="-7.62" y="0" length="point" rot="R180"/>
+<pin name="G" x="-7.62" y="0" visible="pin" length="point" rot="R180"/>
 <wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
@@ -740,8 +804,8 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 </polygon>
 <wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
 <circle x="2.54" y="-2.54" radius="0.254" width="0.254" layer="94"/>
-<pin name="S" x="2.54" y="-7.62" length="point"/>
-<pin name="D" x="2.54" y="7.62" length="point"/>
+<pin name="S" x="2.54" y="-7.62" visible="pin" length="point"/>
+<pin name="D" x="2.54" y="7.62" visible="pin" length="point"/>
 <wire x1="-2.54" y1="0" x2="-7.62" y2="0" width="0.254" layer="94"/>
 <wire x1="2.54" y1="7.62" x2="2.54" y2="2.54" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-2.54" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
@@ -758,13 +822,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <circle x="1.27" y="0" radius="6.2836125" width="0.254" layer="94"/>
 <text x="10.16" y="0" size="1.778" layer="95">&gt;NAME</text>
 <text x="10.16" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="VDD_3V3">
-<wire x1="0.889" y1="-1.27" x2="0" y2="0.127" width="0.254" layer="94"/>
-<wire x1="0" y1="0.127" x2="-0.889" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-0.889" y1="-1.27" x2="0.889" y2="-1.27" width="0.254" layer="94"/>
-<text x="0" y="1.016" size="1.778" layer="94" font="vector" align="bottom-center">VDD_3V3</text>
-<pin name="VDD_3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
 <symbol name="HEADER1X6">
 <wire x1="1.27" y1="-7.62" x2="-5.08" y2="-7.62" width="0.4064" layer="94"/>
@@ -785,6 +842,64 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <pin name="4" x="5.08" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="5" x="5.08" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="6" x="5.08" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="LED-RGB-A">
+<description>Common &lt;b&gt;Anode&lt;/b&gt; RGB LED</description>
+<wire x1="-1.016" y1="-1.016" x2="1.016" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-3.556" y1="-1.016" x2="-1.524" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-1.016" x2="3.556" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<pin name="+" x="0" y="-10.16" length="short" rot="R90"/>
+<pin name="G-" x="0" y="10.16" length="short" rot="R270"/>
+<pin name="R-" x="-2.54" y="10.16" length="short" rot="R270"/>
+<pin name="B-" x="2.54" y="10.16" length="short" rot="R270"/>
+<wire x1="6.096" y1="1.016" x2="7.493" y2="-0.381" width="0.1524" layer="94"/>
+<wire x1="5.969" y1="-0.127" x2="7.366" y2="-1.524" width="0.1524" layer="94"/>
+<polygon width="0.1524" layer="94">
+<vertex x="7.493" y="-0.381"/>
+<vertex x="7.112" y="0.508"/>
+<vertex x="6.604" y="0"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="7.366" y="-1.524"/>
+<vertex x="6.985" y="-0.635"/>
+<vertex x="6.477" y="-1.143"/>
+</polygon>
+<polygon width="0.254" layer="94">
+<vertex x="-1.016" y="0.762"/>
+<vertex x="1.016" y="0.762"/>
+<vertex x="0" y="-1.016"/>
+</polygon>
+<polygon width="0.254" layer="94">
+<vertex x="-1.016" y="0.762"/>
+<vertex x="1.016" y="0.762"/>
+<vertex x="0" y="-1.016"/>
+</polygon>
+<polygon width="0.254" layer="94">
+<vertex x="-3.556" y="0.762"/>
+<vertex x="-1.524" y="0.762"/>
+<vertex x="-2.54" y="-1.016"/>
+</polygon>
+<polygon width="0.254" layer="94">
+<vertex x="1.524" y="0.762"/>
+<vertex x="3.556" y="0.762"/>
+<vertex x="2.54" y="-1.016"/>
+</polygon>
+<text x="7.62" y="-7.62" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="-5.08" y="-7.62" size="1.778" layer="95" rot="R90">&gt;VALUE</text>
+</symbol>
+<symbol name="CAP">
+<wire x1="0" y1="2.54" x2="0" y2="2.032" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="0.508" width="0.1524" layer="94"/>
+<text x="2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.032" y1="0.508" x2="2.032" y2="1.016" layer="94"/>
+<rectangle x1="-2.032" y1="1.524" x2="2.032" y2="2.032" layer="94"/>
+<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1060,19 +1175,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 </device>
 </devices>
 </deviceset>
-<deviceset name="VDD_3V3" prefix="SUPPLY">
-<description>3-volt device voltage supply</description>
-<gates>
-<gate name="VDD_3V3" symbol="VDD_3V3" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="HEADER1X6" prefix="HD">
 <description>6-pin Header (1*6)
 0.5mm Pitch Connectors For FPC/FFC</description>
@@ -1101,6 +1203,94 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <connect gate="A" pin="4" pad="4"/>
 <connect gate="A" pin="5" pad="5"/>
 <connect gate="A" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LED-RGB-A" prefix="D">
+<gates>
+<gate name="A" symbol="LED-RGB-A" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-3528" package="3528-4">
+<connects>
+<connect gate="A" pin="+" pad="2"/>
+<connect gate="A" pin="B-" pad="3"/>
+<connect gate="A" pin="G-" pad="4"/>
+<connect gate="A" pin="R-" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CAP" prefix="C" uservalue="yes">
+<description>Non-polarized capacitor</description>
+<gates>
+<gate name="A" symbol="CAP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0402" package="SMD0402">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0603" package="SMD0603">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0805" package="SMD0805">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-1206" package="SMD1206">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RP" prefix="RP" uservalue="yes">
+<description>Resistor Packs</description>
+<gates>
+<gate name="A" symbol="RES" x="0" y="15.24"/>
+<gate name="B" symbol="RES" x="0" y="5.08"/>
+<gate name="C" symbol="RES" x="0" y="-5.08"/>
+<gate name="D" symbol="RES" x="0" y="-15.24"/>
+</gates>
+<devices>
+<device name="-0603" package="RP0603">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+<connect gate="B" pin="1" pad="3"/>
+<connect gate="B" pin="2" pad="4"/>
+<connect gate="C" pin="1" pad="5"/>
+<connect gate="C" pin="2" pad="6"/>
+<connect gate="D" pin="1" pad="7"/>
+<connect gate="D" pin="2" pad="8"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1206,14 +1396,19 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="R3" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
 <part name="HD2" library="MyLibrary" deviceset="HEADER1X6" device="-FPC0.5"/>
 <part name="SUPPLY25" library="MyLibrary" deviceset="GND" device=""/>
-<part name="SUPPLY26" library="MyLibrary" deviceset="VDD_3V3" device=""/>
+<part name="D1" library="MyLibrary" deviceset="LED-RGB-A" device="-3528"/>
+<part name="SUPPLY9" library="MyLibrary" deviceset="VBAT" device=""/>
+<part name="SUPPLY8" library="MyLibrary" deviceset="VBAT" device=""/>
+<part name="C1" library="MyLibrary" deviceset="CAP" device="-0603" value="100nF"/>
+<part name="SUPPLY10" library="MyLibrary" deviceset="GND" device=""/>
+<part name="RP1" library="MyLibrary" deviceset="RP" device="-0603" value="220Ω"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="-119.38" y="-2.54" size="1.778" layer="97">Powered off &amp; connected to charger -&gt;
 MOSFET breaks over and begins to be charged.</text>
-<text x="76.2" y="-5.08" size="2.54" layer="97" font="vector">ICSP</text>
+<text x="101.6" y="-2.54" size="2.54" layer="97" font="vector">ICSP</text>
 </plain>
 <instances>
 <instance part="U1" gate="P" x="0" y="0"/>
@@ -1247,12 +1442,29 @@ MOSFET breaks over and begins to be charged.</text>
 <attribute name="NAME" x="-111.76" y="17.78" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-111.76" y="15.24" size="1.778" layer="96"/>
 </instance>
-<instance part="HD2" gate="A" x="83.82" y="-22.86" smashed="yes">
-<attribute name="VALUE" x="76.2" y="-30.48" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="78.74" y="-11.938" size="1.778" layer="95"/>
+<instance part="HD2" gate="A" x="109.22" y="-20.32" smashed="yes">
+<attribute name="VALUE" x="101.6" y="-27.94" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="104.14" y="-9.398" size="1.778" layer="95"/>
 </instance>
-<instance part="SUPPLY25" gate="GND" x="93.98" y="-30.48"/>
-<instance part="SUPPLY26" gate="VDD_3V3" x="109.22" y="-17.78" rot="R270"/>
+<instance part="SUPPLY25" gate="GND" x="119.38" y="-27.94"/>
+<instance part="D1" gate="A" x="66.04" y="-7.62" rot="MR270"/>
+<instance part="SUPPLY9" gate="VBAT" x="134.62" y="-15.24" rot="R270"/>
+<instance part="SUPPLY8" gate="VBAT" x="78.74" y="-7.62" rot="R270"/>
+<instance part="C1" gate="A" x="-35.56" y="2.54" rot="R90"/>
+<instance part="SUPPLY10" gate="GND" x="-43.18" y="2.54" rot="R270"/>
+<instance part="RP1" gate="A" x="40.64" y="-5.08" smashed="yes">
+<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+</instance>
+<instance part="RP1" gate="B" x="40.64" y="-7.62" smashed="yes">
+<attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
+</instance>
+<instance part="RP1" gate="C" x="40.64" y="-10.16" smashed="yes">
+<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
+</instance>
+<instance part="RP1" gate="D" x="63.5" y="-22.86"/>
 </instances>
 <busses>
 </busses>
@@ -1276,6 +1488,15 @@ MOSFET breaks over and begins to be charged.</text>
 <pinref part="SUPPLY3" gate="VBAT" pin="VBAT"/>
 <pinref part="SW1" gate="G$1" pin="A"/>
 <wire x1="-101.6" y1="43.18" x2="-105.41" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="HD2" gate="A" pin="2"/>
+<wire x1="114.3" y1="-15.24" x2="132.08" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="SUPPLY9" gate="VBAT" pin="VBAT"/>
+</segment>
+<segment>
+<pinref part="D1" gate="A" pin="+"/>
+<pinref part="SUPPLY8" gate="VBAT" pin="VBAT"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1307,8 +1528,12 @@ MOSFET breaks over and begins to be charged.</text>
 </segment>
 <segment>
 <pinref part="HD2" gate="A" pin="6"/>
-<wire x1="88.9" y1="-27.94" x2="93.98" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-25.4" x2="119.38" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="SUPPLY25" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C1" gate="A" pin="1"/>
+<pinref part="SUPPLY10" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="BAT-COM" class="0">
@@ -1334,8 +1559,8 @@ MOSFET breaks over and begins to be charged.</text>
 </segment>
 <segment>
 <pinref part="U1" gate="P" pin="PC1(ADC1)"/>
-<wire x1="-33.02" y1="-7.62" x2="-40.64" y2="-7.62" width="0.1524" layer="91"/>
-<label x="-40.64" y="-7.62" size="1.778" layer="95" font="vector" rot="R180"/>
+<wire x1="-33.02" y1="-7.62" x2="-38.1" y2="-7.62" width="0.1524" layer="91"/>
+<label x="-38.1" y="-7.62" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 </net>
 <net name="L" class="0">
@@ -1346,15 +1571,15 @@ MOSFET breaks over and begins to be charged.</text>
 </segment>
 <segment>
 <pinref part="U1" gate="P" pin="PC0(ADC0)"/>
-<wire x1="-33.02" y1="-5.08" x2="-40.64" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-40.64" y="-5.08" size="1.778" layer="95" font="vector" rot="R180"/>
+<wire x1="-33.02" y1="-5.08" x2="-38.1" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-38.1" y="-5.08" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 </net>
 <net name="RXD" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PD0(RXD)"/>
-<wire x1="35.56" y1="20.32" x2="43.18" y2="20.32" width="0.1524" layer="91"/>
-<label x="43.18" y="20.32" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
+<label x="40.64" y="20.32" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
 <pinref part="R1" gate="A" pin="1"/>
@@ -1365,8 +1590,8 @@ MOSFET breaks over and begins to be charged.</text>
 <net name="TXD" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PD1(TXD)"/>
-<wire x1="35.56" y1="17.78" x2="43.18" y2="17.78" width="0.1524" layer="91"/>
-<label x="43.18" y="17.78" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="17.78" x2="40.64" y2="17.78" width="0.1524" layer="91"/>
+<label x="40.64" y="17.78" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
 <pinref part="U2" gate="P" pin="UART_RX"/>
@@ -1395,8 +1620,8 @@ MOSFET breaks over and begins to be charged.</text>
 </segment>
 <segment>
 <pinref part="U1" gate="P" pin="PD2(INT0)"/>
-<wire x1="35.56" y1="15.24" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
-<label x="43.18" y="15.24" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="15.24" x2="40.64" y2="15.24" width="0.1524" layer="91"/>
+<label x="40.64" y="15.24" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="R-TX" class="0">
@@ -1423,56 +1648,94 @@ MOSFET breaks over and begins to be charged.</text>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB3(MOSI)"/>
-<wire x1="35.56" y1="-12.7" x2="43.18" y2="-12.7" width="0.1524" layer="91"/>
-<label x="43.18" y="-12.7" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="-12.7" x2="45.72" y2="-12.7" width="0.1524" layer="91"/>
+<label x="45.72" y="-12.7" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
 <pinref part="HD2" gate="A" pin="4"/>
-<wire x1="88.9" y1="-22.86" x2="93.98" y2="-22.86" width="0.1524" layer="91"/>
-<label x="93.98" y="-22.86" size="1.778" layer="95" font="vector"/>
+<wire x1="114.3" y1="-20.32" x2="119.38" y2="-20.32" width="0.1524" layer="91"/>
+<label x="119.38" y="-20.32" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="MISO" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB4(MISO)"/>
-<wire x1="35.56" y1="-15.24" x2="43.18" y2="-15.24" width="0.1524" layer="91"/>
-<label x="43.18" y="-15.24" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="-15.24" x2="45.72" y2="-15.24" width="0.1524" layer="91"/>
+<label x="45.72" y="-15.24" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
 <pinref part="HD2" gate="A" pin="1"/>
-<wire x1="88.9" y1="-15.24" x2="93.98" y2="-15.24" width="0.1524" layer="91"/>
-<label x="93.98" y="-15.24" size="1.778" layer="95" font="vector"/>
+<wire x1="114.3" y1="-12.7" x2="119.38" y2="-12.7" width="0.1524" layer="91"/>
+<label x="119.38" y="-12.7" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="SCK" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB5(SCK)"/>
-<wire x1="35.56" y1="-17.78" x2="43.18" y2="-17.78" width="0.1524" layer="91"/>
-<label x="43.18" y="-17.78" size="1.778" layer="95" font="vector"/>
+<wire x1="35.56" y1="-17.78" x2="45.72" y2="-17.78" width="0.1524" layer="91"/>
+<label x="45.72" y="-17.78" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
 <pinref part="HD2" gate="A" pin="3"/>
-<wire x1="88.9" y1="-20.32" x2="93.98" y2="-20.32" width="0.1524" layer="91"/>
-<label x="93.98" y="-20.32" size="1.778" layer="95" font="vector"/>
+<wire x1="114.3" y1="-17.78" x2="119.38" y2="-17.78" width="0.1524" layer="91"/>
+<label x="119.38" y="-17.78" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="RST" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PC6(RESET)"/>
-<wire x1="-33.02" y1="25.4" x2="-40.64" y2="25.4" width="0.1524" layer="91"/>
-<label x="-40.64" y="25.4" size="1.778" layer="95" font="vector" rot="R180"/>
+<wire x1="-33.02" y1="25.4" x2="-38.1" y2="25.4" width="0.1524" layer="91"/>
+<label x="-38.1" y="25.4" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 <segment>
 <pinref part="HD2" gate="A" pin="5"/>
-<wire x1="88.9" y1="-25.4" x2="93.98" y2="-25.4" width="0.1524" layer="91"/>
-<label x="93.98" y="-25.4" size="1.778" layer="95" font="vector"/>
+<wire x1="114.3" y1="-22.86" x2="119.38" y2="-22.86" width="0.1524" layer="91"/>
+<label x="119.38" y="-22.86" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
-<net name="VDD_3V3" class="0">
+<net name="N$4" class="0">
 <segment>
-<pinref part="HD2" gate="A" pin="2"/>
-<pinref part="SUPPLY26" gate="VDD_3V3" pin="VDD_3V3"/>
-<wire x1="88.9" y1="-17.78" x2="106.68" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="D1" gate="A" pin="R-"/>
+<wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
+<pinref part="RP1" gate="A" pin="1"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="D1" gate="A" pin="G-"/>
+<wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="RP1" gate="B" pin="1"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="D1" gate="A" pin="B-"/>
+<wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="RP1" gate="C" pin="1"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="AREF"/>
+<pinref part="C1" gate="A" pin="2"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
+<pinref part="RP1" gate="A" pin="2"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PB1(OC1A)"/>
+<pinref part="RP1" gate="B" pin="2"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
+<pinref part="RP1" gate="C" pin="2"/>
 </segment>
 </net>
 </nets>
