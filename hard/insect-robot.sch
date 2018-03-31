@@ -1406,9 +1406,11 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <sheets>
 <sheet>
 <plain>
-<text x="-119.38" y="-2.54" size="1.778" layer="97">Powered off &amp; connected to charger -&gt;
+<text x="-116.84" y="0" size="1.27" layer="97" font="vector">Powered off &amp; connected to charger -&gt;
 MOSFET breaks over and begins to be charged.</text>
 <text x="101.6" y="-2.54" size="2.54" layer="97" font="vector">ICSP</text>
+<text x="-111.76" y="-43.18" size="1.27" layer="97" font="vector">BRTS: wake the SLAVE up.
+BCTS: wake the MASTER up.</text>
 </plain>
 <instances>
 <instance part="U1" gate="P" x="0" y="0"/>
@@ -1605,6 +1607,11 @@ MOSFET breaks over and begins to be charged.</text>
 <wire x1="-73.66" y1="-25.4" x2="-58.42" y2="-25.4" width="0.1524" layer="91"/>
 <label x="-58.42" y="-25.4" size="1.778" layer="95" font="vector"/>
 </segment>
+<segment>
+<pinref part="U1" gate="P" pin="PD4(XCK/T0)"/>
+<wire x1="35.56" y1="10.16" x2="40.64" y2="10.16" width="0.1524" layer="91"/>
+<label x="40.64" y="10.16" size="1.778" layer="95" font="vector"/>
+</segment>
 </net>
 <net name="R-BCTS" class="0">
 <segment>
@@ -1635,6 +1642,11 @@ MOSFET breaks over and begins to be charged.</text>
 <pinref part="U2" gate="P" pin="LINK"/>
 <wire x1="-73.66" y1="-30.48" x2="-58.42" y2="-30.48" width="0.1524" layer="91"/>
 <label x="-58.42" y="-30.48" size="1.778" layer="95" font="vector"/>
+</segment>
+<segment>
+<pinref part="U1" gate="P" pin="PD3(INT1)"/>
+<wire x1="35.56" y1="12.7" x2="40.64" y2="12.7" width="0.1524" layer="91"/>
+<label x="40.64" y="12.7" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="SWITCH-B" class="0">
