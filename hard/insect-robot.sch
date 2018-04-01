@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -443,8 +443,8 @@
 <wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="51"/>
 <wire x1="3.25" y1="5" x2="3.25" y2="-5" width="0.127" layer="51"/>
 <wire x1="3.25" y1="-5" x2="-3.25" y2="-5" width="0.127" layer="51"/>
-<text x="-2" y="-3" size="0.8128" layer="51" font="vector">&gt;NAME</text>
-<text x="-2" y="-4" size="0.8128" layer="51" font="vector">&gt;VALUE</text>
+<text x="-2" y="-3" size="0.8128" layer="25" font="vector">&gt;NAME</text>
+<text x="-2" y="-4" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
 </package>
 <package name="SMD0201">
 <description>Surface mount device - 0201 - 0.6mm x 0.3mm (0.024" × 0.012")</description>
@@ -524,85 +524,6 @@
 <rectangle x1="0.7" y1="-1.4" x2="1.2" y2="-0.8" layer="51"/>
 <rectangle x1="-0.25" y1="0.8" x2="0.25" y2="1.4" layer="51"/>
 </package>
-<package name="DIP1X6">
-<description>6-pin Header (1x6)</description>
-<pad name="1" x="-6.35" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="2" x="-3.81" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="3" x="-1.27" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="4" x="1.27" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="5" x="3.81" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="6" x="6.35" y="0" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
-<text x="-7.6962" y="1.8288" size="0.8128" layer="25" font="vector" ratio="10" align="center-left">&gt;NAME</text>
-<text x="-7.62" y="-1.905" size="0.8128" layer="27" font="vector" align="center-left">&gt;VALUE</text>
-</package>
-<package name="FPC0.5-6">
-<description>&lt;b&gt;0.5mm Pitch Connectors For FPC/FFC&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data sheet&lt;/a&gt;&lt;p&gt;</description>
-<wire x1="-2.95" y1="0.5" x2="-3.45" y2="0.5" width="0.2032" layer="51"/>
-<wire x1="-3.45" y1="0.5" x2="-3.45" y2="-0.5" width="0.2032" layer="51"/>
-<wire x1="-3.45" y1="-0.5" x2="-2.95" y2="-0.5" width="0.2032" layer="51"/>
-<wire x1="-2.95" y1="-0.5" x2="-2.95" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.95" y1="-1.9" x2="-2.65" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.65" y1="-1.9" x2="-2.65" y2="-2.2" width="0.2032" layer="51"/>
-<wire x1="-2.65" y1="-2.2" x2="-2.95" y2="-2.2" width="0.2032" layer="51"/>
-<wire x1="-2.95" y1="-2.2" x2="-2.95" y2="-2.9" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-2.9" x2="2.95" y2="-2.2" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-2.2" x2="2.65" y2="-2.2" width="0.2032" layer="51"/>
-<wire x1="2.65" y1="-2.2" x2="2.65" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.65" y1="-1.9" x2="2.95" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-1.9" x2="2.95" y2="-0.5" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-0.5" x2="3.45" y2="-0.5" width="0.2032" layer="51"/>
-<wire x1="3.45" y1="-0.5" x2="3.45" y2="0.5" width="0.2032" layer="51"/>
-<wire x1="3.45" y1="0.5" x2="2.95" y2="0.5" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="0.5" x2="2.95" y2="2.5" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="2.5" x2="-2.95" y2="2.5" width="0.2032" layer="51"/>
-<wire x1="-2.95" y1="2.5" x2="-2.95" y2="0.5" width="0.2032" layer="51"/>
-<wire x1="2.65" y1="-1.9" x2="-2.65" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-2.9" x2="-2.95" y2="-2.9" width="0.2032" layer="51"/>
-<wire x1="-2.95" y1="2.5" x2="-2.95" y2="1.5" width="0.2032" layer="21"/>
-<wire x1="-1.75" y1="2.5" x2="-2.95" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="2.95" y1="1.5" x2="2.95" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="2.95" y1="2.5" x2="1.75" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="-2.95" y1="-1.5" x2="-2.95" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.95" y1="-1.9" x2="2.95" y2="-1.5" width="0.2032" layer="51"/>
-<smd name="1" x="-1.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<smd name="2" x="-0.75" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<smd name="3" x="-0.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<smd name="4" x="0.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<smd name="5" x="0.75" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<smd name="6" x="1.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
-<text x="-2.54" y="-3.81" size="0.8128" layer="25" font="vector">&gt;NAME</text>
-<text x="-2.54" y="-5.08" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
-<rectangle x1="-1.45" y1="2.55" x2="-1.05" y2="3.95" layer="29"/>
-<rectangle x1="-1.375" y1="2.625" x2="-1.125" y2="3.875" layer="31"/>
-<rectangle x1="-0.95" y1="2.55" x2="-0.55" y2="3.95" layer="29"/>
-<rectangle x1="-0.875" y1="2.625" x2="-0.625" y2="3.875" layer="31"/>
-<rectangle x1="-0.45" y1="2.55" x2="-0.05" y2="3.95" layer="29"/>
-<rectangle x1="-0.375" y1="2.625" x2="-0.125" y2="3.875" layer="31"/>
-<rectangle x1="0.05" y1="2.55" x2="0.45" y2="3.95" layer="29"/>
-<rectangle x1="0.125" y1="2.625" x2="0.375" y2="3.875" layer="31"/>
-<rectangle x1="0.55" y1="2.55" x2="0.95" y2="3.95" layer="29"/>
-<rectangle x1="0.625" y1="2.625" x2="0.875" y2="3.875" layer="31"/>
-<rectangle x1="1.05" y1="2.55" x2="1.45" y2="3.95" layer="29"/>
-<rectangle x1="1.125" y1="2.625" x2="1.375" y2="3.875" layer="31"/>
-<rectangle x1="2.25" y1="-1.1" x2="4.05" y2="1.1" layer="1" rot="R180"/>
-<rectangle x1="2.2" y1="-1.175" x2="4.1" y2="1.175" layer="29" rot="R180"/>
-<rectangle x1="2.325" y1="-1.025" x2="3.975" y2="1.025" layer="31" rot="R180"/>
-<rectangle x1="-4.05" y1="-1.1" x2="-2.25" y2="1.1" layer="1" rot="R180"/>
-<rectangle x1="-4.1" y1="-1.175" x2="-2.2" y2="1.175" layer="29" rot="R180"/>
-<rectangle x1="-3.975" y1="-1.025" x2="-2.325" y2="1.025" layer="31" rot="R180"/>
-<rectangle x1="-1.35" y1="2.55" x2="-1.15" y2="3.4" layer="51"/>
-<rectangle x1="-0.85" y1="2.55" x2="-0.65" y2="3.4" layer="51"/>
-<rectangle x1="-0.35" y1="2.55" x2="-0.15" y2="3.4" layer="51"/>
-<rectangle x1="0.15" y1="2.55" x2="0.35" y2="3.4" layer="51"/>
-<rectangle x1="0.65" y1="2.55" x2="0.85" y2="3.4" layer="51"/>
-<rectangle x1="1.15" y1="2.55" x2="1.35" y2="3.4" layer="51"/>
-<polygon width="0.2032" layer="51">
-<vertex x="-1.45" y="-2.2"/>
-<vertex x="-1.25" y="-2.6"/>
-<vertex x="-1.05" y="-2.2"/>
-</polygon>
-</package>
 <package name="3528-4">
 <smd name="3" x="-1.4" y="0.8" dx="1.2" dy="0.95" layer="1"/>
 <smd name="2" x="-1.4" y="-0.8" dx="1.2" dy="0.95" layer="1"/>
@@ -666,6 +587,87 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <wire x1="-1.8" y1="-0.8" x2="1.8" y2="-0.8" width="0.127" layer="51"/>
 <text x="-1.905" y="1.905" size="0.8128" layer="25" font="vector">&gt;NAME</text>
 <text x="-1.905" y="-2.54" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+</package>
+<package name="FPC0.5-6-DRAWER">
+<description>&lt;b&gt;0.5mm Pitch Connectors For FPC/FFC&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="-3.9025" y1="2.3225" x2="-3.9025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="-3.9025" y1="-0.63" x2="-3.6025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="-3.6025" y1="-0.63" x2="-3.6025" y2="-0.93" width="0.2032" layer="51"/>
+<wire x1="-3.6025" y1="-0.93" x2="-3.9025" y2="-0.93" width="0.2032" layer="51"/>
+<wire x1="-3.9025" y1="-0.93" x2="-3.9025" y2="-1.63" width="0.2032" layer="51"/>
+<wire x1="3.9025" y1="-1.63" x2="3.9025" y2="-0.93" width="0.2032" layer="51"/>
+<wire x1="3.9025" y1="-0.93" x2="3.6025" y2="-0.93" width="0.2032" layer="51"/>
+<wire x1="3.6025" y1="-0.93" x2="3.6025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="3.6025" y1="-0.63" x2="3.9025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="3.9025" y1="-0.63" x2="3.9025" y2="2.3225" width="0.2032" layer="51"/>
+<wire x1="1.7975" y1="2.5" x2="-1.6975" y2="2.5" width="0.2032" layer="51"/>
+<wire x1="3.6025" y1="-0.63" x2="-3.6025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="3.9025" y1="-1.63" x2="-3.9025" y2="-1.63" width="0.2032" layer="51"/>
+<wire x1="-3.9025" y1="2.5" x2="-3.9025" y2="2.3" width="0.2032" layer="21"/>
+<wire x1="-1.65" y1="2.5" x2="-3.9025" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="3.9025" y1="2.3" x2="3.9025" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="3.9025" y1="2.5" x2="1.65" y2="2.5" width="0.2032" layer="21"/>
+<smd name="1" x="-1.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<smd name="2" x="-0.75" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<smd name="3" x="-0.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0.75" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<smd name="6" x="1.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
+<text x="-3.81" y="-2.54" size="0.8128" layer="25" font="vector">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="-1.45" y1="2.55" x2="-1.05" y2="3.95" layer="29"/>
+<rectangle x1="-1.375" y1="2.625" x2="-1.125" y2="3.875" layer="31"/>
+<rectangle x1="-0.95" y1="2.55" x2="-0.55" y2="3.95" layer="29"/>
+<rectangle x1="-0.875" y1="2.625" x2="-0.625" y2="3.875" layer="31"/>
+<rectangle x1="-0.45" y1="2.55" x2="-0.05" y2="3.95" layer="29"/>
+<rectangle x1="-0.375" y1="2.625" x2="-0.125" y2="3.875" layer="31"/>
+<rectangle x1="0.05" y1="2.55" x2="0.45" y2="3.95" layer="29"/>
+<rectangle x1="0.125" y1="2.625" x2="0.375" y2="3.875" layer="31"/>
+<rectangle x1="0.55" y1="2.55" x2="0.95" y2="3.95" layer="29"/>
+<rectangle x1="0.625" y1="2.625" x2="0.875" y2="3.875" layer="31"/>
+<rectangle x1="1.05" y1="2.55" x2="1.45" y2="3.95" layer="29"/>
+<rectangle x1="1.125" y1="2.625" x2="1.375" y2="3.875" layer="31"/>
+<rectangle x1="2.325" y1="-1.025" x2="3.975" y2="1.025" layer="31" rot="R180"/>
+<rectangle x1="-3.975" y1="-1.025" x2="-2.325" y2="1.025" layer="31" rot="R180"/>
+<rectangle x1="-1.35" y1="2.55" x2="-1.15" y2="3.4" layer="51"/>
+<rectangle x1="-0.85" y1="2.55" x2="-0.65" y2="3.4" layer="51"/>
+<rectangle x1="-0.35" y1="2.55" x2="-0.15" y2="3.4" layer="51"/>
+<rectangle x1="0.15" y1="2.55" x2="0.35" y2="3.4" layer="51"/>
+<rectangle x1="0.65" y1="2.55" x2="0.85" y2="3.4" layer="51"/>
+<rectangle x1="1.15" y1="2.55" x2="1.35" y2="3.4" layer="51"/>
+<polygon width="0.2032" layer="51">
+<vertex x="-2.72" y="-0.93"/>
+<vertex x="-2.52" y="-1.33"/>
+<vertex x="-2.32" y="-0.93"/>
+</polygon>
+<smd name="SS1" x="-3.175" y="0.9525" dx="1.8" dy="2.2" layer="1"/>
+<smd name="SS2" x="3.175" y="0.9525" dx="1.8" dy="2.2" layer="1"/>
+</package>
+<package name="SWITCH-SMD-6.7X2.7">
+<description>Double-throw switch.</description>
+<wire x1="-0.597" y1="3.302" x2="0.597" y2="3.302" width="0.127" layer="21"/>
+<smd name="A" x="1.978" y="2.286" dx="1.8" dy="0.7" layer="1"/>
+<smd name="SS4" x="-1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
+<smd name="SS3" x="1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
+<smd name="SS1" x="-1.15" y="-3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
+<smd name="SS2" x="1.15" y="-3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
+<smd name="B" x="1.978" y="-2.286" dx="1.8" dy="0.7" layer="1"/>
+<smd name="COM" x="1.978" y="-0.762" dx="1.8" dy="0.7" layer="1"/>
+<text x="-3.81" y="-2.54" size="0.8128" layer="25" font="vector" ratio="11" rot="R90">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="0.8128" layer="27" font="vector" ratio="11" rot="R90">&gt;VALUE</text>
+<hole x="0" y="-1.524" drill="0.8128"/>
+<hole x="0" y="1.524" drill="0.8128"/>
+<wire x1="-1.4" y1="3" x2="-1.4" y2="-3" width="0.127" layer="21"/>
+<wire x1="0.6" y1="-3.3" x2="-0.6" y2="-3.3" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-3" x2="1.4" y2="-2.9" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-1.7" x2="1.4" y2="-1.3" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-0.2" x2="1.4" y2="1.7" width="0.127" layer="21"/>
+<wire x1="1.4" y1="3" x2="1.4" y2="2.9" width="0.127" layer="21"/>
+</package>
+<package name="BAT-SMD-SMALL">
+<text x="1.27" y="-1.27" size="0.8128" layer="25" font="vector" rot="R270" align="center">+</text>
+<smd name="-" x="-0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="25" rot="R90"/>
+<smd name="+" x="0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="100" rot="R90"/>
 </package>
 </packages>
 <symbols>
@@ -823,26 +825,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <text x="10.16" y="0" size="1.778" layer="95">&gt;NAME</text>
 <text x="10.16" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="HEADER1X6">
-<wire x1="1.27" y1="-7.62" x2="-5.08" y2="-7.62" width="0.4064" layer="94"/>
-<wire x1="-5.08" y1="10.16" x2="-5.08" y2="-7.62" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-7.62" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
-<wire x1="-5.08" y1="10.16" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
-<wire x1="-1.27" y1="-5.08" x2="0" y2="-5.08" width="0.6096" layer="94"/>
-<wire x1="-1.27" y1="-2.54" x2="0" y2="-2.54" width="0.6096" layer="94"/>
-<wire x1="-1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
-<wire x1="-1.27" y1="2.54" x2="0" y2="2.54" width="0.6096" layer="94"/>
-<wire x1="-1.27" y1="5.08" x2="0" y2="5.08" width="0.6096" layer="94"/>
-<wire x1="-1.27" y1="7.62" x2="0" y2="7.62" width="0.6096" layer="94"/>
-<text x="-5.08" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-5.08" y="10.922" size="1.778" layer="95">&gt;NAME</text>
-<pin name="1" x="5.08" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="2" x="5.08" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="3" x="5.08" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="4" x="5.08" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="5" x="5.08" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="6" x="5.08" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-</symbol>
 <symbol name="LED-RGB-A">
 <description>Common &lt;b&gt;Anode&lt;/b&gt; RGB LED</description>
 <wire x1="-1.016" y1="-1.016" x2="1.016" y2="-1.016" width="0.254" layer="94"/>
@@ -900,6 +882,42 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <rectangle x1="-2.032" y1="1.524" x2="2.032" y2="2.032" layer="94"/>
 <pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+</symbol>
+<symbol name="HEADER1X7">
+<wire x1="1.27" y1="-10.16" x2="-5.08" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="10.16" x2="-5.08" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-10.16" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="10.16" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="-1.27" y1="-5.08" x2="0" y2="-5.08" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="0" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="2.54" x2="0" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="5.08" x2="0" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="7.62" x2="0" y2="7.62" width="0.6096" layer="94"/>
+<text x="-5.08" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-5.08" y="10.922" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="5.08" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="2" x="5.08" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="3" x="5.08" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="4" x="5.08" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="5" x="5.08" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="6" x="5.08" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<wire x1="-1.27" y1="-7.62" x2="0" y2="-7.62" width="0.6096" layer="94"/>
+<pin name="7" x="5.08" y="-7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="SWITCH-DT">
+<description>Single pole double throw switch.</description>
+<pin name="COM" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<circle x="2.286" y="0" radius="0.254" width="0.1524" layer="94"/>
+<pin name="A" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
+<pin name="B" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
+<circle x="-2.286" y="2.54" radius="0.254" width="0.1524" layer="94"/>
+<circle x="-2.286" y="-2.54" radius="0.254" width="0.1524" layer="94"/>
+<wire x1="2.032" y1="0" x2="-2.032" y2="-2.54" width="0.1524" layer="94"/>
+<pin name="SS" x="2.54" y="-2.54" visible="pad" length="point" rot="R180"/>
+<text x="-5.08" y="7.62" size="1.27" layer="95">&gt;NAME</text>
+<text x="-5.08" y="5.08" size="1.27" layer="96">&gt;VALUE</text>
+<circle x="2.54" y="-2.54" radius="0.127" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1057,6 +1075,15 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <technology name=""/>
 </technologies>
 </device>
+<device name="-SMD-SMALL" package="BAT-SMD-SMALL">
+<connects>
+<connect gate="A" pin="+" pad="+"/>
+<connect gate="A" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="HEADER1X3" prefix="HD">
@@ -1175,41 +1202,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 </device>
 </devices>
 </deviceset>
-<deviceset name="HEADER1X6" prefix="HD">
-<description>6-pin Header (1*6)
-0.5mm Pitch Connectors For FPC/FFC</description>
-<gates>
-<gate name="A" symbol="HEADER1X6" x="0" y="-7.62"/>
-</gates>
-<devices>
-<device name="" package="DIP1X6">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-<connect gate="A" pin="5" pad="5"/>
-<connect gate="A" pin="6" pad="6"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-FPC0.5" package="FPC0.5-6">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-<connect gate="A" pin="5" pad="5"/>
-<connect gate="A" pin="6" pad="6"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="LED-RGB-A" prefix="D">
 <gates>
 <gate name="A" symbol="LED-RGB-A" x="0" y="0"/>
@@ -1298,70 +1290,43 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 </device>
 </devices>
 </deviceset>
-</devicesets>
-</library>
-<library name="Seeed-OPL-Button">
-<packages>
-<package name="SW7-SMD-L6.7X2.7X3.2MM">
-<wire x1="-1.397" y1="3.302" x2="1.397" y2="3.302" width="0.127" layer="21"/>
-<wire x1="1.397" y1="3.302" x2="1.397" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="1.397" y1="-3.302" x2="-1.397" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="-1.397" y1="-3.302" x2="-1.397" y2="3.302" width="0.127" layer="21"/>
-<smd name="A" x="1.978" y="2.286" dx="1.8" dy="0.7" layer="1"/>
-<smd name="SS4" x="-1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
-<smd name="SS3" x="1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
-<smd name="SS1" x="-1.15" y="-3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
-<smd name="SS2" x="1.15" y="-3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
-<smd name="B" x="1.978" y="-2.286" dx="1.8" dy="0.7" layer="1"/>
-<smd name="COM" x="1.978" y="-0.762" dx="1.8" dy="0.7" layer="1"/>
-<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-1.905" size="0.889" layer="27" ratio="11" rot="R90">&gt;VALUE</text>
-<rectangle x1="-0.635" y1="-1.27" x2="0.635" y2="1.27" layer="21"/>
-<rectangle x1="-1.397" y1="-3.302" x2="1.397" y2="3.302" layer="39"/>
-<hole x="0" y="-1.524" drill="0.8128"/>
-<hole x="0" y="1.524" drill="0.8128"/>
-</package>
-</packages>
-<symbols>
-<symbol name="SWITCH-3+4P">
-<wire x1="-3.81" y1="6.35" x2="3.81" y2="6.35" width="0.254" layer="94"/>
-<wire x1="3.81" y1="6.35" x2="3.81" y2="-6.35" width="0.254" layer="94"/>
-<wire x1="3.81" y1="-6.35" x2="-3.81" y2="-6.35" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-6.35" x2="-3.81" y2="6.35" width="0.254" layer="94"/>
-<text x="-7.62" y="-6.35" size="1.27" layer="95" ratio="10" rot="R90">&gt;NAME</text>
-<text x="-7.62" y="0" size="1.27" layer="96" ratio="10" rot="R90">&gt;VALUE</text>
-<rectangle x1="-6.35" y1="-2.54" x2="-3.81" y2="2.54" layer="94"/>
-<pin name="A" x="6.35" y="5.08" length="short" rot="R180"/>
-<pin name="COM" x="6.35" y="-2.54" length="short" rot="R180"/>
-<pin name="B" x="6.35" y="-5.08" length="short" rot="R180"/>
-<pin name="SS1" x="-3.81" y="-8.89" visible="off" length="short" rot="R90"/>
-<pin name="SS2" x="3.81" y="-8.89" visible="off" length="short" rot="R90"/>
-<pin name="SS3" x="3.81" y="8.89" visible="off" length="short" rot="R270"/>
-<pin name="SS4" x="-3.81" y="8.89" visible="off" length="short" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="SMD-TOGGLE-SWITCH-ON-ON(3+4P-6.7X2.7MM)" prefix="SW" uservalue="yes">
-<description>311030001</description>
+<deviceset name="HEADER1X6-SS" prefix="HD">
+<description>6-pin Header (1*6)
+0.5mm Pitch Connectors For FPC/FFC</description>
 <gates>
-<gate name="G$1" symbol="SWITCH-3+4P" x="0" y="0"/>
+<gate name="A" symbol="HEADER1X7" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SW7-SMD-L6.7X2.7X3.2MM">
+<device name="-FPC0.5-DRAWER" package="FPC0.5-6-DRAWER">
 <connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="B" pad="B"/>
-<connect gate="G$1" pin="COM" pad="COM"/>
-<connect gate="G$1" pin="SS1" pad="SS1"/>
-<connect gate="G$1" pin="SS2" pad="SS2"/>
-<connect gate="G$1" pin="SS3" pad="SS3"/>
-<connect gate="G$1" pin="SS4" pad="SS4"/>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+<connect gate="A" pin="3" pad="3"/>
+<connect gate="A" pin="4" pad="4"/>
+<connect gate="A" pin="5" pad="5"/>
+<connect gate="A" pin="6" pad="6"/>
+<connect gate="A" pin="7" pad="SS1 SS2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="MPN" value="MK-12C02" constant="no"/>
-<attribute name="VALUE" value="MK-12C02"/>
-</technology>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SWITCH-DT" prefix="SW">
+<gates>
+<gate name="A" symbol="SWITCH-DT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SWITCH-SMD-6.7X2.7">
+<connects>
+<connect gate="A" pin="A" pad="A"/>
+<connect gate="A" pin="B" pad="B"/>
+<connect gate="A" pin="COM" pad="COM"/>
+<connect gate="A" pin="SS" pad="SS1 SS2 SS3 SS4"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -1381,8 +1346,7 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="U1" library="MyLibrary" deviceset="ATMEGA328P" device="-QFN32"/>
 <part name="SUPPLY1" library="MyLibrary" deviceset="VBAT" device=""/>
 <part name="SUPPLY2" library="MyLibrary" deviceset="GND" device=""/>
-<part name="SW1" library="Seeed-OPL-Button" deviceset="SMD-TOGGLE-SWITCH-ON-ON(3+4P-6.7X2.7MM)" device="" value="MK-12C02"/>
-<part name="BAT1" library="MyLibrary" deviceset="BATTERY" device="-SMD"/>
+<part name="BAT1" library="MyLibrary" deviceset="BATTERY" device="-SMD-SMALL" value="BATTERY-SMD-SMALL"/>
 <part name="SUPPLY3" library="MyLibrary" deviceset="VBAT" device=""/>
 <part name="SUPPLY4" library="MyLibrary" deviceset="GND" device=""/>
 <part name="HD1" library="MyLibrary" deviceset="HEADER1X3" device="-SMD-LYING"/>
@@ -1394,7 +1358,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="R2" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
 <part name="Q1" library="MyLibrary" deviceset="MOSFET" device="-SOT23" value="AO3400"/>
 <part name="R3" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
-<part name="HD2" library="MyLibrary" deviceset="HEADER1X6" device="-FPC0.5"/>
 <part name="SUPPLY25" library="MyLibrary" deviceset="GND" device=""/>
 <part name="D1" library="MyLibrary" deviceset="LED-RGB-A" device="-3528"/>
 <part name="SUPPLY9" library="MyLibrary" deviceset="VBAT" device=""/>
@@ -1402,6 +1365,9 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="C1" library="MyLibrary" deviceset="CAP" device="-0603" value="100nF"/>
 <part name="SUPPLY10" library="MyLibrary" deviceset="GND" device=""/>
 <part name="RP1" library="MyLibrary" deviceset="RP" device="-0603" value="220Ω"/>
+<part name="SUPPLY11" library="MyLibrary" deviceset="GND" device=""/>
+<part name="HD2" library="MyLibrary" deviceset="HEADER1X6-SS" device="-FPC0.5-DRAWER"/>
+<part name="SW1" library="MyLibrary" deviceset="SWITCH-DT" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1416,13 +1382,12 @@ BCTS: wake the MASTER up.</text>
 <instance part="U1" gate="P" x="0" y="0"/>
 <instance part="SUPPLY1" gate="VBAT" x="0" y="35.56"/>
 <instance part="SUPPLY2" gate="GND" x="0" y="-33.02"/>
-<instance part="SW1" gate="G$1" x="-111.76" y="38.1"/>
-<instance part="BAT1" gate="A" x="-86.36" y="35.56" smashed="yes" rot="R180">
-<attribute name="NAME" x="-91.44" y="43.18" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-91.44" y="40.64" size="1.778" layer="96"/>
+<instance part="BAT1" gate="A" x="-124.46" y="35.56" smashed="yes">
+<attribute name="NAME" x="-119.38" y="27.94" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-119.38" y="30.48" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY3" gate="VBAT" x="-101.6" y="45.72"/>
-<instance part="SUPPLY4" gate="GND" x="-78.74" y="35.56" rot="R90"/>
+<instance part="SUPPLY3" gate="VBAT" x="-99.06" y="40.64"/>
+<instance part="SUPPLY4" gate="GND" x="-132.08" y="35.56" rot="R270"/>
 <instance part="HD1" gate="A" x="-78.74" y="12.7"/>
 <instance part="SUPPLY5" gate="GND" x="-114.3" y="12.7" rot="R270"/>
 <instance part="U2" gate="P" x="-91.44" y="-25.4"/>
@@ -1444,29 +1409,31 @@ BCTS: wake the MASTER up.</text>
 <attribute name="NAME" x="-111.76" y="17.78" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-111.76" y="15.24" size="1.778" layer="96"/>
 </instance>
-<instance part="HD2" gate="A" x="109.22" y="-20.32" smashed="yes">
-<attribute name="VALUE" x="101.6" y="-27.94" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="104.14" y="-9.398" size="1.778" layer="95"/>
-</instance>
-<instance part="SUPPLY25" gate="GND" x="119.38" y="-27.94"/>
+<instance part="SUPPLY25" gate="GND" x="134.62" y="-27.94" rot="R90"/>
 <instance part="D1" gate="A" x="66.04" y="-7.62" rot="MR270"/>
 <instance part="SUPPLY9" gate="VBAT" x="134.62" y="-15.24" rot="R270"/>
 <instance part="SUPPLY8" gate="VBAT" x="78.74" y="-7.62" rot="R270"/>
 <instance part="C1" gate="A" x="-35.56" y="2.54" rot="R90"/>
 <instance part="SUPPLY10" gate="GND" x="-43.18" y="2.54" rot="R270"/>
-<instance part="RP1" gate="A" x="40.64" y="-5.08" smashed="yes">
-<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+<instance part="RP1" gate="A" x="60.96" y="-22.86" smashed="yes">
+<attribute name="NAME" x="63.5" y="-22.86" size="1.778" layer="95"/>
+<attribute name="VALUE" x="71.12" y="-22.86" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="B" x="40.64" y="-7.62" smashed="yes">
-<attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
-</instance>
-<instance part="RP1" gate="C" x="40.64" y="-10.16" smashed="yes">
+<instance part="RP1" gate="B" x="40.64" y="-10.16" smashed="yes">
 <attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="D" x="63.5" y="-22.86"/>
+<instance part="RP1" gate="C" x="40.64" y="-7.62" smashed="yes">
+<attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
+</instance>
+<instance part="RP1" gate="D" x="40.64" y="-5.08" smashed="yes">
+<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY11" gate="GND" x="-111.76" y="27.94"/>
+<instance part="HD2" gate="A" x="109.22" y="-20.32"/>
+<instance part="SW1" gate="A" x="-109.22" y="35.56" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -1487,18 +1454,18 @@ BCTS: wake the MASTER up.</text>
 <wire x1="-109.22" y1="-30.48" x2="-114.3" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY3" gate="VBAT" pin="VBAT"/>
-<pinref part="SW1" gate="G$1" pin="A"/>
-<wire x1="-101.6" y1="43.18" x2="-105.41" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="HD2" gate="A" pin="2"/>
 <wire x1="114.3" y1="-15.24" x2="132.08" y2="-15.24" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="VBAT" pin="VBAT"/>
+<pinref part="HD2" gate="A" pin="2"/>
 </segment>
 <segment>
 <pinref part="D1" gate="A" pin="+"/>
 <pinref part="SUPPLY8" gate="VBAT" pin="VBAT"/>
+</segment>
+<segment>
+<pinref part="SUPPLY3" gate="VBAT" pin="VBAT"/>
+<pinref part="SW1" gate="A" pin="A"/>
+<wire x1="-99.06" y1="38.1" x2="-104.14" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1529,20 +1496,23 @@ BCTS: wake the MASTER up.</text>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="HD2" gate="A" pin="6"/>
-<wire x1="114.3" y1="-25.4" x2="119.38" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="SUPPLY25" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C1" gate="A" pin="1"/>
 <pinref part="SUPPLY10" gate="GND" pin="GND"/>
 </segment>
-</net>
-<net name="BAT-COM" class="0">
 <segment>
-<pinref part="BAT1" gate="A" pin="+"/>
-<pinref part="SW1" gate="G$1" pin="COM"/>
-<wire x1="-91.44" y1="35.56" x2="-105.41" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="HD2" gate="A" pin="7"/>
+<pinref part="SUPPLY25" gate="GND" pin="GND"/>
+<wire x1="114.3" y1="-27.94" x2="119.38" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="HD2" gate="A" pin="6"/>
+<wire x1="119.38" y1="-27.94" x2="132.08" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-25.4" x2="119.38" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-25.4" x2="119.38" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="119.38" y="-27.94"/>
+</segment>
+<segment>
+<pinref part="SW1" gate="A" pin="SS"/>
+<wire x1="-111.76" y1="33.02" x2="-111.76" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="SUPPLY11" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="R" class="0">
@@ -1653,8 +1623,7 @@ BCTS: wake the MASTER up.</text>
 <segment>
 <pinref part="Q1" gate="A" pin="D"/>
 <wire x1="-104.14" y1="25.4" x2="-104.14" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="G$1" pin="B"/>
-<wire x1="-104.14" y1="33.02" x2="-105.41" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="B"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -1664,9 +1633,9 @@ BCTS: wake the MASTER up.</text>
 <label x="45.72" y="-12.7" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
-<pinref part="HD2" gate="A" pin="4"/>
 <wire x1="114.3" y1="-20.32" x2="119.38" y2="-20.32" width="0.1524" layer="91"/>
 <label x="119.38" y="-20.32" size="1.778" layer="95" font="vector"/>
+<pinref part="HD2" gate="A" pin="4"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -1676,9 +1645,9 @@ BCTS: wake the MASTER up.</text>
 <label x="45.72" y="-15.24" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
-<pinref part="HD2" gate="A" pin="1"/>
 <wire x1="114.3" y1="-12.7" x2="119.38" y2="-12.7" width="0.1524" layer="91"/>
 <label x="119.38" y="-12.7" size="1.778" layer="95" font="vector"/>
+<pinref part="HD2" gate="A" pin="1"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -1688,66 +1657,61 @@ BCTS: wake the MASTER up.</text>
 <label x="45.72" y="-17.78" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
-<pinref part="HD2" gate="A" pin="3"/>
 <wire x1="114.3" y1="-17.78" x2="119.38" y2="-17.78" width="0.1524" layer="91"/>
 <label x="119.38" y="-17.78" size="1.778" layer="95" font="vector"/>
+<pinref part="HD2" gate="A" pin="3"/>
 </segment>
 </net>
-<net name="RST" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PC6(RESET)"/>
-<wire x1="-33.02" y1="25.4" x2="-38.1" y2="25.4" width="0.1524" layer="91"/>
-<label x="-38.1" y="25.4" size="1.778" layer="95" font="vector" rot="R180"/>
-</segment>
-<segment>
-<pinref part="HD2" gate="A" pin="5"/>
-<wire x1="114.3" y1="-22.86" x2="119.38" y2="-22.86" width="0.1524" layer="91"/>
-<label x="119.38" y="-22.86" size="1.778" layer="95" font="vector"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="R-"/>
-<wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="A" pin="1"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="G-"/>
-<wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="B" pin="1"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="B-"/>
-<wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="C" pin="1"/>
-</segment>
-</net>
-<net name="N$7" class="0">
+<net name="AREF" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="AREF"/>
 <pinref part="C1" gate="A" pin="2"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="BAT-COM" class="0">
 <segment>
-<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
-<pinref part="RP1" gate="A" pin="2"/>
+<pinref part="BAT1" gate="A" pin="+"/>
+<pinref part="SW1" gate="A" pin="COM"/>
+<wire x1="-119.38" y1="35.56" x2="-114.3" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="RR-" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
+<pinref part="RP1" gate="D" pin="2"/>
+</segment>
+</net>
+<net name="RG-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB1(OC1A)"/>
+<pinref part="RP1" gate="C" pin="2"/>
+</segment>
+</net>
+<net name="RB-" class="0">
+<segment>
+<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
 <pinref part="RP1" gate="B" pin="2"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="R-" class="0">
 <segment>
-<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
-<pinref part="RP1" gate="C" pin="2"/>
+<pinref part="D1" gate="A" pin="R-"/>
+<pinref part="RP1" gate="D" pin="1"/>
+<wire x1="45.72" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="G-" class="0">
+<segment>
+<pinref part="D1" gate="A" pin="G-"/>
+<pinref part="RP1" gate="C" pin="1"/>
+<wire x1="45.72" y1="-7.62" x2="55.88" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="B-" class="0">
+<segment>
+<pinref part="D1" gate="A" pin="B-"/>
+<pinref part="RP1" gate="B" pin="1"/>
+<wire x1="45.72" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
