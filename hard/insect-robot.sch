@@ -662,6 +662,11 @@
 <hole x="0" y="-1.524" drill="0.8128"/>
 <hole x="0" y="1.524" drill="0.8128"/>
 </package>
+<package name="BAT-SMD-SMALL">
+<text x="1.27" y="-1.27" size="0.8128" layer="25" font="vector" rot="R270" align="center">+</text>
+<smd name="-" x="-0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="25" rot="R90"/>
+<smd name="+" x="0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="100" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA168/328P">
@@ -1068,6 +1073,15 @@
 <technology name=""/>
 </technologies>
 </device>
+<device name="-SMD-SMALL" package="BAT-SMD-SMALL">
+<connects>
+<connect gate="A" pin="+" pad="+"/>
+<connect gate="A" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="HEADER1X3" prefix="HD">
@@ -1330,7 +1344,7 @@
 <part name="U1" library="MyLibrary" deviceset="ATMEGA328P" device="-QFN32"/>
 <part name="SUPPLY1" library="MyLibrary" deviceset="VBAT" device=""/>
 <part name="SUPPLY2" library="MyLibrary" deviceset="GND" device=""/>
-<part name="BAT1" library="MyLibrary" deviceset="BATTERY" device="-SMD"/>
+<part name="BAT1" library="MyLibrary" deviceset="BATTERY" device="-SMD-SMALL" value="BATTERY-SMD-SMALL"/>
 <part name="SUPPLY3" library="MyLibrary" deviceset="VBAT" device=""/>
 <part name="SUPPLY4" library="MyLibrary" deviceset="GND" device=""/>
 <part name="HD1" library="MyLibrary" deviceset="HEADER1X3" device="-SMD-LYING"/>
@@ -1399,17 +1413,17 @@ BCTS: wake the MASTER up.</text>
 <instance part="SUPPLY8" gate="VBAT" x="78.74" y="-7.62" rot="R270"/>
 <instance part="C1" gate="A" x="-35.56" y="2.54" rot="R90"/>
 <instance part="SUPPLY10" gate="GND" x="-43.18" y="2.54" rot="R270"/>
-<instance part="RP1" gate="A" x="40.64" y="-5.08" smashed="yes">
-<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+<instance part="RP1" gate="A" x="40.64" y="-10.16" smashed="yes">
+<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
 </instance>
 <instance part="RP1" gate="B" x="40.64" y="-7.62" smashed="yes">
 <attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="C" x="40.64" y="-10.16" smashed="yes">
-<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
+<instance part="RP1" gate="C" x="40.64" y="-5.08" smashed="yes">
+<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
 </instance>
 <instance part="RP1" gate="D" x="63.5" y="-22.86"/>
 <instance part="SUPPLY11" gate="GND" x="-111.76" y="27.94"/>
@@ -1655,49 +1669,10 @@ BCTS: wake the MASTER up.</text>
 <pinref part="HD2" gate="A" pin="5"/>
 </segment>
 </net>
-<net name="R-" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="R-"/>
-<wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="A" pin="1"/>
-</segment>
-</net>
-<net name="G-" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="G-"/>
-<wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="B" pin="1"/>
-</segment>
-</net>
-<net name="B-" class="0">
-<segment>
-<pinref part="D1" gate="A" pin="B-"/>
-<wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="RP1" gate="C" pin="1"/>
-</segment>
-</net>
 <net name="AREF" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="AREF"/>
 <pinref part="C1" gate="A" pin="2"/>
-</segment>
-</net>
-<net name="RR-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
-<pinref part="RP1" gate="A" pin="2"/>
-</segment>
-</net>
-<net name="RG-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB1(OC1A)"/>
-<pinref part="RP1" gate="B" pin="2"/>
-</segment>
-</net>
-<net name="RB-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
-<pinref part="RP1" gate="C" pin="2"/>
 </segment>
 </net>
 <net name="BAT-COM" class="0">
@@ -1705,6 +1680,45 @@ BCTS: wake the MASTER up.</text>
 <pinref part="BAT1" gate="A" pin="+"/>
 <pinref part="SW1" gate="A" pin="COM"/>
 <wire x1="-119.38" y1="35.56" x2="-114.3" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RR-" class="0">
+<segment>
+<pinref part="RP1" gate="C" pin="2"/>
+<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
+</segment>
+</net>
+<net name="RG-" class="0">
+<segment>
+<pinref part="RP1" gate="B" pin="2"/>
+<pinref part="U1" gate="P" pin="PB1(OC1A)"/>
+</segment>
+</net>
+<net name="RB-" class="0">
+<segment>
+<pinref part="RP1" gate="A" pin="2"/>
+<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
+</segment>
+</net>
+<net name="R-" class="0">
+<segment>
+<pinref part="RP1" gate="C" pin="1"/>
+<pinref part="D1" gate="A" pin="R-"/>
+<wire x1="45.72" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="G-" class="0">
+<segment>
+<pinref part="RP1" gate="B" pin="1"/>
+<pinref part="D1" gate="A" pin="G-"/>
+<wire x1="45.72" y1="-7.62" x2="55.88" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="B-" class="0">
+<segment>
+<pinref part="RP1" gate="A" pin="1"/>
+<pinref part="D1" gate="A" pin="B-"/>
+<wire x1="45.72" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
