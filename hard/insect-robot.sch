@@ -1726,7 +1726,7 @@ BCTS: wake the MASTER up.</text>
 <pinref part="RP1" gate="C" pin="1"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="AREF" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="AREF"/>
 <pinref part="C1" gate="A" pin="2"/>
