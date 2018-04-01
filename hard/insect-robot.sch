@@ -443,8 +443,8 @@
 <wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="51"/>
 <wire x1="3.25" y1="5" x2="3.25" y2="-5" width="0.127" layer="51"/>
 <wire x1="3.25" y1="-5" x2="-3.25" y2="-5" width="0.127" layer="51"/>
-<text x="-2" y="-3" size="0.8128" layer="51" font="vector">&gt;NAME</text>
-<text x="-2" y="-4" size="0.8128" layer="51" font="vector">&gt;VALUE</text>
+<text x="-2" y="-3" size="0.8128" layer="25" font="vector">&gt;NAME</text>
+<text x="-2" y="-4" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
 </package>
 <package name="SMD0201">
 <description>Surface mount device - 0201 - 0.6mm x 0.3mm (0.024" × 0.012")</description>
@@ -1413,19 +1413,22 @@ BCTS: wake the MASTER up.</text>
 <instance part="SUPPLY8" gate="VBAT" x="78.74" y="-7.62" rot="R270"/>
 <instance part="C1" gate="A" x="-35.56" y="2.54" rot="R90"/>
 <instance part="SUPPLY10" gate="GND" x="-43.18" y="2.54" rot="R270"/>
-<instance part="RP1" gate="A" x="40.64" y="-10.16" smashed="yes">
+<instance part="RP1" gate="A" x="60.96" y="-22.86" smashed="yes">
+<attribute name="NAME" x="63.5" y="-22.86" size="1.778" layer="95"/>
+<attribute name="VALUE" x="71.12" y="-22.86" size="1.778" layer="96"/>
+</instance>
+<instance part="RP1" gate="B" x="40.64" y="-10.16" smashed="yes">
 <attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="B" x="40.64" y="-7.62" smashed="yes">
+<instance part="RP1" gate="C" x="40.64" y="-7.62" smashed="yes">
 <attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="C" x="40.64" y="-5.08" smashed="yes">
+<instance part="RP1" gate="D" x="40.64" y="-5.08" smashed="yes">
 <attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="D" x="63.5" y="-22.86"/>
 <instance part="SUPPLY11" gate="GND" x="-111.76" y="27.94"/>
 <instance part="HD2" gate="A" x="109.22" y="-20.32"/>
 <instance part="SW1" gate="A" x="-109.22" y="35.56" rot="MR0"/>
@@ -1657,18 +1660,6 @@ BCTS: wake the MASTER up.</text>
 <pinref part="HD2" gate="A" pin="3"/>
 </segment>
 </net>
-<net name="RST" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PC6(RESET)"/>
-<wire x1="-33.02" y1="25.4" x2="-38.1" y2="25.4" width="0.1524" layer="91"/>
-<label x="-38.1" y="25.4" size="1.778" layer="95" font="vector" rot="R180"/>
-</segment>
-<segment>
-<wire x1="114.3" y1="-22.86" x2="119.38" y2="-22.86" width="0.1524" layer="91"/>
-<label x="119.38" y="-22.86" size="1.778" layer="95" font="vector"/>
-<pinref part="HD2" gate="A" pin="5"/>
-</segment>
-</net>
 <net name="AREF" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="AREF"/>
@@ -1684,50 +1675,46 @@ BCTS: wake the MASTER up.</text>
 </net>
 <net name="RR-" class="0">
 <segment>
-<pinref part="RP1" gate="C" pin="2"/>
 <pinref part="U1" gate="P" pin="PB0(ICP1)"/>
+<pinref part="RP1" gate="D" pin="2"/>
 </segment>
 </net>
 <net name="RG-" class="0">
 <segment>
-<pinref part="RP1" gate="B" pin="2"/>
 <pinref part="U1" gate="P" pin="PB1(OC1A)"/>
+<pinref part="RP1" gate="C" pin="2"/>
 </segment>
 </net>
 <net name="RB-" class="0">
 <segment>
-<pinref part="RP1" gate="A" pin="2"/>
 <pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
+<pinref part="RP1" gate="B" pin="2"/>
 </segment>
 </net>
 <net name="R-" class="0">
 <segment>
-<pinref part="RP1" gate="C" pin="1"/>
 <pinref part="D1" gate="A" pin="R-"/>
+<pinref part="RP1" gate="D" pin="1"/>
 <wire x1="45.72" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="G-" class="0">
 <segment>
-<pinref part="RP1" gate="B" pin="1"/>
 <pinref part="D1" gate="A" pin="G-"/>
+<pinref part="RP1" gate="C" pin="1"/>
 <wire x1="45.72" y1="-7.62" x2="55.88" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="B-" class="0">
 <segment>
-<pinref part="RP1" gate="A" pin="1"/>
 <pinref part="D1" gate="A" pin="B-"/>
+<pinref part="RP1" gate="B" pin="1"/>
 <wire x1="45.72" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="101,1,58.42,-22.86,RP1D,2,,,,"/>
-<approved hash="101,1,68.58,-22.86,RP1D,1,,,,"/>
-</errors>
 </schematic>
 </drawing>
 <compatibility>
