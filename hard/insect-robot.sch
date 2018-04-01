@@ -590,7 +590,7 @@
 </package>
 <package name="FPC0.5-6-DRAWER">
 <description>&lt;b&gt;0.5mm Pitch Connectors For FPC/FFC&lt;/b&gt;&lt;p&gt;</description>
-<wire x1="-3.9025" y1="1.7225" x2="-3.9025" y2="-0.63" width="0.2032" layer="51"/>
+<wire x1="-3.9025" y1="2.3225" x2="-3.9025" y2="-0.63" width="0.2032" layer="51"/>
 <wire x1="-3.9025" y1="-0.63" x2="-3.6025" y2="-0.63" width="0.2032" layer="51"/>
 <wire x1="-3.6025" y1="-0.63" x2="-3.6025" y2="-0.93" width="0.2032" layer="51"/>
 <wire x1="-3.6025" y1="-0.93" x2="-3.9025" y2="-0.93" width="0.2032" layer="51"/>
@@ -599,14 +599,14 @@
 <wire x1="3.9025" y1="-0.93" x2="3.6025" y2="-0.93" width="0.2032" layer="51"/>
 <wire x1="3.6025" y1="-0.93" x2="3.6025" y2="-0.63" width="0.2032" layer="51"/>
 <wire x1="3.6025" y1="-0.63" x2="3.9025" y2="-0.63" width="0.2032" layer="51"/>
-<wire x1="3.9025" y1="-0.63" x2="3.9025" y2="1.7225" width="0.2032" layer="51"/>
-<wire x1="1.9975" y1="2.5" x2="-1.9975" y2="2.5" width="0.2032" layer="51"/>
+<wire x1="3.9025" y1="-0.63" x2="3.9025" y2="2.3225" width="0.2032" layer="51"/>
+<wire x1="1.7975" y1="2.5" x2="-1.6975" y2="2.5" width="0.2032" layer="51"/>
 <wire x1="3.6025" y1="-0.63" x2="-3.6025" y2="-0.63" width="0.2032" layer="51"/>
 <wire x1="3.9025" y1="-1.63" x2="-3.9025" y2="-1.63" width="0.2032" layer="51"/>
-<wire x1="-3.9025" y1="2.5" x2="-3.9025" y2="1.5" width="0.2032" layer="21"/>
-<wire x1="-1.75" y1="2.5" x2="-3.9025" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="3.9025" y1="1.5" x2="3.9025" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="3.9025" y1="2.5" x2="1.75" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="-3.9025" y1="2.5" x2="-3.9025" y2="2.3" width="0.2032" layer="21"/>
+<wire x1="-1.65" y1="2.5" x2="-3.9025" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="3.9025" y1="2.3" x2="3.9025" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="3.9025" y1="2.5" x2="1.65" y2="2.5" width="0.2032" layer="21"/>
 <smd name="1" x="-1.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
 <smd name="2" x="-0.75" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
 <smd name="3" x="-0.25" y="3.25" dx="0.3" dy="1.3" layer="1" stop="no" cream="no"/>
@@ -645,10 +645,7 @@
 </package>
 <package name="SWITCH-SMD-6.7X2.7">
 <description>Double-throw switch.</description>
-<wire x1="-1.397" y1="3.302" x2="1.397" y2="3.302" width="0.127" layer="21"/>
-<wire x1="1.397" y1="3.302" x2="1.397" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="1.397" y1="-3.302" x2="-1.397" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="-1.397" y1="-3.302" x2="-1.397" y2="3.302" width="0.127" layer="21"/>
+<wire x1="-0.597" y1="3.302" x2="0.597" y2="3.302" width="0.127" layer="21"/>
 <smd name="A" x="1.978" y="2.286" dx="1.8" dy="0.7" layer="1"/>
 <smd name="SS4" x="-1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
 <smd name="SS3" x="1.15" y="3.683" dx="1.016" dy="0.7" layer="1" rot="R90"/>
@@ -658,9 +655,14 @@
 <smd name="COM" x="1.978" y="-0.762" dx="1.8" dy="0.7" layer="1"/>
 <text x="-3.81" y="-2.54" size="0.8128" layer="25" font="vector" ratio="11" rot="R90">&gt;NAME</text>
 <text x="-2.54" y="-2.54" size="0.8128" layer="27" font="vector" ratio="11" rot="R90">&gt;VALUE</text>
-<rectangle x1="-0.635" y1="-1.27" x2="0.635" y2="1.27" layer="21"/>
 <hole x="0" y="-1.524" drill="0.8128"/>
 <hole x="0" y="1.524" drill="0.8128"/>
+<wire x1="-1.4" y1="3" x2="-1.4" y2="-3" width="0.127" layer="21"/>
+<wire x1="0.6" y1="-3.3" x2="-0.6" y2="-3.3" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-3" x2="1.4" y2="-2.9" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-1.7" x2="1.4" y2="-1.3" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-0.2" x2="1.4" y2="1.7" width="0.127" layer="21"/>
+<wire x1="1.4" y1="3" x2="1.4" y2="2.9" width="0.127" layer="21"/>
 </package>
 <package name="BAT-SMD-SMALL">
 <text x="1.27" y="-1.27" size="0.8128" layer="25" font="vector" rot="R270" align="center">+</text>
