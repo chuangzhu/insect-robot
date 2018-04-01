@@ -1705,21 +1705,21 @@ BCTS: wake the MASTER up.</text>
 <label x="119.38" y="-22.86" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="R-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="R-"/>
 <wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="A" pin="1"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="G-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="G-"/>
 <wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="B" pin="1"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="B-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="B-"/>
 <wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
@@ -1732,19 +1732,19 @@ BCTS: wake the MASTER up.</text>
 <pinref part="C1" gate="A" pin="2"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="RR-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB0(ICP1)"/>
 <pinref part="RP1" gate="A" pin="2"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="RG-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB1(OC1A)"/>
 <pinref part="RP1" gate="B" pin="2"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="RB-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
 <pinref part="RP1" gate="C" pin="2"/>
