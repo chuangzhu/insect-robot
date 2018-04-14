@@ -439,12 +439,16 @@
 <smd name="12" x="3" y="-0.25" dx="1.27" dy="0.635" layer="1"/>
 <smd name="13" x="3" y="0.75" dx="1.27" dy="0.635" layer="1"/>
 <smd name="14" x="3" y="1.75" dx="1.27" dy="0.635" layer="1"/>
-<wire x1="-3.25" y1="-5" x2="-3.25" y2="5" width="0.127" layer="51"/>
-<wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="51"/>
-<wire x1="3.25" y1="5" x2="3.25" y2="-5" width="0.127" layer="51"/>
-<wire x1="3.25" y1="-5" x2="-3.25" y2="-5" width="0.127" layer="51"/>
 <text x="-2" y="-3" size="0.8128" layer="25" font="vector">&gt;NAME</text>
 <text x="-2" y="-4" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+<wire x1="-3.25" y1="2.25" x2="-3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="-4.75" x2="-3.25" y2="-5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="-5" x2="3.25" y2="-5" width="0.127" layer="21"/>
+<wire x1="3.25" y1="-5" x2="3.25" y2="-4.75" width="0.127" layer="21"/>
+<wire x1="3.25" y1="2.25" x2="3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="2.25" x2="-3.25" y2="-4.75" width="0.127" layer="51"/>
+<wire x1="3.25" y1="2.25" x2="3.25" y2="-4.75" width="0.127" layer="51"/>
 </package>
 <package name="SMD0201">
 <description>Surface mount device - 0201 - 0.6mm x 0.3mm (0.024" × 0.012")</description>

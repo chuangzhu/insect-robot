@@ -353,12 +353,16 @@
 <smd name="12" x="3" y="-0.25" dx="1.27" dy="0.635" layer="1"/>
 <smd name="13" x="3" y="0.75" dx="1.27" dy="0.635" layer="1"/>
 <smd name="14" x="3" y="1.75" dx="1.27" dy="0.635" layer="1"/>
-<wire x1="-3.25" y1="-5" x2="-3.25" y2="5" width="0.127" layer="51"/>
-<wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="51"/>
-<wire x1="3.25" y1="5" x2="3.25" y2="-5" width="0.127" layer="51"/>
-<wire x1="3.25" y1="-5" x2="-3.25" y2="-5" width="0.127" layer="51"/>
 <text x="-2" y="-3" size="0.8128" layer="25" font="vector">&gt;NAME</text>
 <text x="-2" y="-4" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
+<wire x1="-3.25" y1="2.25" x2="-3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="-4.75" x2="-3.25" y2="-5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="-5" x2="3.25" y2="-5" width="0.127" layer="21"/>
+<wire x1="3.25" y1="-5" x2="3.25" y2="-4.75" width="0.127" layer="21"/>
+<wire x1="3.25" y1="2.25" x2="3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="5" x2="3.25" y2="5" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="2.25" x2="-3.25" y2="-4.75" width="0.127" layer="51"/>
+<wire x1="3.25" y1="2.25" x2="3.25" y2="-4.75" width="0.127" layer="51"/>
 </package>
 <package name="FPC0.5-6-DRAWER">
 <description>&lt;b&gt;0.5mm Pitch Connectors For FPC/FFC&lt;/b&gt;&lt;p&gt;</description>
@@ -435,6 +439,44 @@
 <wire x1="1.4" y1="-1.7" x2="1.4" y2="-1.3" width="0.127" layer="21"/>
 <wire x1="1.4" y1="-0.2" x2="1.4" y2="1.7" width="0.127" layer="21"/>
 <wire x1="1.4" y1="3" x2="1.4" y2="2.9" width="0.127" layer="21"/>
+</package>
+<package name="ICON-OSHW">
+<description>Open Source HardWare icon</description>
+<polygon width="0.15" layer="21">
+<vertex x="0.3947" y="-0.9528" curve="9.498218"/>
+<vertex x="0.5465" y="-0.8746"/>
+<vertex x="0.9235" y="-1.182"/>
+<vertex x="1.182" y="-0.9235"/>
+<vertex x="0.8746" y="-0.5465" curve="19.000773"/>
+<vertex x="1.0049" y="-0.232"/>
+<vertex x="1.4888" y="-0.1828"/>
+<vertex x="1.4888" y="0.1828"/>
+<vertex x="1.0049" y="0.232" curve="19.000773"/>
+<vertex x="0.8746" y="0.5465"/>
+<vertex x="1.182" y="0.9235"/>
+<vertex x="0.9235" y="1.182"/>
+<vertex x="0.5465" y="0.8746" curve="19.000773"/>
+<vertex x="0.232" y="1.0049"/>
+<vertex x="0.1828" y="1.4888"/>
+<vertex x="-0.1828" y="1.4888"/>
+<vertex x="-0.232" y="1.0049" curve="19.000773"/>
+<vertex x="-0.5465" y="0.8746"/>
+<vertex x="-0.9235" y="1.182"/>
+<vertex x="-1.182" y="0.9235"/>
+<vertex x="-0.8746" y="0.5465" curve="19.000773"/>
+<vertex x="-1.0049" y="0.232"/>
+<vertex x="-1.4888" y="0.1828"/>
+<vertex x="-1.4888" y="-0.1828"/>
+<vertex x="-1.0049" y="-0.232" curve="19.000773"/>
+<vertex x="-0.8746" y="-0.5465"/>
+<vertex x="-1.182" y="-0.9235"/>
+<vertex x="-0.9235" y="-1.182"/>
+<vertex x="-0.5465" y="-0.8746" curve="9.498218"/>
+<vertex x="-0.3947" y="-0.9528"/>
+<vertex x="-0.1794" y="-0.4331" curve="-67.514699"/>
+<vertex x="-0.4688" y="0" curve="-247.473915"/>
+<vertex x="0.1794" y="-0.4331"/>
+</polygon>
 </package>
 </packages>
 </library>
@@ -635,7 +677,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="6.45895" y="2.8575" size="0.6096" layer="28" font="vector" rot="MR135"/>
 </element>
 <element name="D1" library="MyLibrary" package="LED-0603X2" value="LED-RGB-A-0603" x="5.08" y="23.8125" smashed="yes" rot="R270">
-<attribute name="NAME" x="7.6075" y="23.9175" size="0.8128" layer="25" font="vector" rot="R90"/>
+<attribute name="NAME" x="5.185" y="21.6025" size="0.8128" layer="25" font="vector"/>
 <attribute name="VALUE" x="2.68" y="25.6125" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="HD1" library="MyLibrary" package="SMD-1X3-LYING" value="HEADER1X3-SMD-LYING" x="8.89" y="19.05" rot="MR180"/>
@@ -655,9 +697,19 @@ design rules under a new name.</description>
 <attribute name="NAME" x="5.02085" y="2.961778125" size="0.8128" layer="26" font="vector" rot="MR45"/>
 <attribute name="VALUE" x="6.876053125" y="10.205125" size="0.8128" layer="28" font="vector" rot="MR225"/>
 </element>
-<element name="U2" library="MyLibrary" package="PW0316" value="PW0316" x="5.08" y="5.08" rot="R180"/>
-<element name="HD2" library="MyLibrary" package="FPC0.5-6-DRAWER" value="HEADER1X6-SS-FPC0.5-DRAWER" x="9.525" y="19.05" rot="R90"/>
-<element name="SW1" library="MyLibrary" package="SWITCH-SMD-6.7X2.7" value="SWITCH-DT" x="1.905" y="19.05"/>
+<element name="U2" library="MyLibrary" package="PW0316" value="PW0316" x="5.08" y="5.08" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.2075" y="9.3025" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="VALUE" x="7.08" y="9.08" size="0.8128" layer="27" font="vector" rot="R180"/>
+</element>
+<element name="HD2" library="MyLibrary" package="FPC0.5-6-DRAWER" value="HEADER1X6-SS-FPC0.5-DRAWER" x="9.525" y="19.05" smashed="yes" rot="R90">
+<attribute name="NAME" x="7.62" y="20.32" size="0.8128" layer="25" font="vector" rot="R270"/>
+<attribute name="VALUE" x="13.335" y="15.24" size="0.8128" layer="27" font="vector" rot="R90"/>
+</element>
+<element name="SW1" library="MyLibrary" package="SWITCH-SMD-6.7X2.7" value="SWITCH-DT" x="1.905" y="19.05" smashed="yes">
+<attribute name="NAME" x="2.8575" y="18.0975" size="0.8128" layer="25" font="vector" ratio="11" rot="R90"/>
+<attribute name="VALUE" x="-0.635" y="16.51" size="0.8128" layer="27" font="vector" ratio="11" rot="R90"/>
+</element>
+<element name="OSHW" library="MyLibrary" package="ICON-OSHW" value="" x="5.08" y="20.955" rot="MR0"/>
 </elements>
 <signals>
 <signal name="VDD">
