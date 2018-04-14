@@ -51,3 +51,9 @@ eagle.epf
 
 
 # End of https://www.gitignore.io/api/eagle
+
+# Eagle 8.x
+outputs/
+*.gbr
+*.xln
+*.gbrjob
