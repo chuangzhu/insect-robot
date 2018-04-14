@@ -508,7 +508,7 @@
 <rectangle x1="0.9525" y1="-0.8763" x2="1.6891" y2="0.8763" layer="51"/>
 <rectangle x1="-0.3" y1="-0.7" x2="0.3" y2="0.7" layer="35"/>
 </package>
-<package name="3528-4">
+<package name="SMD3528-4">
 <smd name="3" x="-1.4" y="0.8" dx="1.2" dy="0.95" layer="1"/>
 <smd name="2" x="-1.4" y="-0.8" dx="1.2" dy="0.95" layer="1"/>
 <smd name="1" x="1.4" y="-0.8" dx="1.2" dy="0.95" layer="1"/>
@@ -652,6 +652,38 @@
 <text x="1.27" y="-1.27" size="0.8128" layer="25" font="vector" rot="R270" align="center">+</text>
 <smd name="-" x="-0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="25" rot="R90"/>
 <smd name="+" x="0.635" y="0" dx="1.778" dy="0.889" layer="1" roundness="100" rot="R90"/>
+</package>
+<package name="LED-0603X2">
+<description>Surface mount LED - 0603 package</description>
+<circle x="-0.985" y="0.625" radius="0.075" width="0.0508" layer="51"/>
+<wire x1="-0.935" y1="0.8" x2="-0.335" y2="0.8" width="0.1016" layer="51" curve="170.055574"/>
+<wire x1="-0.91" y1="-0.825" x2="-0.36" y2="-0.825" width="0.0508" layer="51" curve="-180"/>
+<wire x1="-1.035" y1="0.375" x2="-1.035" y2="-0.35" width="0.1016" layer="51"/>
+<wire x1="-0.254" y1="-0.127" x2="0" y2="0.127" width="0.127" layer="21"/>
+<wire x1="0.254" y1="-0.127" x2="0" y2="0.127" width="0.127" layer="21"/>
+<rectangle x1="-1.085" y1="0.7" x2="-0.885" y2="0.85" layer="51"/>
+<rectangle x1="-0.91" y1="0.55" x2="-0.86" y2="0.6" layer="51"/>
+<rectangle x1="-1.085" y1="0.35" x2="-1.035" y2="0.725" layer="51"/>
+<rectangle x1="-0.385" y1="0.55" x2="0.385" y2="0.85" layer="51"/>
+<rectangle x1="-1.085" y1="0.35" x2="1.085" y2="0.575" layer="51"/>
+<rectangle x1="-1.085" y1="-0.85" x2="-0.885" y2="-0.35" layer="51"/>
+<rectangle x1="-0.385" y1="-0.85" x2="0.385" y2="-0.575" layer="51"/>
+<rectangle x1="-0.91" y1="-0.575" x2="0.91" y2="-0.35" layer="51"/>
+<rectangle x1="-0.91" y1="-0.65" x2="-0.81" y2="-0.55" layer="51"/>
+<rectangle x1="-0.46" y1="-0.65" x2="-0.36" y2="-0.55" layer="51"/>
+<smd name="1" x="-0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="2" x="-0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<text x="-1.27" y="-1.27" size="0.6096" layer="25" font="vector" rot="R90">&gt;NAME</text>
+<text x="1.905" y="-1.27" size="0.6096" layer="27" font="vector" rot="R90">&gt;VALUE</text>
+<wire x1="0.335" y1="0.8" x2="0.935" y2="0.8" width="0.1016" layer="51" curve="170.055574"/>
+<wire x1="0.36" y1="-0.825" x2="0.91" y2="-0.825" width="0.0508" layer="51" curve="-180"/>
+<wire x1="1.035" y1="0.35" x2="1.035" y2="-0.35" width="0.1016" layer="51"/>
+<rectangle x1="0.885" y1="0.55" x2="1.085" y2="0.85" layer="51"/>
+<rectangle x1="0.885" y1="-0.85" x2="1.085" y2="-0.35" layer="51"/>
+<rectangle x1="0.36" y1="-0.65" x2="0.46" y2="-0.55" layer="51"/>
+<rectangle x1="0.81" y1="-0.65" x2="0.91" y2="-0.55" layer="51"/>
+<smd name="4" x="0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="3" x="0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -1137,11 +1169,22 @@
 <gate name="A" symbol="LED-RGB-A" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-3528" package="3528-4">
+<device name="-3528" package="SMD3528-4">
 <connects>
 <connect gate="A" pin="+" pad="2"/>
 <connect gate="A" pin="B-" pad="3"/>
 <connect gate="A" pin="G-" pad="4"/>
+<connect gate="A" pin="R-" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-0603" package="LED-0603X2">
+<connects>
+<connect gate="A" pin="+" pad="3"/>
+<connect gate="A" pin="B-" pad="4"/>
+<connect gate="A" pin="G-" pad="2"/>
 <connect gate="A" pin="R-" pad="1"/>
 </connects>
 <technologies>
@@ -1287,7 +1330,7 @@
 <part name="R1" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
 <part name="R2" library="MyLibrary" deviceset="RES" device="-0603" value="1kΩ"/>
 <part name="SUPPLY25" library="MyLibrary" deviceset="GND" device=""/>
-<part name="D1" library="MyLibrary" deviceset="LED-RGB-A" device="-3528"/>
+<part name="D1" library="MyLibrary" deviceset="LED-RGB-A" device="-0603" value="LED-RGB-A-0603"/>
 <part name="SUPPLY8" library="MyLibrary" deviceset="VDD" device=""/>
 <part name="C1" library="MyLibrary" deviceset="CAP" device="-0603" value="100nF"/>
 <part name="SUPPLY10" library="MyLibrary" deviceset="GND" device=""/>
@@ -1335,17 +1378,17 @@ BCTS: wake the MASTER up.</text>
 <attribute name="NAME" x="63.5" y="-22.86" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="-22.86" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="B" x="40.64" y="-10.16" smashed="yes">
-<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
+<instance part="RP1" gate="B" x="40.64" y="-5.08" smashed="yes">
+<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
 </instance>
 <instance part="RP1" gate="C" x="40.64" y="-7.62" smashed="yes">
 <attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
 <attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="D" x="40.64" y="-5.08" smashed="yes">
-<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+<instance part="RP1" gate="D" x="40.64" y="-10.16" smashed="yes">
+<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
+<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY11" gate="GND" x="-86.36" y="35.56"/>
 <instance part="HD2" gate="A" x="109.22" y="-20.32"/>
@@ -1576,7 +1619,7 @@ BCTS: wake the MASTER up.</text>
 <net name="RR-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB0(ICP1)"/>
-<pinref part="RP1" gate="D" pin="2"/>
+<pinref part="RP1" gate="B" pin="2"/>
 </segment>
 </net>
 <net name="RG-" class="0">
@@ -1588,28 +1631,28 @@ BCTS: wake the MASTER up.</text>
 <net name="RB-" class="0">
 <segment>
 <pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
-<pinref part="RP1" gate="B" pin="2"/>
+<pinref part="RP1" gate="D" pin="2"/>
 </segment>
 </net>
 <net name="R-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="R-"/>
-<pinref part="RP1" gate="D" pin="1"/>
-<wire x1="45.72" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
+<pinref part="RP1" gate="B" pin="1"/>
 </segment>
 </net>
 <net name="G-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="G-"/>
+<wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="C" pin="1"/>
-<wire x1="45.72" y1="-7.62" x2="55.88" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="B-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="B-"/>
-<pinref part="RP1" gate="B" pin="1"/>
-<wire x1="45.72" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="RP1" gate="D" pin="1"/>
 </segment>
 </net>
 <net name="RST" class="0">
