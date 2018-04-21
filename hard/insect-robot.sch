@@ -675,8 +675,8 @@
 <rectangle x1="-0.91" y1="-0.575" x2="0.91" y2="-0.35" layer="51"/>
 <rectangle x1="-0.91" y1="-0.65" x2="-0.81" y2="-0.55" layer="51"/>
 <rectangle x1="-0.46" y1="-0.65" x2="-0.36" y2="-0.55" layer="51"/>
-<smd name="1" x="-0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="2" x="-0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="4" x="-0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="3" x="-0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
 <text x="-1.27" y="-1.27" size="0.6096" layer="25" font="vector" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-1.27" size="0.6096" layer="27" font="vector" rot="R90">&gt;VALUE</text>
 <wire x1="0.335" y1="0.8" x2="0.935" y2="0.8" width="0.1016" layer="51" curve="170.055574"/>
@@ -686,8 +686,8 @@
 <rectangle x1="0.885" y1="-0.85" x2="1.085" y2="-0.35" layer="51"/>
 <rectangle x1="0.36" y1="-0.65" x2="0.46" y2="-0.55" layer="51"/>
 <rectangle x1="0.81" y1="-0.65" x2="0.91" y2="-0.55" layer="51"/>
-<smd name="4" x="0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="3" x="0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="2" x="0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="1" x="0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
 </package>
 </packages>
 <symbols>

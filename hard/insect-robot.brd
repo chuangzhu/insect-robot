@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.0125" unitdist="inch" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.00625" altunitdist="inch" altunit="inch"/>
+<grid distance="0.0125" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.00625" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -197,8 +197,8 @@
 <rectangle x1="-0.91" y1="-0.575" x2="0.91" y2="-0.35" layer="51"/>
 <rectangle x1="-0.91" y1="-0.65" x2="-0.81" y2="-0.55" layer="51"/>
 <rectangle x1="-0.46" y1="-0.65" x2="-0.36" y2="-0.55" layer="51"/>
-<smd name="1" x="-0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="2" x="-0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="4" x="-0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="3" x="-0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
 <text x="-1.27" y="-1.27" size="0.6096" layer="25" font="vector" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-1.27" size="0.6096" layer="27" font="vector" rot="R90">&gt;VALUE</text>
 <wire x1="0.335" y1="0.8" x2="0.935" y2="0.8" width="0.1016" layer="51" curve="170.055574"/>
@@ -208,8 +208,8 @@
 <rectangle x1="0.885" y1="-0.85" x2="1.085" y2="-0.35" layer="51"/>
 <rectangle x1="0.36" y1="-0.65" x2="0.46" y2="-0.55" layer="51"/>
 <rectangle x1="0.81" y1="-0.65" x2="0.91" y2="-0.55" layer="51"/>
-<smd name="4" x="0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="3" x="0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="2" x="0.635" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="1" x="0.635" y="0.75" dx="0.8" dy="0.8" layer="1"/>
 </package>
 <package name="SMD-1X3-LYING">
 <wire x1="0" y1="1.25" x2="-7.62" y2="1.25" width="0.127" layer="51"/>
@@ -676,9 +676,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="9.2075" y="4.28625" size="0.6096" layer="26" font="vector" rot="MR90"/>
 <attribute name="VALUE" x="6.45895" y="2.8575" size="0.6096" layer="28" font="vector" rot="MR135"/>
 </element>
-<element name="D1" library="MyLibrary" package="LED-0603X2" value="LED-RGB-A-0603" x="5.08" y="23.8125" smashed="yes" rot="R270">
-<attribute name="NAME" x="5.185" y="21.6025" size="0.8128" layer="25" font="vector"/>
-<attribute name="VALUE" x="2.68" y="25.6125" size="0.8128" layer="27" font="vector" rot="R270"/>
+<element name="D1" library="MyLibrary" package="LED-0603X2" value="LED-RGB-A-0603" x="5.08" y="23.8125" smashed="yes" rot="R90">
+<attribute name="NAME" x="4.975" y="26.0225" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="VALUE" x="7.48" y="22.0125" size="0.8128" layer="27" font="vector" rot="R90"/>
 </element>
 <element name="HD1" library="MyLibrary" package="SMD-1X3-LYING" value="HEADER1X3-SMD-LYING" x="8.89" y="19.05" rot="MR180"/>
 <element name="R1" library="MyLibrary" package="SMD0603" value="1kΩ" x="5.23875" y="1.11125" smashed="yes" rot="MR180">
@@ -746,12 +746,8 @@ design rules under a new name.</description>
 <via x="0.9525" y="19.685" extent="1-16" drill="0.4"/>
 <wire x1="0.9525" y1="19.685" x2="0.47625" y2="19.20875" width="0.254" layer="16"/>
 <wire x1="0.47625" y1="19.20875" x2="0.47625" y2="9.36625" width="0.254" layer="16"/>
-<wire x1="3.883" y1="21.336" x2="4.85775" y2="21.336" width="0.2032" layer="1"/>
-<wire x1="4.85775" y1="21.336" x2="5.23875" y2="20.955" width="0.2032" layer="1"/>
-<via x="5.23875" y="20.955" extent="1-16" drill="0.4"/>
-<wire x1="5.23875" y1="20.955" x2="5.23875" y2="22.58625" width="0.2032" layer="16"/>
-<wire x1="5.23875" y1="22.58625" x2="5.83" y2="23.1775" width="0.2032" layer="16"/>
-<via x="5.83" y="23.1775" extent="1-16" drill="0.4"/>
+<wire x1="3.883" y1="21.336" x2="4.33" y2="21.783" width="0.2032" layer="1"/>
+<wire x1="4.33" y1="21.783" x2="4.33" y2="23.1775" width="0.2032" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="5"/>
@@ -1011,24 +1007,20 @@ design rules under a new name.</description>
 <wire x1="5.23875" y1="16.8275" x2="5.3975" y2="16.98625" width="0.2032" layer="1"/>
 <via x="5.3975" y="16.98625" extent="1-16" drill="0.4"/>
 <via x="4.33" y="24.4475" extent="1-16" drill="0.4"/>
-<wire x1="5.3975" y1="16.98625" x2="5.3975" y2="19.3675" width="0.2032" layer="16"/>
-<wire x1="5.3975" y1="19.3675" x2="4.33" y2="20.435" width="0.2032" layer="16"/>
-<wire x1="4.33" y1="20.435" x2="4.33" y2="24.4475" width="0.2032" layer="16"/>
+<wire x1="5.3975" y1="16.98625" x2="5.3975" y2="22.225" width="0.2032" layer="16"/>
+<wire x1="5.3975" y1="22.225" x2="4.33" y2="23.2925" width="0.2032" layer="16"/>
+<wire x1="4.33" y1="23.2925" x2="4.33" y2="24.4475" width="0.2032" layer="16"/>
 </signal>
 <signal name="G-">
 <contactref element="D1" pad="2"/>
 <contactref element="RP1" pad="5"/>
 <wire x1="5.7975" y1="13.55" x2="5.7975" y2="14.0525" width="0.2032" layer="1"/>
 <wire x1="5.7975" y1="14.0525" x2="6.0325" y2="14.2875" width="0.2032" layer="1"/>
-<wire x1="5.715" y1="24.3325" x2="5.83" y2="24.4475" width="0.2032" layer="16"/>
 <via x="5.83" y="24.4475" extent="1-16" drill="0.4"/>
 <wire x1="6.0325" y1="14.2875" x2="6.0325" y2="16.03375" width="0.2032" layer="1"/>
 <via x="6.0325" y="16.03375" extent="1-16" drill="0.4"/>
-<wire x1="6.0325" y1="16.03375" x2="6.0325" y2="21.9075" width="0.2032" layer="16"/>
-<wire x1="6.0325" y1="21.9075" x2="6.985" y2="22.86" width="0.2032" layer="16"/>
-<wire x1="6.985" y1="22.86" x2="6.985" y2="23.8125" width="0.2032" layer="16"/>
-<wire x1="6.985" y1="23.8125" x2="6.35" y2="24.4475" width="0.2032" layer="16"/>
-<wire x1="6.35" y1="24.4475" x2="5.83" y2="24.4475" width="0.2032" layer="16"/>
+<wire x1="6.0325" y1="16.03375" x2="6.0325" y2="24.245" width="0.2032" layer="16"/>
+<wire x1="6.0325" y1="24.245" x2="5.83" y2="24.4475" width="0.2032" layer="16"/>
 </signal>
 <signal name="B-">
 <contactref element="D1" pad="4"/>
@@ -1039,8 +1031,8 @@ design rules under a new name.</description>
 <wire x1="6.6675" y1="16.8275" x2="6.6675" y2="21.43125" width="0.2032" layer="16"/>
 <wire x1="6.6675" y1="21.43125" x2="6.82625" y2="21.59" width="0.2032" layer="16"/>
 <via x="6.82625" y="21.59" extent="1-16" drill="0.4"/>
-<wire x1="6.82625" y1="21.59" x2="5.9175" y2="21.59" width="0.2032" layer="1"/>
-<wire x1="5.9175" y1="21.59" x2="4.33" y2="23.1775" width="0.2032" layer="1"/>
+<wire x1="6.82625" y1="21.59" x2="5.83" y2="22.58625" width="0.2032" layer="1"/>
+<wire x1="5.83" y1="22.58625" x2="5.83" y2="23.1775" width="0.2032" layer="1"/>
 </signal>
 <signal name="RST">
 <contactref element="U1" pad="29"/>
