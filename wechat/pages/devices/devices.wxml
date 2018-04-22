@@ -1,0 +1,7 @@
+<!--pages/devices/devices.wxml-->
+<view class='error' style='display: {{errDisplay}};'>
+  <view class='error-text'>请在设置中打开蓝牙</view>
+</view>
+<view class='container'>
+  <text>{{indicator}}</text>
+</view>

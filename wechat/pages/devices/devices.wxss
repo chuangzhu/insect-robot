@@ -1,0 +1,12 @@
+/* pages/devices/devices.wxss */
+.error {
+  background-color: lightcoral;
+  text-align: center;
+  width: 100%;
+  padding: 40rpx 0;
+}
+
+.error-text {
+  color: white;
+  padding: 0;
+}

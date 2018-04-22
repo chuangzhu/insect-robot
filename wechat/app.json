@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/devices/devices",
     "pages/console/console"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Insect Robot",
     "navigationBarTextStyle": "black"
