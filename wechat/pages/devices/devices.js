@@ -1,4 +1,6 @@
 // pages/devices/devices.js
+var app = getApp()
+
 Page({
 
   /**
@@ -25,7 +27,7 @@ Page({
           self.setData({ errDisplay: 'none' })
           wx.startPullDownRefresh()
           self.setData({ searchButtonDisabled: false })
-          setInterval(wx.startPullDownRefresh, 8000)
+          self.refreshInt = setInterval(wx.startPullDownRefresh, 8000)
         },
       })
     }, 500)
@@ -75,6 +77,27 @@ Page({
    * 选择设备
    */
   deviceClick: function (tap) {
-    console.log(tap.target.id)
+    var self = this
+    var id = tap.target.id
+    console.log(id)
+    //连接BLE
+    wx.createBLEConnection({
+      deviceId: id,
+      success: function(res) {
+        clearTimeout(self.refreshInt)
+        app.globalData.connectDev = id
+        wx.redirectTo({
+          url: '../console/console',
+        })
+      },
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    console.log('page devices unload')
   }
+
 })

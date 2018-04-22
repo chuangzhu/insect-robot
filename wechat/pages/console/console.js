@@ -1,4 +1,6 @@
 // pages/console/console.js
+var app = getApp()
+
 Page({
 
   /**
@@ -11,6 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('page console onload')
+    console.log(app.globalData.connectDev)
     this.animation = wx.createAnimation({
       duration: 200,
       timingFunction: 'ease',
@@ -55,7 +59,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.closeBLEConnection({
+      deviceId: app.globalData.connectDev
+    })
   },
 
   /**
