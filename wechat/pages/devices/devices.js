@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    errDisplay: 'none'
+    errDisplay: 'none',
+    searchButtonDisabled: true
   },
 
   /**
@@ -17,12 +18,14 @@ Page({
     this.blueInt = setInterval(function () {
       wx.openBluetoothAdapter({
         fail: function (res) {
-          self.setData({ errDisplay: 'block' })
+          self.setData({ errDisplay: 'block' }) //显示错误提示
         },
         success: function (res) {
           clearInterval(self.blueInt) //成功后停止尝试
           self.setData({ errDisplay: 'none' })
-          setInterval(wx.startPullDownRefresh, 3500)
+          wx.startPullDownRefresh()
+          self.setData({ searchButtonDisabled: false })
+          setInterval(wx.startPullDownRefresh, 8000)
         },
       })
     }, 500)
@@ -43,39 +46,35 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
     var self = this
-    this.deviceList = []
+    self.deviceList = []
+    wx.onBluetoothDeviceFound(function(res){
+      for (var item of res.devices) {
+        self.deviceList.push({ name: item.name, id: item.deviceId })
+      }
+      self.setData({deviceList: self.deviceList})
+      console.log(res.devices)
+    })
+    //开始寻找设备
+    wx.startBluetoothDevicesDiscovery()
+    setTimeout(function () {
+      wx.stopBluetoothDevicesDiscovery()
+    }, 2000)
     wx.stopPullDownRefresh()
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  searchButtonClick: function () {
+    wx.showToast({ title: 'Searching ...', icon: 'loading' })
+    wx.startPullDownRefresh()
   },
 
   /**
-   * 用户点击右上角分享
+   * 选择设备
    */
-  onShareAppMessage: function () {
-  
+  deviceClick: function (tap) {
+    console.log(tap.target.id)
   }
 })

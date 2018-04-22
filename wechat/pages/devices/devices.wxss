@@ -10,3 +10,11 @@
   color: white;
   padding: 0;
 }
+
+#av-dev {
+  margin: 20rpx;
+}
+
+#search-ble {
+  margin: 50rpx;
+}
