@@ -1,0 +1,11 @@
+<!--pages/devices/devices.wxml-->
+<view class='error' style='display: {{errDisplay}};'>
+  <view class='error-text'>请在设置中打开蓝牙</view>
+</view>
+<view class='container'>
+  <text id='av-dev'>Avalible Devices:</text>
+  <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
+    <button bindtap='deviceClick' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
+  </block>
+  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>Search for Ble</button>
+</view>

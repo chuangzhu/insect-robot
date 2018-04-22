@@ -1,0 +1,6 @@
+<!--pages/console/console.wxml-->
+<button id='button-left' bindtap='beetleAni'>left</button>
+<button id='button-right' bindtap='beetleAni'>right</button>
+<view id='beetle-con'>
+  <image id='beetle-img' animation='{{animation}}' src='./beetle.png'/>
+</view>
