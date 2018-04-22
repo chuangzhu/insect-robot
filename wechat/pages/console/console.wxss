@@ -1,0 +1,13 @@
+/* pages/console/console.wxss */
+#beetle-con {
+  position: fixed;
+  width: 100%;
+  bottom: -12%;
+  text-align: center;
+}
+
+#beetle-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
