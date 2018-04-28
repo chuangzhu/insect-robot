@@ -1,0 +1,10 @@
+
+# Wechat mini program
+*.wxml linguist-language=html
+*.wxss linguist-language=css
+*.wxs linguist-language=javascript
+
+# Eagle PCB
+*.sch linguist-language=eagle
+*.brd linguist-language=eagle
+
