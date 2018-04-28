@@ -1,0 +1,3 @@
+[submodule "avr/lib"]
+	path = avr/lib
+	url = git@github.com:genelocated/avr.git
