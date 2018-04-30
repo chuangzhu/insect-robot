@@ -7,11 +7,20 @@
 
 #include "main.h"
 
-
 int main(void)
 {
-    while (1) 
-    {
-    }
+	DDRD = (1<<TXD)|(1<<BRTS);
+	DDRB = (1<<ledR)|(1<<ledG)|(ledB<<1);
+	PORTB = 0xFF;
+	DDRC = (1<<eleLeft)|(1<<eleRight);
+	USART_Begin();
+	sei();
+	while (1) 
+	{
+	}
 }
 
+ISR(USART_RX_vect)
+{
+	PORTB = UDR0;
+}
