@@ -35,11 +35,20 @@ int main(void)
 
 ISR(USART_RX_vect)
 {
-	PORTB = UDR0;
+	static unsigned char usartIndex = 0;
+	usartIndex ++;
 	if (UDR0 == 'L')
-		;//set(PORTC, eleRight);
+	{
+		set(PORTC, eleRight);
+		_delay_ms(100);
+		clr(PORTC, eleRight);
+	}
 	else if (UDR0 == 'R')
-		;//set(PORTC, eleLeft);
+	{
+		set(PORTC, eleLeft);
+		_delay_ms(100);
+		clr(PORTC, eleRight);
+	}
 }
 
 /** Used for PWM of electrode */
@@ -55,7 +64,7 @@ ISR(TIMER0_OVF_vect)
 //   __________|  |__________|
 //
 // 	|<-------->|             |<>|
-// 	  rDuty            (dutyPriod - rDuty)
+// 	  ledDuty            (dutyPriod - ledDuty)
 
 /** Used for PWM of RGB LED */
 ISR(TIMER2_OVF_vect)
