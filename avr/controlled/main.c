@@ -6,8 +6,7 @@
  */ 
 
 #include "main.h"
-
-unsigned char usartBuf[3] = {0};
+#include <string.h>
 
 /** Give random color using a hanging ADC port as random seed */
 #define randColor(yourColor) {\
@@ -33,22 +32,45 @@ int main(void)
 	}
 }
 
+
+char usartBuf[4] = {0, 0, 0, 0};
+unsigned char modeFlag = 0;
+#define noMode		(0)
+#define moveMode	(1)
+
 ISR(USART_RX_vect)
 {
 	static unsigned char usartIndex = 0;
+	usartBuf[usartIndex] = UDR0;
+	if (usartIndex == 2)
+	{
+		if (modeFlag == noMode)
+		{
+			if (!strcmp(usartBuf, "MV:"))
+			{
+				modeFlag = moveMode;
+			}
+		}
+		else if (modeFlag == moveMode)
+		{
+			modeFlag = 0;
+			if (!strcmp(usartBuf, "LLL"))
+			{
+				set(PORTC, eleLeft);
+				_delay_ms(10);
+				clr(PORTC, eleLeft);
+			}
+			else if (!strcmp(usartBuf, "RRR"))
+			{
+				set(PORTC, eleRight);
+				_delay_ms(10);
+				clr(PORTC, eleRight);
+			}
+		}
+	}
 	usartIndex ++;
-	if (UDR0 == 'L')
-	{
-		set(PORTC, eleRight);
-		_delay_ms(100);
-		clr(PORTC, eleRight);
-	}
-	else if (UDR0 == 'R')
-	{
-		set(PORTC, eleLeft);
-		_delay_ms(100);
-		clr(PORTC, eleRight);
-	}
+	if (usartIndex > 2)
+		usartIndex = 0;
 }
 
 /** Used for PWM of electrode */
