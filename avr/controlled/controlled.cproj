@@ -147,6 +147,14 @@
     <Compile Include="main.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="../lib/ADC/HAL_ADC.h">
+      <SubType>compile</SubType>
+      <Link>HAL_ADC.h</Link>
+    </Compile>
+    <Compile Include="../lib/ADC/HAL_ADC.c">
+      <SubType>compile</SubType>
+      <Link>HAL_ADC.c</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

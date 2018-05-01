@@ -7,13 +7,25 @@
 
 #include "main.h"
 
+unsigned char usartBuf[3] = {0};
+
+/** Give random color using a hanging ADC port as random seed */
+#define randColor(yourColor) {\
+	ADC_Init();\
+	for (unsigned char i = 0; i<3; i++) {\
+		srand(ADConvert(3));\
+		yourColor[i] = rand() % 256;\
+	}\
+	ADC_Disenable();\
+}
+
 int main(void)
 {
 	DDRD = (1<<TXD)|(1<<BRTS);
 	DDRB = (1<<ledR)|(1<<ledG)|(ledB<<1);
 	DDRC = (1<<eleLeft)|(1<<eleRight);
 	USART_Begin();
-	colorLED(0, 0, 0);
+	randColor(ledDuty);
 	TIMER2_Init();
 	sei();
 	while (1) 
@@ -30,7 +42,7 @@ ISR(USART_RX_vect)
 		;//set(PORTC, eleLeft);
 }
 
-/* Used for PWM of electrode */
+/** Used for PWM of electrode */
 ISR(TIMER0_OVF_vect)
 {
 	
@@ -45,15 +57,15 @@ ISR(TIMER0_OVF_vect)
 // 	|<-------->|             |<>|
 // 	  rDuty            (dutyPriod - rDuty)
 
-/* Used for PWM of RGB LED */
+/** Used for PWM of RGB LED */
 ISR(TIMER2_OVF_vect)
 {
 	static unsigned ovfStep = 0;
-	if (ovfStep == rDuty)
+	if (ovfStep == ledDuty[0])
 		set(PORTB, ledR);
-	if (ovfStep == gDuty)
+	if (ovfStep == ledDuty[1])
 		set(PORTB, ledG);
-	if (ovfStep == bDuty)
+	if (ovfStep == ledDuty[2])
 		set(PORTB, ledB);
 	ovfStep ++;
 	if (ovfStep >= dutyPeriod)
