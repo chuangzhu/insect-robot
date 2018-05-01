@@ -13,7 +13,7 @@ unsigned char usartBuf[3] = {0};
 #define randColor(yourColor) {\
 	ADC_Init();\
 	for (unsigned char i = 0; i<3; i++) {\
-		srand(ADConvert(3));\
+		srand(ADConvert(3) + ADConvert(6));\
 		yourColor[i] = rand() % 256;\
 	}\
 	ADC_Disenable();\
