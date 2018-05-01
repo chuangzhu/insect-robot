@@ -38,4 +38,18 @@
 #define eleLeft		PORTC1
 #define eleRight	PORTC0
 
+#define set(Reg, Bit)	Reg |= (1<<Bit)		//Set a bit of reg.
+#define clr(Reg, Bit)	Reg &= ~(1<<Bit)	//Clear a bit of reg.
+#define not(Reg, Bit)	Reg ^= (1<<Bit)		//Reverse a bit of reg.
+
+#define dutyPeriod 256
+unsigned char rDuty;
+unsigned char gDuty;
+unsigned char bDuty;
+
+#define colorLED(red, blue, green) {\
+	rDuty = red;\
+	gDuty = blue;\
+	bDuty = green;}
+
 #endif /* MAIN_H_ */

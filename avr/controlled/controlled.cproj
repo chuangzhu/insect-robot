@@ -97,7 +97,7 @@
       <Value>BAUD=9600</Value>
       <Value>USART_RX_ENABLE</Value>
       <Value>TIMER0_Period=1000</Value>
-      <Value>TIMER2_Period=1000</Value>
+      <Value>TIMER2_Period=1</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
