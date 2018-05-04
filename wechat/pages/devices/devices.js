@@ -64,8 +64,8 @@ Page({
     wx.startBluetoothDevicesDiscovery()
     setTimeout(function () {
       wx.stopBluetoothDevicesDiscovery()
+      wx.stopPullDownRefresh()      
     }, 2000)
-    wx.stopPullDownRefresh()
   },
 
   searchButtonClick: function () {

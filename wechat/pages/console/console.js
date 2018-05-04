@@ -23,7 +23,7 @@ Page({
   },
 
   beetleAni: function (info) {
-    if (info.target.id === 'button-left')
+    if (info.target.id === 'button-right')
       this.animation.rotate(-45).step()
     else
       this.animation.rotate(45).step()

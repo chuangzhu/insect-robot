@@ -79,14 +79,14 @@ ISR(TIMER0_OVF_vect)
 	
 }
 
-// 	  dutyPeriod
+//    dutyPeriod
 //  |<----------->|
-// 	            __            __
+//              __            __
 //             |  |          |
 //   __________|  |__________|
 //
-// 	|<-------->|             |<>|
-// 	  ledDuty            (dutyPriod - ledDuty)
+//  |<-------->|             |<>|
+//    ledDuty            (dutyPriod - ledDuty)
 
 /** Used for PWM of RGB LED */
 ISR(TIMER2_OVF_vect)
