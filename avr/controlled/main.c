@@ -24,6 +24,9 @@ int main(void)
 	DDRB = (1<<ledR)|(1<<ledG)|(ledB<<1);
 	DDRC = (1<<eleLeft)|(1<<eleRight);
 	USART_Begin();
+	_delay_ms(128);
+	USART_SendData("TTM:REN-insect\r\n", 17);
+	_delay_ms(255);
 	randColor(ledDuty);
 	TIMER2_Init();
 	sei();
