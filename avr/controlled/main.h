@@ -12,8 +12,10 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <stdlib.h>
 #include "../lib/TIMER/HAL_TIMER.h"
 #include "../lib/USART/HAL_USART.h"
+#include "../lib/ADC/HAL_ADC.h"
 
 //Pins definitions.
 #define RXD		PORTD0
@@ -24,7 +26,7 @@
 
 #define CI_42fbc97
 //This commit corrected LED pins,
-//but I haven't send it for manufactor yet.
+//but I haven't send it for manufactory yet.
 #if defined(CI_f84fea8)
 	#define ledR PORTB0
 	#define ledG PORTB1
@@ -37,5 +39,17 @@
 
 #define eleLeft		PORTC1
 #define eleRight	PORTC0
+
+#define set(Reg, Bit)	Reg |= (1<<Bit)		//Set a bit of reg.
+#define clr(Reg, Bit)	Reg &= ~(1<<Bit)	//Clear a bit of reg.
+#define not(Reg, Bit)	Reg ^= (1<<Bit)		//Reverse a bit of reg.
+
+#define dutyPeriod 256
+unsigned char ledDuty[3] = {0};
+
+#define colorLED(red, blue, green) {\
+	ledDuty[0] = red;\
+	ledDuty[1] = blue;\
+	ledDuty[2] = green;}
 
 #endif /* MAIN_H_ */

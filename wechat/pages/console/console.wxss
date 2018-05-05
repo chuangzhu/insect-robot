@@ -8,6 +8,56 @@
 
 #beetle-img {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
+}
+
+#ele-con {
+  overflow: hidden;
+  margin-top: 60%;
+}
+
+.ele-button {
+  border-radius: 100rpx;
+  width: 350rpx;
+  height: 200rpx;
+  color: white;
+  background-color: #1aad19;
+  vertical-align: middle;
+}
+
+.ele-button-hover {
+  background-color: #179816;
+}
+
+.ele-svg {
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.ele-arrow {
+  padding-top: 75rpx;
+  padding-bottom: 75rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+#lt-arrow {
+  padding-right: 40rpx;
+}
+
+#gt-arrow {
+  padding-left: 40rpx;  
+}
+
+#button-left {
+  float: left;
+  left: -12%;
+}
+
+#button-right {
+  float: right;
+  right: -12%;
 }

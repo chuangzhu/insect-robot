@@ -1,6 +1,15 @@
 // pages/console/console.js
 var app = getApp()
 
+function str2buf(str) {
+  var buf = new ArrayBuffer(str.length)
+  var bufView = new Uint8Array(buf)
+  for (var i = 0, strLen = str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i)
+  }
+  return buf
+}
+
 Page({
 
   /**
@@ -20,12 +29,39 @@ Page({
       timingFunction: 'ease',
       transformOrigin: 'center'
     })
+    wx.getBLEDeviceServices({
+      deviceId: app.globalData.connectDev,
+      success: function(res) {console.log(res)},
+    })
   },
 
-  beetleAni: function (info) {
-    if (info.target.id === 'button-left')
+  eleClick: function (button) {
+    var self = this
+    var message, direction
+    if (button.target.id == 'button-left') {
+      message = 'EL:LLL'
+      direction = 'right'
+    } else if (button.target.id == 'button-right') {
+      message = 'EL:RRR'
+      direction = 'left'
+    }
+    wx.writeBLECharacteristicValue({
+      deviceId: app.globalData.connectDev,
+      serviceId: '0000FFE5-0000-1000-8000-00805F9B34FB',
+      characteristicId: '0000FFE9-0000-1000-8000-00805F9B34FB',
+      value: str2buf(message),
+      success: function (res) { self.beetleAni(direction) },
+      fail: function (res) {
+        wx.showToast({ title: '操作失败', icon: 'none' })
+        console.log(res)
+      }
+    })
+  },
+
+  beetleAni: function (direction) {
+    if (direction === 'left')
       this.animation.rotate(-45).step()
-    else
+    else if (direction === 'right')
       this.animation.rotate(45).step()
     this.animation.rotate(0).step()
     this.setData({
@@ -62,26 +98,5 @@ Page({
     wx.closeBLEConnection({
       deviceId: app.globalData.connectDev
     })
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
 })

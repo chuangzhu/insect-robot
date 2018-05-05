@@ -1,6 +1,14 @@
 <!--pages/console/console.wxml-->
-<button id='button-left' bindtap='beetleAni'>left</button>
-<button id='button-right' bindtap='beetleAni'>right</button>
+<view id='ele-con'>
+  <button id='button-left' class='ele-button' hover-class='ele-button-hover' bindtap='eleClick'>
+    <image class='ele-svg' src='./flash.svg'/>
+    <image class='ele-arrow' id='gt-arrow' src='./next.svg'/>
+  </button>
+  <button id='button-right' class='ele-button' hover-class='ele-button-hover' bindtap='eleClick'>
+    <image class='ele-arrow' id='lt-arrow' src='./back.svg'/>
+    <image class='ele-svg' src='./flash.svg'/>
+  </button>
+</view>
 <view id='beetle-con'>
-  <image id='beetle-img' animation='{{animation}}' src='./beetle.png'/>
+  <image id='beetle-img' animation='{{animation}}' src='./ladybug.svg'/>
 </view>

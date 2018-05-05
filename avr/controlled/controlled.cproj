@@ -97,7 +97,7 @@
       <Value>BAUD=9600</Value>
       <Value>USART_RX_ENABLE</Value>
       <Value>TIMER0_Period=1000</Value>
-      <Value>TIMER2_Period=1000</Value>
+      <Value>TIMER2_Period=1</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
@@ -146,6 +146,14 @@
     </Compile>
     <Compile Include="main.h">
       <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="../lib/ADC/HAL_ADC.h">
+      <SubType>compile</SubType>
+      <Link>HAL_ADC.h</Link>
+    </Compile>
+    <Compile Include="../lib/ADC/HAL_ADC.c">
+      <SubType>compile</SubType>
+      <Link>HAL_ADC.c</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
