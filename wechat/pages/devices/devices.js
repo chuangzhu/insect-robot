@@ -80,16 +80,22 @@ Page({
     var self = this
     var id = tap.target.id
     console.log(id)
+    wx.showToast({ title: '正在连接...', icon:'loading' })
     //连接BLE
     wx.createBLEConnection({
       deviceId: id,
       success: function(res) {
+        wx.showToast({ title: '连接成功', icon: 'ok' })
         clearTimeout(self.refreshInt)
         app.globalData.connectDev = id
         wx.redirectTo({
           url: '../console/console',
         })
       },
+      fail: function(res) {
+        wx.showToast({ title: '连接失败', icon: 'none' })
+        console.log(res)
+      }
     })
   },
 

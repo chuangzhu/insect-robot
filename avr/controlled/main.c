@@ -36,7 +36,7 @@ int main(void)
 char usartBuf[4] = {0, 0, 0, 0};
 unsigned char modeFlag = 0;
 #define noMode		(0)
-#define moveMode	(1)
+#define eleMode		(1)
 
 ISR(USART_RX_vect)
 {
@@ -46,14 +46,14 @@ ISR(USART_RX_vect)
 	{
 		if (modeFlag == noMode)
 		{
-			if (!strcmp(usartBuf, "MV:"))
+			if (!strcmp(usartBuf, "EL:"))
 			{
-				modeFlag = moveMode;
+				modeFlag = eleMode;
 			}
 		}
-		else if (modeFlag == moveMode)
+		else if (modeFlag == eleMode)
 		{
-			modeFlag = 0;
+			modeFlag = noMode;
 			if (!strcmp(usartBuf, "LLL"))
 			{
 				set(PORTC, eleLeft);
