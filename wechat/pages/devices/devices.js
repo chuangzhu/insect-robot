@@ -1,6 +1,17 @@
 // pages/devices/devices.js
 var app = getApp()
 
+function buf2str(buf) {
+  return String.fromCharCode.apply(null, new Uint8Array(buf))
+}
+
+function buf2hex(buf) {
+  var res = ''
+  for (var x of new Uint8Array(buf))
+    res += ('00' + x.toString(16)).slice(-2) //complete to two hex digit.
+  return res
+}
+
 Page({
 
   /**
@@ -55,9 +66,10 @@ Page({
     self.deviceList = []
     wx.onBluetoothDeviceFound(function(res){
       for (var item of res.devices) {
-        self.deviceList.push({ name: item.name, id: item.deviceId })
+        var color = buf2hex(item.advertisData)
+        self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
       }
-      self.setData({deviceList: self.deviceList})
+      self.setData({ deviceList: self.deviceList })
       console.log(res.devices)
     })
     //开始寻找设备

@@ -5,7 +5,7 @@
 <view class='container'>
   <text id='av-dev'>Avalible Devices:</text>
   <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
-    <button bindtap='deviceClick' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
+    <button bindtap='deviceClick' style='background-color: #{{deviceItem.color}};' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
   </block>
   <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>Search for Ble</button>
 </view>
