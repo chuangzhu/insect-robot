@@ -6,8 +6,9 @@
   "window": {
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Insect Robot",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "etc Robot",
     "navigationBarTextStyle": "black"
   }
 }

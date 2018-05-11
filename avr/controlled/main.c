@@ -25,11 +25,11 @@ int main(void)
 	DDRC = (1<<eleLeft)|(1<<eleRight);
 	USART_Begin();
 	_delay_ms(128);
-	USART_SendData("TTM:REN-insect\r\n", 17);
+	USART_SendData("TTM:REN-$sect\r\n", 17);
 	_delay_ms(128);
 	randColor(ledDuty);
 	USART_SendData("TTM:ADD-", 8);
-	USART_SendData(ledDuty, 3);
+	USART_SendData((char*)ledDuty, 3);
 	_delay_ms(255);
 	TIMER2_Init();
 	sei();

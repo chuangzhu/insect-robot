@@ -58,6 +58,8 @@ Page({
   
   },
 
+  deviceList: [],
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -65,9 +67,10 @@ Page({
     var self = this
     self.deviceList = []
     wx.onBluetoothDeviceFound(function(res){
-      for (var item of res.devices) {
-        var color = buf2hex(item.advertisData)
-        self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
+      for (var item of res.devices)
+        if (item.name == '$sect') {
+          var color = buf2hex(item.advertisData)
+          self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
       }
       self.setData({ deviceList: self.deviceList })
       console.log(res.devices)
@@ -76,12 +79,14 @@ Page({
     wx.startBluetoothDevicesDiscovery()
     setTimeout(function () {
       wx.stopBluetoothDevicesDiscovery()
-      wx.stopPullDownRefresh()      
+      self.setData({ deviceList: self.deviceList })
+      wx.stopPullDownRefresh()
+      //wx.onBluetoothDeviceFound(function () {})
     }, 2000)
   },
 
   searchButtonClick: function () {
-    wx.showToast({ title: 'Searching ...', icon: 'loading' })
+    wx.showToast({ title: '搜索中...', icon: 'loading' })
     wx.startPullDownRefresh()
   },
 

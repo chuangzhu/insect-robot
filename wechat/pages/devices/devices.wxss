@@ -1,6 +1,6 @@
 /* pages/devices/devices.wxss */
 .error {
-  background-color: lightcoral;
+  background-color: #e64340;
   text-align: center;
   width: 100%;
   padding: 40rpx 0;
