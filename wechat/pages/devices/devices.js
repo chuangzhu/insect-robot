@@ -65,7 +65,6 @@ Page({
    */
   onPullDownRefresh: function () {
     var self = this
-    self.deviceList = []
     wx.onBluetoothDeviceFound(function(res){
       for (var item of res.devices)
         if (item.name == '$sect') {
@@ -81,13 +80,32 @@ Page({
       wx.stopBluetoothDevicesDiscovery()
       self.setData({ deviceList: self.deviceList })
       wx.stopPullDownRefresh()
-      //wx.onBluetoothDeviceFound(function () {})
     }, 2000)
   },
 
+  /** Re-search Ble devices */
   searchButtonClick: function () {
-    wx.showToast({ title: '搜索中...', icon: 'loading' })
-    wx.startPullDownRefresh()
+    var self = this
+    self.deviceList = []
+    wx.closeBluetoothAdapter({
+      fail: function (res) {
+        self.setData({ errDisplay: 'block' })
+        console.log(res)
+      },
+      success: function () {
+        wx.openBluetoothAdapter({
+          fail: function (res) {
+            self.setData({ errDisplay: 'block' })
+            console.log(res)
+          },
+          success: function () {
+            self.setData({ errDisplay: 'none' })
+            wx.showToast({ title: '搜索中...', icon: 'loading' })
+            wx.startPullDownRefresh()
+          }
+        })
+      }
+    })
   },
 
   /**

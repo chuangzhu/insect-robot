@@ -7,5 +7,5 @@
   <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
     <button bindtap='deviceClick' style='background-color: #{{deviceItem.color}};' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
   </block>
-  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>搜索 BLE 设备</button>
+  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>重新搜索 BLE 设备</button>
 </view>
