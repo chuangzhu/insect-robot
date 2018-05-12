@@ -1,6 +1,17 @@
 // pages/devices/devices.js
 var app = getApp()
 
+function buf2str(buf) {
+  return String.fromCharCode.apply(null, new Uint8Array(buf))
+}
+
+function buf2hex(buf) {
+  var res = ''
+  for (var x of new Uint8Array(buf))
+    res += ('00' + x.toString(16)).slice(-2) //complete to two hex digit.
+  return res
+}
+
 Page({
 
   /**
@@ -8,7 +19,8 @@ Page({
    */
   data: {
     errDisplay: 'none',
-    searchButtonDisabled: true
+    searchButtonDisabled: true,
+    infoColor: 'lightgray'
   },
 
   /**
@@ -33,6 +45,12 @@ Page({
     }, 500)
   },
 
+  infoClick: function () {
+    wx.navigateTo({
+      url: '../credits/credits',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,30 +65,54 @@ Page({
   
   },
 
+  deviceList: [],
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
     var self = this
-    self.deviceList = []
     wx.onBluetoothDeviceFound(function(res){
-      for (var item of res.devices) {
-        self.deviceList.push({ name: item.name, id: item.deviceId })
+      for (var item of res.devices)
+        if (item.name == '$sect') {
+          var color = buf2hex(item.advertisData)
+          self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
       }
-      self.setData({deviceList: self.deviceList})
+      self.setData({ deviceList: self.deviceList })
       console.log(res.devices)
     })
     //开始寻找设备
     wx.startBluetoothDevicesDiscovery()
     setTimeout(function () {
       wx.stopBluetoothDevicesDiscovery()
-      wx.stopPullDownRefresh()      
+      self.setData({ deviceList: self.deviceList })
+      wx.stopPullDownRefresh()
     }, 2000)
   },
 
+  /** Re-search Ble devices */
   searchButtonClick: function () {
-    wx.showToast({ title: 'Searching ...', icon: 'loading' })
-    wx.startPullDownRefresh()
+    var self = this
+    self.deviceList = []
+    wx.closeBluetoothAdapter({
+      fail: function (res) {
+        self.setData({ errDisplay: 'block' })
+        console.log(res)
+      },
+      success: function () {
+        wx.openBluetoothAdapter({
+          fail: function (res) {
+            self.setData({ errDisplay: 'block' })
+            console.log(res)
+          },
+          success: function () {
+            self.setData({ errDisplay: 'none' })
+            wx.showToast({ title: '搜索中...', icon: 'loading' })
+            wx.startPullDownRefresh()
+          }
+        })
+      }
+    })
   },
 
   /**

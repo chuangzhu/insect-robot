@@ -3,9 +3,12 @@
   <view class='error-text'>请在设置中打开蓝牙</view>
 </view>
 <view class='container'>
-  <text id='av-dev'>Avalible Devices:</text>
+  <text id='av-dev'>请选择你的设备：</text>
   <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
-    <button bindtap='deviceClick' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
+    <button bindtap='deviceClick' style='background-color: #{{deviceItem.color}};' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
   </block>
-  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>Search for Ble</button>
+  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>重新搜索 BLE 设备</button>
+</view>
+<view id='info-con' bindtap='infoClick'>
+  <icon type='info' size='25' color='{{infoColor}}'/>
 </view>

@@ -1,9 +1,9 @@
 /* pages/devices/devices.wxss */
 .error {
-  background-color: lightcoral;
+  background-color: #e64340;
   text-align: center;
   width: 100%;
-  padding: 40rpx 0;
+  padding: 15px 0;
 }
 
 .error-text {
@@ -17,4 +17,15 @@
 
 #search-ble {
   margin: 50rpx;
+}
+
+#info-con {
+  position: fixed;
+  padding: 18px;
+  right: 0;
+  bottom: 0;
+}
+
+#info-con:active {
+  background-color: lightgray;
 }
