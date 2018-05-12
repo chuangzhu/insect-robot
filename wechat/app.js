@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    connectDev: null
+    connectDev: ''
   }
 })

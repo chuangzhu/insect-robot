@@ -22,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var self = this
     console.log('page console onload')
     console.log(app.globalData.connectDev)
     this.animation = wx.createAnimation({
@@ -29,26 +30,54 @@ Page({
       timingFunction: 'ease',
       transformOrigin: 'center'
     })
+    this.getTxSeChar()
+  },
+
+  /** Get service and characteristic for TX transmission */
+  getTxSeChar: function () {
+    var self = this
     wx.getBLEDeviceServices({
       deviceId: app.globalData.connectDev,
-      success: function(res) {console.log(res)},
+      success: function (res) {
+        self.bleServices = res.services
+
+        //Find a deviceId which includes 'FFE5'
+        self.txService = self.bleServices.find((v) => {
+          return v.uuid.indexOf('FFE5') >= 0
+        }).uuid
+
+        wx.getBLEDeviceCharacteristics({
+          deviceId: app.globalData.connectDev,
+          serviceId: self.txService,
+          success: function (res) {
+            //Find a characteristicId which includes 'FFE9'
+            self.txCharacter = res.characteristics.find((v) => {
+              return v.uuid.indexOf('FFE9') >= 0
+            }).uuid
+          },
+        })
+      }
     })
   },
+
+  bleServices: [],
+  txService: '',
+  txCharacter: '',
 
   eleClick: function (button) {
     var self = this
     var message, direction
-    if (button.target.id == 'button-left') {
+    if (button.target.id === 'button-left') {
       message = 'EL:LLL'
       direction = 'right'
-    } else if (button.target.id == 'button-right') {
+    } else if (button.target.id === 'button-right') {
       message = 'EL:RRR'
       direction = 'left'
     }
     wx.writeBLECharacteristicValue({
       deviceId: app.globalData.connectDev,
-      serviceId: '0000FFE5-0000-1000-8000-00805F9B34FB',
-      characteristicId: '0000FFE9-0000-1000-8000-00805F9B34FB',
+      serviceId: self.txService,
+      characteristicId: self.txCharacter,
       value: str2buf(message),
       success: function (res) { self.beetleAni(direction) },
       fail: function (res) {
