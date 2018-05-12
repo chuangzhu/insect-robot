@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/devices/devices",
-    "pages/console/console"
+    "pages/console/console",
+    "pages/credits/credits"
   ],
   "window": {
     "enablePullDownRefresh": true,

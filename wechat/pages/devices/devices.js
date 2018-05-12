@@ -19,7 +19,8 @@ Page({
    */
   data: {
     errDisplay: 'none',
-    searchButtonDisabled: true
+    searchButtonDisabled: true,
+    infoColor: 'lightgray'
   },
 
   /**
@@ -42,6 +43,12 @@ Page({
         },
       })
     }, 500)
+  },
+
+  infoClick: function () {
+    wx.navigateTo({
+      url: '../credits/credits',
+    })
   },
 
   /**

@@ -1,0 +1,15 @@
+/* pages/credits/credits.wxss */
+
+#main {
+  padding: 30px;
+}
+
+.img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.a {
+  color: #09bb07;
+  text-decoration: underline;
+}
