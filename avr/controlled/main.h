@@ -50,6 +50,7 @@ unsigned char ledDuty[3] = {0};
 #define colorLED(red, blue, green) {\
 	ledDuty[0] = red;\
 	ledDuty[1] = blue;\
-	ledDuty[2] = green;}
+	ledDuty[2] = green;\
+}
 
 #endif /* MAIN_H_ */

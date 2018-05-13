@@ -13,7 +13,7 @@
 	ADC_Init();\
 	for (unsigned char i = 0; i<3; i++) {\
 		srand(ADConvert(3) + ADConvert(6));\
-		yourColor[i] = rand() % 256;\
+		yourColor[i] = rand() % dutyPeriod;\
 	}\
 	ADC_Disenable();\
 }
@@ -22,7 +22,8 @@ int main(void)
 {
 	DDRD = (1<<TXD)|(1<<BRTS);
 	DDRB = (1<<ledR)|(1<<ledG)|(ledB<<1);
-	DDRC = (1<<eleLeft)|(1<<eleRight);
+	//Hi-Z state if both DDRCn & PORTCn is 0
+	DDRC = 0x00 /* (1<<eleLeft)|(1<<eleRight) */;
 	USART_Begin();
 	_delay_ms(128);
 	USART_SendData("TTM:REN-$sect\r\n", 17);
@@ -62,14 +63,18 @@ ISR(USART_RX_vect)
 			modeFlag = noMode;
 			if (!strcmp(usartBuf, "LLL"))
 			{
+				set(DDRC, eleLeft);
 				set(PORTC, eleLeft);
 				_delay_ms(10);
+				clr(DDRC, eleLeft);
 				clr(PORTC, eleLeft);
 			}
 			else if (!strcmp(usartBuf, "RRR"))
 			{
+				set(DDRC, eleRight);
 				set(PORTC, eleRight);
 				_delay_ms(10);
+				clr(DDRC, eleRight);
 				clr(PORTC, eleRight);
 			}
 		}
