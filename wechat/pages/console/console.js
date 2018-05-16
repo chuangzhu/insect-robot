@@ -16,6 +16,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    leftDisabled: false,
+    rightDisabled: false
   },
 
   /**
@@ -79,7 +81,17 @@ Page({
       serviceId: self.txService,
       characteristicId: self.txCharacter,
       value: str2buf(message),
-      success: function (res) { self.beetleAni(direction) },
+      success: function (res) {
+        //A cooling down time, disable the buttons for a while
+        //or else it may damage the robot
+        self.operaCd = true
+        self.setData({ eleDisabled: true })
+        setTimeout(() => {
+          self.operaCd = false
+          self.setData({ eleDisabled: false })
+        }, 400)
+        self.beetleAni(direction)
+      },
       fail: function (res) {
         wx.showToast({ title: '操作失败', icon: 'none' })
         console.log(res)
@@ -97,6 +109,16 @@ Page({
       //export() 会清除之前的动画操作
       animation: this.animation.export()
     })
+  },
+
+  operaCd: false,
+
+  eleConClick: function () {
+    if (this.operaCd)
+      wx.showToast({
+        title: '技能 CD 中',
+        icon: 'none'
+      })
   },
 
   /**
