@@ -44,13 +44,21 @@
 #define clr(Reg, Bit)	Reg &= ~(1<<Bit)	//Clear a bit of reg.
 #define not(Reg, Bit)	Reg ^= (1<<Bit)		//Reverse a bit of reg.
 
-#define dutyPeriod 256
-unsigned char ledDuty[3] = {0};
+#define ledPeriod 256
+unsigned char ledDuty[3];
 
 #define colorLED(red, blue, green) {\
 	ledDuty[0] = red;\
 	ledDuty[1] = blue;\
 	ledDuty[2] = green;\
 }
+
+#define elePeriod	30		//*10us
+#define eleDuty		20		//*10us
+#define eleTimeout	1000	//*10us
+
+unsigned char pwmElePin;
+
+#define TIMER0_Disable() clr(TIMSK0, TOIE0)
 
 #endif /* MAIN_H_ */

@@ -8,12 +8,14 @@
 #include "main.h"
 #include <string.h>
 
+unsigned char ledDuty[3] = {0};
+
 /** Give random color using a hanging ADC port as random seed */
 #define randColor(yourColor) {\
 	ADC_Init();\
 	for (unsigned char i = 0; i<3; i++) {\
 		srand(ADConvert(3) + ADConvert(6));\
-		yourColor[i] = rand() % dutyPeriod;\
+		yourColor[i] = rand() % ledPeriod;\
 	}\
 	ADC_Disenable();\
 }
@@ -39,7 +41,6 @@ int main(void)
 	}
 }
 
-
 char usartBuf[4] = {0, 0, 0, 0};
 unsigned char modeFlag = 0;
 #define noMode		(0)
@@ -54,29 +55,17 @@ ISR(USART_RX_vect)
 		if (modeFlag == noMode)
 		{
 			if (!strcmp(usartBuf, "EL:"))
-			{
 				modeFlag = eleMode;
-			}
 		}
 		else if (modeFlag == eleMode)
 		{
 			modeFlag = noMode;
 			if (!strcmp(usartBuf, "LLL"))
-			{
-				set(DDRC, eleLeft);
-				set(PORTC, eleLeft);
-				_delay_ms(10);
-				clr(DDRC, eleLeft);
-				clr(PORTC, eleLeft);
-			}
+				pwmElePin = eleLeft;
 			else if (!strcmp(usartBuf, "RRR"))
-			{
-				set(DDRC, eleRight);
-				set(PORTC, eleRight);
-				_delay_ms(10);
-				clr(DDRC, eleRight);
-				clr(PORTC, eleRight);
-			}
+				pwmElePin = eleRight;
+			set(DDRC, pwmElePin);
+			TIMER0_Init();
 		}
 	}
 	usartIndex ++;
@@ -84,25 +73,50 @@ ISR(USART_RX_vect)
 		usartIndex = 0;
 }
 
+//unsigned char pwmElePin;
+
 /** Used for PWM of electrode */
 ISR(TIMER0_OVF_vect)
 {
-	
+	TIMER0_Reset();
+	static unsigned char ovfStep = 0;
+	static unsigned int eleTime = 0;
+	if (ovfStep == eleDuty)
+		clr(PORTC, pwmElePin);
+	ovfStep ++;
+	eleTime ++;
+	if (ovfStep >= (elePeriod - 1))
+	{
+		ovfStep = 0;
+		set(PORTC, pwmElePin);
+	}
+	if (eleTime >= (eleTimeout - 1))
+	{
+		eleTime = 0;
+		clr(DDRC, pwmElePin);
+		clr(PORTC, pwmElePin);
+		TIMER0_Disable();
+	}
 }
 
-//    dutyPeriod
+//    ledPeriod
 //  |<----------->|
 //              __            __
 //             |  |          |
 //   __________|  |__________|
 //
 //  |<-------->|             |<>|
-//    ledDuty            (dutyPriod - ledDuty)
+//    ledDuty            (ledPriod - ledDuty)
 
 /** Used for PWM of RGB LED */
 ISR(TIMER2_OVF_vect)
 {
-	static unsigned ovfStep = 0;
+	TIMER2_Reset();
+#if ledPeriod <= 256
+	static unsigned char ovfStep = 0;
+#elif ledPeriod <= 65536
+	static unsigned int ovfStep = 0;
+#endif
 	if (ovfStep == ledDuty[0])
 		set(PORTB, ledR);
 	if (ovfStep == ledDuty[1])
@@ -110,7 +124,7 @@ ISR(TIMER2_OVF_vect)
 	if (ovfStep == ledDuty[2])
 		set(PORTB, ledB);
 	ovfStep ++;
-	if (ovfStep >= dutyPeriod)
+	if (ovfStep >= (ledPeriod - 1))
 	{
 		ovfStep = 0;
 		PORTB = 0x00;
