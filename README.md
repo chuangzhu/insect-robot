@@ -22,8 +22,7 @@ git clone --recursive https://github.com/genelocated/insect-robot.git
 
 #### 手机端
 用微信扫描以下二维码打开小程序：  
-<img id='qrcode' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
-<style>#qrcode {width: 8cm; height: 8cm;}</style>
+<img alt='QRcode' width='300' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
 
 ## 许可协议
 ![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)  

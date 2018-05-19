@@ -23,8 +23,7 @@ Also, you need a [FPC to DIP 6p adapter](https://www.amazon.com/s/?field-keyword
 #### Phone cilent
 Install [WeChat](https://play.google.com/store/apps/details?id=com.tencent.mm).  
 Scan this mini program code in WeChat `> Discover > Scan QR code`:  
-<img id='qrcode' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
-<style>#qrcode {width: 8cm; height: 8cm;}</style>
+<img alt='QRcode' width='300' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
 
 ## License
 ![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)  
