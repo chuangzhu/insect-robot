@@ -3,7 +3,9 @@ __中文 | [English](./README.en.md)__
 用你的手机控制一只昆虫。  
 >This project is greatly inspired by [Backyardbrains/Roboroach](https://github.com/backyardbrains/roboroach).  
 
-<!-- Insert images here -->
+![insrobotop](https://user-images.githubusercontent.com/31200881/40276701-9018be3c-5c43-11e8-9cd4-dfcd022ba257.jpg)
+
+![insrobopack](https://user-images.githubusercontent.com/31200881/40276703-92aff142-5c43-11e8-9227-4ccae34ab8b3.jpg)
 
 ## 开始
 ```Shell

@@ -3,7 +3,9 @@ __English | [中文](./README.md)__
 Control an insect using your cell phone.  
 >This project is greatly inspired by [Backyardbrains/Roboroach](https://github.com/backyardbrains/roboroach).  
 
-<!-- Insert images here -->
+![insrobotop](https://user-images.githubusercontent.com/31200881/40276701-9018be3c-5c43-11e8-9cd4-dfcd022ba257.jpg)  
+
+![insrobopack](https://user-images.githubusercontent.com/31200881/40276703-92aff142-5c43-11e8-9227-4ccae34ab8b3.jpg)  
 
 ## To begin with
 ```Shell
@@ -17,7 +19,7 @@ Send the gerber files generated to PCB factory.
 
 #### Firmware of controlled
 Open `avr/controlled/insectRobot.atsln` in Atmel Studio, Run `Build > Build solution`.    
-Hex file generated is `Debug/controlled.hex`, boot it to the chip using Avrdude. You may need AVR asp for it.  
+Hex file generated is `Debug/controlled.hex`, boot it to the chip using Avrdude. You may need an AVR asp for it.  
 Also, you need a [FPC to DIP 6p adapter](https://www.amazon.com/s/?field-keywords=fpc+dip+6p).
 
 #### Phone cilent
