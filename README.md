@@ -25,5 +25,8 @@ git clone --recursive https://github.com/genelocated/insect-robot.git
 <img alt='QRcode' width='300' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
 
 ## 许可协议
-![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)  
-本作品采用[知识共享署名-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)进行许可。
+本项目为开源硬件项目。
+
+[![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)  
+该项目本身采用[知识共享署名-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)进行许可。  
+小程序使用 MIT 协议进行许可。

@@ -26,5 +26,6 @@ Scan this mini program code in WeChat `> Discover > Scan QR code`:
 <img alt='QRcode' width='300' src='https://user-images.githubusercontent.com/31200881/40267482-84c31bc2-5b8f-11e8-92a8-6d1d5c3509b5.jpg'></img>
 
 ## License
-![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)  
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+[![license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/)  
+This project itself is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+The mini program is licensed under a MIT license.
