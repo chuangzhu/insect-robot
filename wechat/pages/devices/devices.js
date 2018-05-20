@@ -128,7 +128,7 @@ Page({
       deviceId: id,
       success: function(res) {
         wx.showToast({ title: '连接成功', icon: 'ok' })
-        clearTimeout(self.refreshInt)
+        clearInterval(self.refreshInt)
         app.globalData.connectDev = id
         wx.redirectTo({
           url: '../console/console',

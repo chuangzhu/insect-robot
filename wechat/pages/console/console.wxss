@@ -26,6 +26,10 @@
   vertical-align: middle;
 }
 
+.ele-button::after {
+  border-style: none;
+}
+
 .ele-button-hover {
   background-color: #179816;
 }

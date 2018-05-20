@@ -96,8 +96,8 @@
       <Value>F_CPU=8000000</Value>
       <Value>BAUD=9600</Value>
       <Value>USART_RX_ENABLE</Value>
-      <Value>TIMER0_Period=1000</Value>
-      <Value>TIMER2_Period=1</Value>
+      <Value>TIMER0_Period=10</Value>
+      <Value>TIMER2_Period=50</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
