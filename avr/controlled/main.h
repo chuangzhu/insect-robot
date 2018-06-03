@@ -13,6 +13,7 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../lib/TIMER/HAL_TIMER.h"
 #include "../lib/USART/HAL_USART.h"
 #include "../lib/ADC/HAL_ADC.h"
@@ -24,34 +25,24 @@
 #define LINK	PORTD3
 #define BRTS	PORTD4
 
-#define CI_42fbc97
-//This commit corrected LED pins,
-//but I haven't send it for manufactory yet.
-#if defined(CI_f84fea8)
-	#define ledR PORTB0
-	#define ledG PORTB1
-	#define ledB PORTB2
-#elif defined(CI_42fbc97) 
-	#define ledR PORTB2
-	#define ledG PORTB0
-	#define ledB PORTB1
-#endif
+#define eleLeft		PORTB2
+#define eleRight	PORTB1
 
-#define eleLeft		PORTC1
-#define eleRight	PORTC0
+//This commit corrected LED to PWM pins,
+#define ledR PORTD5	//OC0B
+#define ledG PORTD6	//OC0A
+#define ledB PORTB3	//OC2A
+
+#define PWM_0B_ENABLE
+#define PWM_0A_ENABLE
+#define PWM_2A_ENABLE
+#include "../lib/PWM/HAL_PWM.h"
 
 #define set(Reg, Bit)	Reg |= (1<<Bit)		//Set a bit of reg.
 #define clr(Reg, Bit)	Reg &= ~(1<<Bit)	//Clear a bit of reg.
 #define not(Reg, Bit)	Reg ^= (1<<Bit)		//Reverse a bit of reg.
 
-#define ledPeriod 256
 unsigned char ledDuty[3];
-
-#define colorLED(red, blue, green) {\
-	ledDuty[0] = red;\
-	ledDuty[1] = blue;\
-	ledDuty[2] = green;\
-}
 
 #define elePeriod	30		//*10us
 #define eleDuty		20		//*10us
@@ -59,6 +50,6 @@ unsigned char ledDuty[3];
 
 unsigned char pwmElePin;
 
-#define TIMER0_Disable() clr(TIMSK0, TOIE0)
+#define TIMER1_Disable() clr(TIMSK1, TOIE1)
 
 #endif /* MAIN_H_ */

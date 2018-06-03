@@ -155,6 +155,10 @@
       <SubType>compile</SubType>
       <Link>HAL_ADC.c</Link>
     </Compile>
+    <Compile Include="../lib/PWM/HAL_PWM.h">
+      <SubType>compile</SubType>
+      <Link>HAL_PWM.h</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
