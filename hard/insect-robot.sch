@@ -1476,11 +1476,6 @@ BCTS: wake the MASTER up.</text>
 <label x="-91.44" y="15.24" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 <segment>
-<pinref part="U1" gate="P" pin="PC1(ADC1)"/>
-<wire x1="-33.02" y1="-7.62" x2="-38.1" y2="-7.62" width="0.1524" layer="91"/>
-<label x="-38.1" y="-7.62" size="1.778" layer="95" font="vector" rot="R180"/>
-</segment>
-<segment>
 <pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
 <wire x1="35.56" y1="-10.16" x2="40.64" y2="-10.16" width="0.1524" layer="91"/>
 <label x="40.64" y="-10.16" size="1.778" layer="95" font="vector"/>
@@ -1491,11 +1486,6 @@ BCTS: wake the MASTER up.</text>
 <pinref part="HD1" gate="A" pin="3"/>
 <wire x1="-81.28" y1="10.16" x2="-91.44" y2="10.16" width="0.1524" layer="91"/>
 <label x="-91.44" y="10.16" size="1.778" layer="95" font="vector" rot="R180"/>
-</segment>
-<segment>
-<pinref part="U1" gate="P" pin="PC0(ADC0)"/>
-<wire x1="-33.02" y1="-5.08" x2="-38.1" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-38.1" y="-5.08" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 <segment>
 <pinref part="U1" gate="P" pin="PB1(OC1A)"/>
