@@ -49,6 +49,21 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
 }
+
+String inString = "";
+
+void serialEvent() {
+  while (Serial.available()) {
+    char inChar = Serial.read();
+    inString += inChar;
+    if (inString == "EL:LLL") {
+      inString = "";
+      
+    } else if (inString == "EL:RRR") {
+      inString = "";
+      
+    }
+  }
+}
+
