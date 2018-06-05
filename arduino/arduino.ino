@@ -27,7 +27,7 @@ void setup() {
   pinMode(BLUE, OUTPUT);
   // a pin is in Hi-Z state when it is INPUT and LOW.
   // we only make these pins OUTPUT when we need to make them HIGH.
-  // this measure prevented the possibility from
+  // this measure prevented the possibility of
   // letting the current flows from one antenna to another.
   pinMode(LEFT, INPUT);
   pinMode(RIGHT, INPUT);
@@ -48,8 +48,37 @@ void setup() {
   delay(255);
 }
 
+
+
+// parameters for the impulse wave
+const int impulsePeriod = 30; // *10us
+const int impulseDuty = 20; // *10us
+const int impulseTimeout = 1000; // *10us
+
+boolean impulse = false;
+int impulsePin;
+int loopStep = 0;
+int impulseTimes = 0;
+
 void loop() {
+  if (impulse) {
+    if (loopStep == impulseDuty) {
+      digitalWrite(impulsePin, LOW);
+    } else if (loopStep == impulsePeriod) {
+      loopStep = 0;
+      digitalWrite(impulsePin, HIGH); 
+    }
+    loopStep ++;
+    if (impulseTimes == impulseTimeout) {
+      impulseTimes = 0;
+      impulse = false;
+    }
+    impulseTimes ++;
+    delayMicroseconds(10);
+  }
 }
+
+
 
 String inString = "";
 
@@ -59,10 +88,14 @@ void serialEvent() {
     inString += inChar;
     if (inString == "EL:LLL") {
       inString = "";
-      
+      impulsePin = LEFT;
+      pinMode(impulsePin, OUTPUT);
+      impulse = true;
     } else if (inString == "EL:RRR") {
       inString = "";
-      
+      impulsePin = RIGHT;
+      pinMode(impulsePin, OUTPUT);
+      impulse = true;
     }
   }
 }
