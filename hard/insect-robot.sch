@@ -716,15 +716,15 @@
 <pin name="PD0(RXD)" x="35.56" y="20.32" length="middle" rot="R180"/>
 <pin name="PD1(TXD)" x="35.56" y="17.78" length="middle" rot="R180"/>
 <pin name="PD2(INT0)" x="35.56" y="15.24" length="middle" rot="R180"/>
-<pin name="PD3(INT1)" x="35.56" y="12.7" length="middle" rot="R180"/>
+<pin name="PD3(INT1/OC2B)" x="35.56" y="12.7" length="middle" rot="R180"/>
 <pin name="PD4(XCK/T0)" x="35.56" y="10.16" length="middle" rot="R180"/>
-<pin name="PD5(T1)" x="35.56" y="7.62" length="middle" rot="R180"/>
-<pin name="PD6(AIN0)" x="35.56" y="5.08" length="middle" rot="R180"/>
+<pin name="PD5(T1/OC0B)" x="35.56" y="7.62" length="middle" rot="R180"/>
+<pin name="PD6(AIN0/OC0A)" x="35.56" y="5.08" length="middle" rot="R180"/>
 <pin name="PD7(AIN1)" x="35.56" y="2.54" length="middle" rot="R180"/>
 <pin name="PB0(ICP1)" x="35.56" y="-5.08" length="middle" rot="R180"/>
 <pin name="PB1(OC1A)" x="35.56" y="-7.62" length="middle" rot="R180"/>
 <pin name="PB2(SS/OC1B)" x="35.56" y="-10.16" length="middle" rot="R180"/>
-<pin name="PB3(MOSI)" x="35.56" y="-12.7" length="middle" rot="R180"/>
+<pin name="PB3(MOSI/OC2A)" x="35.56" y="-12.7" length="middle" rot="R180"/>
 <pin name="PB4(MISO)" x="35.56" y="-15.24" length="middle" rot="R180"/>
 <pin name="PB5(SCK)" x="35.56" y="-17.78" length="middle" rot="R180"/>
 <pin name="AVCC" x="-5.08" y="33.02" length="middle" rot="R270"/>
@@ -922,7 +922,7 @@
 <connect gate="P" pin="PB0(ICP1)" pad="12"/>
 <connect gate="P" pin="PB1(OC1A)" pad="13"/>
 <connect gate="P" pin="PB2(SS/OC1B)" pad="14"/>
-<connect gate="P" pin="PB3(MOSI)" pad="15"/>
+<connect gate="P" pin="PB3(MOSI/OC2A)" pad="15"/>
 <connect gate="P" pin="PB4(MISO)" pad="16"/>
 <connect gate="P" pin="PB5(SCK)" pad="17"/>
 <connect gate="P" pin="PB6(XTAL1)" pad="7"/>
@@ -937,10 +937,10 @@
 <connect gate="P" pin="PD0(RXD)" pad="30"/>
 <connect gate="P" pin="PD1(TXD)" pad="31"/>
 <connect gate="P" pin="PD2(INT0)" pad="32"/>
-<connect gate="P" pin="PD3(INT1)" pad="1"/>
+<connect gate="P" pin="PD3(INT1/OC2B)" pad="1"/>
 <connect gate="P" pin="PD4(XCK/T0)" pad="2"/>
-<connect gate="P" pin="PD5(T1)" pad="9"/>
-<connect gate="P" pin="PD6(AIN0)" pad="10"/>
+<connect gate="P" pin="PD5(T1/OC0B)" pad="9"/>
+<connect gate="P" pin="PD6(AIN0/OC0A)" pad="10"/>
 <connect gate="P" pin="PD7(AIN1)" pad="11"/>
 <connect gate="P" pin="VCC@1" pad="4"/>
 <connect gate="P" pin="VCC@2" pad="6"/>
@@ -961,7 +961,7 @@
 <connect gate="P" pin="PB0(ICP1)" pad="12"/>
 <connect gate="P" pin="PB1(OC1A)" pad="13"/>
 <connect gate="P" pin="PB2(SS/OC1B)" pad="14"/>
-<connect gate="P" pin="PB3(MOSI)" pad="15"/>
+<connect gate="P" pin="PB3(MOSI/OC2A)" pad="15"/>
 <connect gate="P" pin="PB4(MISO)" pad="16"/>
 <connect gate="P" pin="PB5(SCK)" pad="17"/>
 <connect gate="P" pin="PB6(XTAL1)" pad="7"/>
@@ -976,10 +976,10 @@
 <connect gate="P" pin="PD0(RXD)" pad="30"/>
 <connect gate="P" pin="PD1(TXD)" pad="31"/>
 <connect gate="P" pin="PD2(INT0)" pad="32"/>
-<connect gate="P" pin="PD3(INT1)" pad="1"/>
+<connect gate="P" pin="PD3(INT1/OC2B)" pad="1"/>
 <connect gate="P" pin="PD4(XCK/T0)" pad="2"/>
-<connect gate="P" pin="PD5(T1)" pad="9"/>
-<connect gate="P" pin="PD6(AIN0)" pad="10"/>
+<connect gate="P" pin="PD5(T1/OC0B)" pad="9"/>
+<connect gate="P" pin="PD6(AIN0/OC0A)" pad="10"/>
 <connect gate="P" pin="PD7(AIN1)" pad="11"/>
 <connect gate="P" pin="VCC@1" pad="4"/>
 <connect gate="P" pin="VCC@2" pad="6"/>
@@ -1374,25 +1374,25 @@ BCTS: wake the MASTER up.</text>
 <attribute name="VALUE" x="-66.04" y="-27.94" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY25" gate="GND" x="134.62" y="-27.94" rot="R90"/>
-<instance part="D1" gate="A" x="66.04" y="-7.62" rot="MR270"/>
-<instance part="SUPPLY8" gate="G$1" x="78.74" y="-7.62" rot="R270"/>
+<instance part="D1" gate="A" x="81.28" y="-10.16" rot="MR270"/>
+<instance part="SUPPLY8" gate="G$1" x="93.98" y="-10.16" rot="R270"/>
 <instance part="C1" gate="A" x="-35.56" y="2.54" rot="R90"/>
 <instance part="SUPPLY10" gate="GND" x="-43.18" y="2.54" rot="R270"/>
 <instance part="RP1" gate="A" x="60.96" y="-22.86" smashed="yes">
 <attribute name="NAME" x="63.5" y="-22.86" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="-22.86" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="B" x="40.64" y="-5.08" smashed="yes">
-<attribute name="NAME" x="43.18" y="-5.08" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-5.08" size="1.778" layer="96"/>
+<instance part="RP1" gate="B" x="55.88" y="-7.62" smashed="yes">
+<attribute name="NAME" x="58.42" y="-7.62" size="1.778" layer="95"/>
+<attribute name="VALUE" x="66.04" y="-7.62" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="C" x="40.64" y="-7.62" smashed="yes">
-<attribute name="NAME" x="43.18" y="-7.62" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-7.62" size="1.778" layer="96"/>
+<instance part="RP1" gate="C" x="55.88" y="-10.16" smashed="yes">
+<attribute name="NAME" x="58.42" y="-10.16" size="1.778" layer="95"/>
+<attribute name="VALUE" x="66.04" y="-10.16" size="1.778" layer="96"/>
 </instance>
-<instance part="RP1" gate="D" x="40.64" y="-10.16" smashed="yes">
-<attribute name="NAME" x="43.18" y="-10.16" size="1.778" layer="95"/>
-<attribute name="VALUE" x="50.8" y="-10.16" size="1.778" layer="96"/>
+<instance part="RP1" gate="D" x="55.88" y="-12.7" smashed="yes">
+<attribute name="NAME" x="58.42" y="-12.7" size="1.778" layer="95"/>
+<attribute name="VALUE" x="66.04" y="-12.7" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY11" gate="GND" x="-86.36" y="35.56"/>
 <instance part="HD2" gate="A" x="109.22" y="-20.32"/>
@@ -1476,9 +1476,9 @@ BCTS: wake the MASTER up.</text>
 <label x="-91.44" y="15.24" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 <segment>
-<pinref part="U1" gate="P" pin="PC1(ADC1)"/>
-<wire x1="-33.02" y1="-7.62" x2="-38.1" y2="-7.62" width="0.1524" layer="91"/>
-<label x="-38.1" y="-7.62" size="1.778" layer="95" font="vector" rot="R180"/>
+<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
+<wire x1="35.56" y1="-10.16" x2="40.64" y2="-10.16" width="0.1524" layer="91"/>
+<label x="40.64" y="-10.16" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="R" class="0">
@@ -1488,9 +1488,9 @@ BCTS: wake the MASTER up.</text>
 <label x="-91.44" y="10.16" size="1.778" layer="95" font="vector" rot="R180"/>
 </segment>
 <segment>
-<pinref part="U1" gate="P" pin="PC0(ADC0)"/>
-<wire x1="-33.02" y1="-5.08" x2="-38.1" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-38.1" y="-5.08" size="1.778" layer="95" font="vector" rot="R180"/>
+<pinref part="U1" gate="P" pin="PB1(OC1A)"/>
+<wire x1="35.56" y1="-7.62" x2="40.64" y2="-7.62" width="0.1524" layer="91"/>
+<label x="40.64" y="-7.62" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
 <net name="RXD" class="0">
@@ -1560,16 +1560,17 @@ BCTS: wake the MASTER up.</text>
 <label x="-58.42" y="-30.48" size="1.778" layer="95" font="vector"/>
 </segment>
 <segment>
-<pinref part="U1" gate="P" pin="PD3(INT1)"/>
+<pinref part="U1" gate="P" pin="PD3(INT1/OC2B)"/>
 <wire x1="35.56" y1="12.7" x2="40.64" y2="12.7" width="0.1524" layer="91"/>
 <label x="40.64" y="12.7" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
-<net name="MOSI" class="0">
+<net name="RB-/MOSI" class="0">
 <segment>
-<pinref part="U1" gate="P" pin="PB3(MOSI)"/>
-<wire x1="35.56" y1="-12.7" x2="45.72" y2="-12.7" width="0.1524" layer="91"/>
-<label x="45.72" y="-12.7" size="1.778" layer="95" font="vector"/>
+<pinref part="U1" gate="P" pin="PB3(MOSI/OC2A)"/>
+<label x="38.1" y="-12.7" size="1.778" layer="95" font="vector"/>
+<pinref part="RP1" gate="D" pin="2"/>
+<wire x1="50.8" y1="-12.7" x2="35.56" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="114.3" y1="-20.32" x2="119.38" y2="-20.32" width="0.1524" layer="91"/>
@@ -1620,42 +1621,24 @@ BCTS: wake the MASTER up.</text>
 <label x="132.08" y="-15.24" size="1.778" layer="95" font="vector"/>
 </segment>
 </net>
-<net name="RR-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB0(ICP1)"/>
-<pinref part="RP1" gate="B" pin="2"/>
-</segment>
-</net>
-<net name="RG-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB1(OC1A)"/>
-<pinref part="RP1" gate="C" pin="2"/>
-</segment>
-</net>
-<net name="RB-" class="0">
-<segment>
-<pinref part="U1" gate="P" pin="PB2(SS/OC1B)"/>
-<pinref part="RP1" gate="D" pin="2"/>
-</segment>
-</net>
 <net name="R-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="R-"/>
-<wire x1="55.88" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-7.62" x2="60.96" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="B" pin="1"/>
 </segment>
 </net>
 <net name="G-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="G-"/>
-<wire x1="55.88" y1="-7.62" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-10.16" x2="60.96" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="C" pin="1"/>
 </segment>
 </net>
 <net name="B-" class="0">
 <segment>
 <pinref part="D1" gate="A" pin="B-"/>
-<wire x1="55.88" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-12.7" x2="60.96" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="RP1" gate="D" pin="1"/>
 </segment>
 </net>
@@ -1669,6 +1652,23 @@ BCTS: wake the MASTER up.</text>
 <pinref part="HD2" gate="A" pin="5"/>
 <wire x1="114.3" y1="-22.86" x2="119.38" y2="-22.86" width="0.1524" layer="91"/>
 <label x="119.38" y="-22.86" size="1.778" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="RR-" class="0">
+<segment>
+<pinref part="RP1" gate="B" pin="2"/>
+<pinref part="U1" gate="P" pin="PD5(T1/OC0B)"/>
+<wire x1="35.56" y1="7.62" x2="50.8" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="7.62" x2="50.8" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RG-" class="0">
+<segment>
+<pinref part="RP1" gate="C" pin="2"/>
+<wire x1="50.8" y1="-10.16" x2="48.26" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="-10.16" x2="48.26" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="U1" gate="P" pin="PD6(AIN0/OC0A)"/>
+<wire x1="48.26" y1="5.08" x2="35.56" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
