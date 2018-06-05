@@ -1,0 +1,5 @@
+
+# Exported compiled binaries
+# Intel hex
+*.hex
+

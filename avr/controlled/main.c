@@ -68,7 +68,7 @@ ISR(USART_RX_vect)
 				pwmElePin = eleLeft;
 			else if (!strcmp(usartBuf, "RRR"))
 				pwmElePin = eleRight;
-			set(DDRC, pwmElePin);
+			set(DDRB, pwmElePin);
 			TIMER1_Init();
 		}
 	}
@@ -94,20 +94,20 @@ ISR(TIMER1_OVF_vect)
 	static unsigned char ovfStep = 0;
 	static unsigned int eleTime = 0;
 	if (ovfStep == eleDuty)
-		clr(PORTC, pwmElePin);
-	ovfStep ++;
-	eleTime ++;
-	if (ovfStep >= (elePeriod - 1))
+		clr(PORTB, pwmElePin);
+	else if (ovfStep >= elePeriod)
 	{
 		ovfStep = 0;
-		set(PORTC, pwmElePin);
+		set(PORTB, pwmElePin);
 	}
-	if (eleTime >= (eleTimeout - 1))
+	ovfStep ++;
+	if (eleTime >= eleTimeout)
 	{
 		eleTime = 0;
-		clr(DDRC, pwmElePin);
-		clr(PORTC, pwmElePin);
+		clr(DDRB, pwmElePin);
+		clr(PORTB, pwmElePin);
 		TIMER1_Disable();
 	}
+	eleTime ++;
 }
 
