@@ -60,6 +60,22 @@ int impulsePin;
 int loopStep = 0;
 int impulseTimes = 0;
 
+//   impulsePeriod
+//  |<----------->|
+//   __________    __________      HIGH
+//             |  |          |
+//             |__|          |__   LOW
+//
+//  |<-------->|             |<>|
+//   impulseDuty        (impulsePriod - impulseDuty)
+//
+//           |   zoom out
+//           V
+//        _   _   _   _   _   _   _
+//  ------ |_| |_| |_| |_| |_| |_| |_------
+//       |<------------------------->|
+//              impulseTimeout
+
 void loop() {
   if (impulse) {
     if (loopStep == impulseDuty) {
@@ -85,12 +101,12 @@ String inString = "";
 void serialEvent() {
   while (Serial.available()) {
     char inChar = Serial.read();
-    inString += inChar;
+    inString += inChar; // append to the string
     if (inString == "EL:LLL") {
       inString = "";
       impulsePin = LEFT;
       pinMode(impulsePin, OUTPUT);
-      impulse = true;
+      impulse = true; // start impulse wave
     } else if (inString == "EL:RRR") {
       inString = "";
       impulsePin = RIGHT;
