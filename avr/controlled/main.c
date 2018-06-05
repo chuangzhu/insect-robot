@@ -1,4 +1,4 @@
-/*
+﻿/*
  * controlled.c
  *
  * Created: 2018/4/28 20:59:13
@@ -69,7 +69,7 @@ ISR(USART_RX_vect)
 			else if (!strcmp(usartBuf, "RRR"))
 				pwmElePin = eleRight;
 			set(DDRC, pwmElePin);
-			TIMER0_Init();
+			TIMER1_Init();
 		}
 	}
 	usartIndex ++;
@@ -90,7 +90,7 @@ ISR(USART_RX_vect)
 /** Used for PWM of electrode */
 ISR(TIMER1_OVF_vect)
 {
-	TIMER0_Reset();
+	TIMER1_Reset();
 	static unsigned char ovfStep = 0;
 	static unsigned int eleTime = 0;
 	if (ovfStep == eleDuty)
