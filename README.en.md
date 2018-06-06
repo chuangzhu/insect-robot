@@ -18,7 +18,10 @@ Open job `excellon.cam`, then process it.
 Send the gerber files generated to PCB factory.
 
 #### Firmware of controlled
-Open `avr/controlled/insectRobot.atsln` in Atmel Studio, Run `Build > Build solution`.    
+
+ It's compatible to Arduino due to the AVR chip I use. You can program it using Arduino IDE, see [arduino](./arduino) directory for details.
+
+The other way: Open `avr/controlled/insectRobot.atsln` in Atmel Studio, Run `Build > Build solution`.    
 Hex file generated is `Debug/controlled.hex`, boot it to the chip using Avrdude. You may need an AVR asp for it.  
 Also, you need a [FPC to DIP 6p adapter](https://www.amazon.com/s/?field-keywords=fpc+dip+6p).
 
