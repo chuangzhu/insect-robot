@@ -18,7 +18,10 @@ git clone --recursive https://github.com/genelocated/insect-robot.git
 将生成的 gerber 文件发给 pcb 打样厂。
 
 #### 被控端固件
-用 atmel studio 打开 `avr/controlled/insectRobot.atsln` , 运行 `build > build solution` 。  
+
+由于主控芯片采用的是 AVR，所以兼容 Arduino。可以使用 Arduino IDE 编程，具体请见 [arduino](./arduino/) 目录。
+
+另一种方法：用 atmel studio 打开 `avr/controlled/insectRobot.atsln` , 运行 `build > build solution` 。  
 生成的 hex 文件为 `Debug/controlled.hex` , 用 avrdude 或 progisp 烧录。需要用到 AVR asp。  
 你还需要买一块 [FPC 6p 转接板](https://s.taobao.com/search?q=fpc+转接板+直插)。
 
