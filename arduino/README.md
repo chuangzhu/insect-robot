@@ -1,4 +1,4 @@
-__中文 | [English](./README.en.md)__
+﻿__中文 | [English](./README.en.md)__
 
 # 使用 Arduino IDE 编程
 
@@ -14,7 +14,7 @@ __中文 | [English](./README.en.md)__
 
 ![progisp](https://user-images.githubusercontent.com/31200881/41062384-4411fa94-6a08-11e8-92a6-d4cec1362297.png)
 
-点击“编程熔丝”右边的框，将熔丝配置为如图所示，点击“写入”。
+点击“编程熔丝”右边的框，将熔丝配置为如图所示，点击“写入”。在这一步之前，你要打开电路板上的开关。
 
 ![fuse](https://user-images.githubusercontent.com/31200881/41062709-34d0aeda-6a09-11e8-8f96-8b7e57be11fe.png)
 
