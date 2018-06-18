@@ -810,9 +810,9 @@
 </symbol>
 <symbol name="LED-RGB-A">
 <description>Common &lt;b&gt;Anode&lt;/b&gt; RGB LED</description>
-<wire x1="-1.016" y1="-1.016" x2="1.016" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="-3.556" y1="-1.016" x2="-1.524" y2="-1.016" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-1.016" x2="3.556" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="1.016" y1="1.016" x2="-1.016" y2="1.016" width="0.254" layer="94"/>
+<wire x1="3.556" y1="1.016" x2="1.524" y2="1.016" width="0.254" layer="94"/>
+<wire x1="-1.524" y1="1.016" x2="-3.556" y2="1.016" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
@@ -834,24 +834,24 @@
 <vertex x="6.477" y="-1.143"/>
 </polygon>
 <polygon width="0.254" layer="94">
-<vertex x="-1.016" y="0.762"/>
-<vertex x="1.016" y="0.762"/>
-<vertex x="0" y="-1.016"/>
+<vertex x="1.016" y="-0.762"/>
+<vertex x="-1.016" y="-0.762"/>
+<vertex x="0" y="1.016"/>
 </polygon>
 <polygon width="0.254" layer="94">
-<vertex x="-1.016" y="0.762"/>
-<vertex x="1.016" y="0.762"/>
-<vertex x="0" y="-1.016"/>
+<vertex x="1.016" y="-0.762"/>
+<vertex x="-1.016" y="-0.762"/>
+<vertex x="0" y="1.016"/>
 </polygon>
 <polygon width="0.254" layer="94">
-<vertex x="-3.556" y="0.762"/>
-<vertex x="-1.524" y="0.762"/>
-<vertex x="-2.54" y="-1.016"/>
+<vertex x="3.556" y="-0.762"/>
+<vertex x="1.524" y="-0.762"/>
+<vertex x="2.54" y="1.016"/>
 </polygon>
 <polygon width="0.254" layer="94">
-<vertex x="1.524" y="0.762"/>
-<vertex x="3.556" y="0.762"/>
-<vertex x="2.54" y="-1.016"/>
+<vertex x="-1.524" y="-0.762"/>
+<vertex x="-3.556" y="-0.762"/>
+<vertex x="-2.54" y="1.016"/>
 </polygon>
 <text x="7.62" y="-7.62" size="1.778" layer="95" rot="R90">&gt;NAME</text>
 <text x="-5.08" y="-7.62" size="1.778" layer="95" rot="R90">&gt;VALUE</text>
@@ -1169,6 +1169,7 @@
 </devices>
 </deviceset>
 <deviceset name="LED-RGB-A" prefix="D">
+<description>Common Anode</description>
 <gates>
 <gate name="A" symbol="LED-RGB-A" x="0" y="0"/>
 </gates>
