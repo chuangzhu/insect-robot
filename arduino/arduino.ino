@@ -18,8 +18,8 @@ const int RED = 5;
 const int GREEN = 6;
 const int BLUE = 11;
 // electrode pins
-const int LEFT = 9;
-const int RIGHT = 10;
+const int LEFT = 10;
+const int RIGHT = 9;
 
 void setup() {
   pinMode(RED, OUTPUT);
