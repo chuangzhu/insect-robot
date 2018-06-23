@@ -18,8 +18,8 @@ const int RED = 5;
 const int GREEN = 6;
 const int BLUE = 11;
 // electrode pins
-const int LEFT = 9;
-const int RIGHT = 10;
+const int LEFT = 10;
+const int RIGHT = 9;
 
 void setup() {
   pinMode(RED, OUTPUT);
@@ -33,9 +33,9 @@ void setup() {
   pinMode(RIGHT, INPUT);
   randColor(); // get a random color
   // show this random color on the LED
-  analogWrite(5, ledColor[0]);
-  analogWrite(6, ledColor[1]);
-  analogWrite(11, ledColor[2]);
+  analogWrite(RED, 255 - ledColor[0]);
+  analogWrite(GREEN, 255 - ledColor[1]);
+  analogWrite(BLUE, 255 - ledColor[2]);
   Serial.begin(9600);
   delay(128);
   // rename the bluetooth low energy (BLE) module to '$sect'
