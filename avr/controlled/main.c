@@ -20,9 +20,9 @@ unsigned char ledDuty[3] = {0};
 }
 
 #define setLEDDuty() {\
-	PWM_0B(ledDuty[0]);\
-	PWM_0A(ledDuty[1]);\
-	PWM_2A(ledDuty[2]);\
+	PWM_0B(255 - ledDuty[0]);\
+	PWM_0A(255 - ledDuty[1]);\
+	PWM_2A(255 - ledDuty[2]);\
 }
 
 int main(void)
