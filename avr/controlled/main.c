@@ -8,6 +8,7 @@
 #include "main.h"
 
 unsigned char ledDuty[3] = {0};
+unsigned char impulse = 0;
 
 /** Give random color using a hanging ADC port as random seed */
 #define randColor(yourColor) {\
@@ -42,7 +43,48 @@ int main(void)
 	PWM_Init();
 	setLEDDuty();
 	sei();
-	while (1);
+	
+	//    elePeriod
+	//  |<----------->|
+	//   __________    __________      HIGH
+	//             |  |          |
+	//             |__|          |__   LOW
+	//
+	//  |<-------->|             |<>|
+	//    eleDuty          (elePriod - eleDuty)
+	//
+	//           |   zoom out
+	//           V
+	//        _   _   _   _   _   _   _
+	//  ------ |_| |_| |_| |_| |_| |_| |_------
+	//       |<------------------------->|
+	//                eleTimeout
+	
+	while (1)
+	{
+		if (impulse)
+		{
+			static unsigned char loopStep = 0;
+			static unsigned int eleTime = 0;
+			if (loopStep == eleDuty)
+				clr(PORTB, pwmElePin);
+			else if (loopStep >= elePeriod)
+			{
+				loopStep = 0;
+				set(PORTB, pwmElePin);
+			}
+			loopStep ++;
+			if (eleTime >= eleTimeout)
+			{
+				eleTime = 0;
+				clr(DDRB, pwmElePin);
+				clr(PORTB, pwmElePin);
+				impulse = 0;	// FALSE
+			}
+			eleTime ++;
+			_delay_us(10);
+		}
+	}
 }
 
 char usartBuf[4] = {0, 0, 0, 0};
@@ -69,45 +111,11 @@ ISR(USART_RX_vect)
 			else if (!strcmp(usartBuf, "RRR"))
 				pwmElePin = eleRight;
 			set(DDRB, pwmElePin);
-			TIMER1_Init();
+			impulse = 1;	//TRUE
 		}
 	}
 	usartIndex ++;
 	if (usartIndex > 2)
 		usartIndex = 0;
-}
-
-
-//    elePeriod
-//  |<----------->|
-//   __________    __________
-//             |  |          |
-//             |__|          |__
-//
-//  |<-------->|             |<>|
-//    eleDuty            (elePriod - eleDuty)
-
-/** Used for PWM of electrode */
-ISR(TIMER1_OVF_vect)
-{
-	TIMER1_Reset();
-	static unsigned char ovfStep = 0;
-	static unsigned int eleTime = 0;
-	if (ovfStep == eleDuty)
-		clr(PORTB, pwmElePin);
-	else if (ovfStep >= elePeriod)
-	{
-		ovfStep = 0;
-		set(PORTB, pwmElePin);
-	}
-	ovfStep ++;
-	if (eleTime >= eleTimeout)
-	{
-		eleTime = 0;
-		clr(DDRB, pwmElePin);
-		clr(PORTB, pwmElePin);
-		TIMER1_Disable();
-	}
-	eleTime ++;
 }
 

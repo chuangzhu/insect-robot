@@ -87,6 +87,8 @@ void loop() {
     loopStep ++;
     if (impulseTimes == impulseTimeout) {
       impulseTimes = 0;
+      pinMode(impulsePin, INPUT);
+      digitalWrite(impulsePin, LOW);
       impulse = false;
     }
     impulseTimes ++;

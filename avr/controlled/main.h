@@ -14,7 +14,6 @@
 #include <util/delay.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../lib/TIMER/HAL_TIMER.h"
 #include "../lib/USART/HAL_USART.h"
 #include "../lib/ADC/HAL_ADC.h"
 
@@ -49,7 +48,5 @@ unsigned char ledDuty[3];
 #define eleTimeout	1000	//*10us
 
 unsigned char pwmElePin;
-
-#define TIMER1_Disable() clr(TIMSK1, TOIE1)
 
 #endif /* MAIN_H_ */
