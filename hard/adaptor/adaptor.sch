@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -363,6 +363,7 @@
 <part name="SUPPLY2" library="MyLibrary" deviceset="GND" device=""/>
 <part name="SUPPLY25" library="MyLibrary" deviceset="GND" device=""/>
 <part name="HD2" library="MyLibrary" deviceset="HEADER1X6-SS" device="-FPC0.5-DRAWER"/>
+<part name="SUPPLY3" library="MyLibrary" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -374,6 +375,7 @@
 <instance part="SUPPLY2" gate="GND" x="-5.08" y="-5.08"/>
 <instance part="SUPPLY25" gate="GND" x="40.64" y="-5.08" rot="R90"/>
 <instance part="HD2" gate="A" x="15.24" y="2.54"/>
+<instance part="SUPPLY3" gate="VCC" x="38.1" y="10.16"/>
 </instances>
 <busses>
 </busses>
@@ -384,6 +386,11 @@
 <wire x1="-7.62" y1="7.62" x2="-7.62" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="HD1" gate="A" pin="2"/>
 <wire x1="-7.62" y1="2.54" x2="-10.16" y2="2.54" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="7.62" x2="38.1" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="HD2" gate="A" pin="2"/>
+<pinref part="SUPPLY3" gate="VCC" pin="VCC"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -408,6 +415,11 @@
 <pinref part="HD1" gate="A" pin="4"/>
 <wire x1="-10.16" y1="0" x2="0" y2="0" width="0.1524" layer="91"/>
 <label x="0" y="0" size="1.778" layer="95" font="vector"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="2.54" x2="25.4" y2="2.54" width="0.1524" layer="91"/>
+<label x="25.4" y="2.54" size="1.778" layer="95" font="vector"/>
+<pinref part="HD2" gate="A" pin="4"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -440,22 +452,6 @@
 <wire x1="-27.94" y1="-2.54" x2="-40.64" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-40.64" y="-2.54" size="1.778" layer="95" font="vector"/>
 </segment>
-</net>
-<net name="RB-/MOSI" class="0">
-<segment>
-<wire x1="20.32" y1="2.54" x2="25.4" y2="2.54" width="0.1524" layer="91"/>
-<label x="25.4" y="2.54" size="1.778" layer="95" font="vector"/>
-<pinref part="HD2" gate="A" pin="4"/>
-</segment>
-</net>
-<net name="VBAT" class="0">
-<segment>
-<wire x1="20.32" y1="7.62" x2="38.1" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="HD2" gate="A" pin="2"/>
-<label x="38.1" y="7.62" size="1.778" layer="95" font="vector"/>
-</segment>
-</net>
-<net name="RST" class="0">
 <segment>
 <pinref part="HD2" gate="A" pin="5"/>
 <wire x1="20.32" y1="0" x2="25.4" y2="0" width="0.1524" layer="91"/>
