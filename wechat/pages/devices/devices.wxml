@@ -11,8 +11,8 @@
 </view>
 
 <view class='bottom-con'>
-  <view id='info-con' bindtap='infoClick'>
+  <navigator url='../credits/credits' id='info-con'>
     <icon type='info' size='25' color='lightgray'/>
-  </view>
-  <text class='a' id='link' bindtap='tryClick'>尝试使用控制台</text>
+  </navigator>
+  <navigator class='a' id='link' url='../console/console?try=true'>尝试使用控制台</navigator>
 </view>

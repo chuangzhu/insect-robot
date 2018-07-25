@@ -44,20 +44,6 @@ Page({
     }, 500)
   },
 
-  infoClick: function () {
-    wx.navigateTo({
-      url: '../credits/credits',
-    })
-  },
-
-  /* 尝试使用控制台 */
-  tryClick: () => {
-    app.globalData.isTry = true
-    wx.navigateTo({
-      url: '../console/console',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -69,7 +55,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   deviceList: [],
@@ -129,7 +115,6 @@ Page({
    * 选择设备
    */
   deviceClick: function (tap) {
-    app.globalData.isTry = false
     for (var i of this.deviceList)
       if ((i.id == tap.target.id) && (i.name != '$sect')){
         wx.showModal({
@@ -138,21 +123,19 @@ Page({
           showCancel: false,
           confirmText: '知道了'
         })
-        return /* 退出函数 */
+        return // 退出函数 
       }
     var self = this
     var id = tap.target.id
     console.log(id)
     wx.showToast({ title: '正在连接...', icon:'loading' })
-    //连接BLE
+    // 连接BLE
     wx.createBLEConnection({
       deviceId: id,
       success: function(res) {
         wx.showToast({ title: '连接成功', icon: 'ok' })
-        clearInterval(self.refreshInt)
-        app.globalData.connectDev = id
         wx.redirectTo({
-          url: '../console/console',
+          url: '../console/console?id=' + id,
         })
       },
       fail: function(res) {
@@ -163,10 +146,17 @@ Page({
   },
 
   /**
+ * 生命周期函数--监听页面隐藏
+ */
+  onHide: function () {
+    // 停止自动刷新
+    clearInterval(this.refreshInt)
+  },
+
+  /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
     console.log('page devices unload')
   }
-
 })

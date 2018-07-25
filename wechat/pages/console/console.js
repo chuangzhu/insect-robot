@@ -24,22 +24,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this
-    console.log('page console onload')
-    console.log(app.globalData.connectDev)
+    // 页面参数：尝试模式
+    if (options.try === 'true') {
+      this.isTry = true
+    } else {
+      this.isTry = false
+    }
+    // 页面参数：UUID
+    this.id = options.id
+    console.log(options.id)
     this.animation = wx.createAnimation({
       duration: 200,
       timingFunction: 'ease',
       transformOrigin: 'center'
     })
-    this.getTxSeChar()
+    if (!this.isTry) this.getTxSeChar()
   },
 
   /** Get service and characteristic for TX transmission */
   getTxSeChar: function () {
     var self = this
     wx.getBLEDeviceServices({
-      deviceId: app.globalData.connectDev,
+      deviceId: self.id,
       success: function (res) {
         self.bleServices = res.services
 
@@ -50,7 +56,7 @@ Page({
         }).uuid
 
         wx.getBLEDeviceCharacteristics({
-          deviceId: app.globalData.connectDev,
+          deviceId: self.id,
           serviceId: self.txService,
           success: function (res) {
             // Find a characteristicId which includes 'FFE9'
@@ -84,7 +90,7 @@ Page({
         message = 'EL:RRR'
         direction = 'left'
       }
-      if (app.globalData.isTry === false) {
+      if (this.isTry === false) {
         // 普通模式下，写入 BLE
         self.writeBLE(message, direction)
       } else {
@@ -96,8 +102,9 @@ Page({
 
   // 写 BLE 函数
   writeBLE: function (message, direction) {
+    var self = this
     wx.writeBLECharacteristicValue({
-      deviceId: app.globalData.connectDev,
+      deviceId: self.id,
       serviceId: self.txService,
       characteristicId: self.txCharacter,
       value: str2buf(message),
@@ -160,8 +167,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.closeBLEConnection({
-      deviceId: app.globalData.connectDev
+    var self = this
+    if (!this.isTry) wx.closeBLEConnection({
+      deviceId: self.id
     })
   }
 })
