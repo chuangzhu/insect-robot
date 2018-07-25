@@ -1,5 +1,6 @@
 // pages/console/console.js
-var app = getApp()
+const app = getApp()
+const util = require('../../utils/util.js')
 
 function str2buf(str) {
   var buf = new ArrayBuffer(str.length)
@@ -33,6 +34,11 @@ Page({
     // 页面参数：UUID
     this.id = options.id
     console.log(options.id)
+    var backgroundColor = options.color ? options.color : 'f8f8f8'
+    wx.setNavigationBarColor({
+      frontColor: util.getForeColor(backgroundColor),
+      backgroundColor: '#' + backgroundColor
+    })
     this.animation = wx.createAnimation({
       duration: 200,
       timingFunction: 'ease',

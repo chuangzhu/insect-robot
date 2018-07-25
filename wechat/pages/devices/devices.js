@@ -1,5 +1,6 @@
 // pages/devices/devices.js
-var app = getApp()
+const app = getApp()
+const util = require('../../utils/util.js')
 
 function buf2str(buf) {
   return String.fromCharCode.apply(null, new Uint8Array(buf))
@@ -58,6 +59,10 @@ Page({
     
   },
 
+  /**
+   * 储存设备的数组
+   * 每个设备的格式为 {name, id, color, fore}
+   */
   deviceList: [],
 
   /**
@@ -67,12 +72,17 @@ Page({
     var self = this
     wx.onBluetoothDeviceFound(function(res){
       for (var item of res.devices) {
-        var color
+        var color // 背景颜色
         // 只有名称为 '$sect' 才获取颜色
         if (item.name == '$sect') {
           color = buf2hex(item.advertisData)
         } else color = 'ffffff' // 否则为白色
-        self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
+        self.deviceList.push({
+          name: item.name,
+          id: item.deviceId,
+          color: color,
+          fore: util.getForeColor(color) // 前景色
+        })
       }
       self.setData({ deviceList: self.deviceList })
       console.log(res.devices)
@@ -86,7 +96,10 @@ Page({
     }, 2000)
   },
 
-  /** Re-search Ble devices */
+  /**
+   * Re-search Ble devices
+   * 重新搜索 BLE 设备
+   */
   searchButtonClick: function () {
     var self = this
     self.deviceList = []
@@ -115,27 +128,34 @@ Page({
    * 选择设备
    */
   deviceClick: function (tap) {
-    for (var i of this.deviceList)
-      if ((i.id == tap.target.id) && (i.name != '$sect')){
-        wx.showModal({
-          title: '这不是可用的设备',
-          content: '可用的设备应该以 “$sect” 为名，并且显示为彩色',
-          showCancel: false,
-          confirmText: '知道了'
-        })
-        return // 退出函数 
+    var dev = {} // {name, id, color, fore} 对象
+    for (var i of this.deviceList) {
+      if (i.id === tap.target.id) {
+        dev = i
       }
+    }
+    console.log(dev.id)
+    if (dev.name != '$sect') {
+      wx.showModal({
+        title: '这不是可用的设备',
+        content: '可用的设备应该以 “$sect” 为名，并且显示为彩色',
+        showCancel: false,
+        confirmText: '知道了'
+      })
+      return // 退出函数 
+    }
     var self = this
-    var id = tap.target.id
-    console.log(id)
     wx.showToast({ title: '正在连接...', icon:'loading' })
     // 连接BLE
     wx.createBLEConnection({
-      deviceId: id,
+      deviceId: dev.id,
       success: function(res) {
         wx.showToast({ title: '连接成功', icon: 'ok' })
+        // 停止自动刷新
+        clearInterval(self.refreshInt)
+        // 这里使用重定向，因为有返回键的时候极易误操作，滑动返回
         wx.redirectTo({
-          url: '../console/console?id=' + id,
+          url: `../console/console?id=${dev.id}&color=${dev.color}`,
         })
       },
       fail: function(res) {

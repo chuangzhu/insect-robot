@@ -1,6 +1,6 @@
 <!--pages/credits/credits.wxml-->
 <view id='main'>
-
+<!-- TODO: SET CLIPBOARD -->
   <view><text>该项目的 GitHub 地址：\n</text> <text class="a" bindtap="showLink" id="浏览器中输入：https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
 
   <image class='img' src='../console/back.svg' />

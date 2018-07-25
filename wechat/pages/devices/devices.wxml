@@ -5,7 +5,12 @@
 <view class='container'>
   <text id='av-dev'>选择你的设备：</text>
   <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
-    <button bindtap='deviceClick' style='background-color: #{{deviceItem.color}};' id='{{deviceItem.id}}'>{{deviceItem.name}}</button>
+    <button
+      bindtap='deviceClick'
+      style='background-color: #{{deviceItem.color}}; color: {{deviceItem.fore}};'
+      id='{{deviceItem.id}}'>
+      {{deviceItem.name}}
+    </button>
   </block>
   <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>重新搜索</button>
 </view>
