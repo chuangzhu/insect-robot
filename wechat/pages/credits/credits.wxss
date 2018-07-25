@@ -1,17 +1,23 @@
 /* pages/credits/credits.wxss */
 
 page {
-  --to-upper: 45rpx;
+  --line-distance: 0.6em;
 }
 
 #main {
-  padding: var(--to-upper) 30px;
+  padding: var(--line-distance) 30px;
+}
+
+.p {
+  margin-bottom: var(--line-distance);
 }
 
 .img {
   width: 100rpx;
   height: 100rpx;
-  margin-top: var(--to-upper);
 }
 
-
+.h1 {
+  font-size: 2em;
+  margin-top: 1em;
+}
