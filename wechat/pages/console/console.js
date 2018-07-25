@@ -16,8 +16,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    leftDisabled: false,
-    rightDisabled: false
+    // 如果为 'disabled' 则显示禁用的样式'
+    eleStyle: ''
   },
 
   /**
@@ -43,7 +43,8 @@ Page({
       success: function (res) {
         self.bleServices = res.services
 
-        //Find a deviceId which includes 'FFE5'
+        // Find a deviceId which includes 'FFE5'
+        // 查找包含 'FFE5' 的设备 UUID
         self.txService = self.bleServices.find((v) => {
           return v.uuid.indexOf('FFE5') >= 0
         }).uuid
@@ -52,7 +53,8 @@ Page({
           deviceId: app.globalData.connectDev,
           serviceId: self.txService,
           success: function (res) {
-            //Find a characteristicId which includes 'FFE9'
+            // Find a characteristicId which includes 'FFE9'
+            // 查找包含 'FFE9' 的特性 UUID
             self.txCharacter = res.characteristics.find((v) => {
               return v.uuid.indexOf('FFE9') >= 0
             }).uuid
@@ -67,22 +69,32 @@ Page({
   txCharacter: '',
 
   eleClick: function (button) {
-    var self = this
-    var message, direction
-    if (button.target.id === 'button-left') {
-      message = 'EL:LLL'
-      direction = 'right'
-    } else if (button.target.id === 'button-right') {
-      message = 'EL:RRR'
-      direction = 'left'
-    }
-    if (app.globalData.isTry === false) {
-      self.writeBLE(message, direction)
+    if (this.operaCd){
+      wx.showToast({
+        title: '技能 CD 中',
+        icon: 'none'
+      })
     } else {
-      self.beetleAni(direction)
+      var self = this
+      var message, direction
+      if (button.target.id === 'button-left') {
+        message = 'EL:LLL'
+        direction = 'right'
+      } else if (button.target.id === 'button-right') {
+        message = 'EL:RRR'
+        direction = 'left'
+      }
+      if (app.globalData.isTry === false) {
+        // 普通模式下，写入 BLE
+        self.writeBLE(message, direction)
+      } else {
+        // 尝试模式下，不写入 BLE，只相应动画
+        self.beetleAni(direction)
+      }
     }
   },
 
+  // 写 BLE 函数
   writeBLE: function (message, direction) {
     wx.writeBLECharacteristicValue({
       deviceId: app.globalData.connectDev,
@@ -99,15 +111,16 @@ Page({
     })
   },
 
+  // 响应的动画
   beetleAni: function (direction) {
     var self = this
     //A cooling down time, disable the buttons for a while
     //or else it may damage the robot
     self.operaCd = true
-    self.setData({ eleDisabled: true })
+    self.setData({ eleStyle: 'disabled' })
     setTimeout(() => {
       self.operaCd = false
-      self.setData({ eleDisabled: false })
+      self.setData({ eleStyle: '' })
     }, 400)
     if (direction === 'left')
       this.animation.rotate(-45).step()
@@ -121,14 +134,6 @@ Page({
   },
 
   operaCd: false,
-
-  eleConClick: function () {
-    if (this.operaCd)
-      wx.showToast({
-        title: '技能 CD 中',
-        icon: 'none'
-      })
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

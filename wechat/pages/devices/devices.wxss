@@ -30,8 +30,6 @@ page {
 }
 
 #link {
-  color: #09bb07;
-  text-decoration: underline;
   position: absolute;
   left: 50%; /* Place in the center */
   transform: translate(-50%);

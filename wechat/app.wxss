@@ -12,3 +12,8 @@
 page {
   background-color: #f8f8f8;
 }
+
+.a {
+  color: #09bb07;
+  text-decoration: underline;
+}

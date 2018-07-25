@@ -14,7 +14,4 @@ page {
   margin-top: var(--to-upper);
 }
 
-.a {
-  color: #09bb07;
-  text-decoration: underline;
-}
+
