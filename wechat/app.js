@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
   },
   globalData: {
-    connectDev: ''
+    connectDev: '',
+    isTry: false
   }
 })

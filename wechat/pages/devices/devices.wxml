@@ -9,6 +9,10 @@
   </block>
   <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>重新搜索 BLE 设备</button>
 </view>
-<view id='info-con' bindtap='infoClick'>
-  <icon type='info' size='25' color='{{infoColor}}'/>
+
+<view class='bottom-con'>
+  <view id='info-con' bindtap='infoClick'>
+    <icon type='info' size='25' color='lightgray'/>
+  </view>
+  <text id='link' bindtap='tryClick'>练习使用控制台</text>
 </view>

@@ -15,17 +15,35 @@
   margin: 20rpx;
 }
 
-#search-ble {
-  margin: 50rpx;
+button#search-ble {
+  margin-top: 50rpx;
 }
 
-#info-con {
+page {
+  --bottom-dis: 18px;
+}
+
+.bottom-con {
   position: fixed;
-  padding: 18px;
-  right: 0;
+  width: 100%;
   bottom: 0;
 }
 
+#link {
+  color: #09bb07;
+  text-decoration: underline;
+  position: absolute;
+  left: 50%; /* Place in the center */
+  transform: translate(-50%);
+  bottom: var(--bottom-dis);
+}
+
+#info-con {
+  float: right;
+  padding: var(--bottom-dis);
+}
+
+/* Reverse color when clicked */
 #info-con:active {
   background-color: lightgray;
 }

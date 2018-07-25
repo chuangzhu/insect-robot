@@ -19,8 +19,7 @@ Page({
    */
   data: {
     errDisplay: 'none',
-    searchButtonDisabled: true,
-    infoColor: 'lightgray'
+    searchButtonDisabled: true
   },
 
   /**
@@ -48,6 +47,13 @@ Page({
   infoClick: function () {
     wx.navigateTo({
       url: '../credits/credits',
+    })
+  },
+
+  tryClick: () => {
+    app.globalData.isTry = true
+    wx.navigateTo({
+      url: '../console/console',
     })
   },
 

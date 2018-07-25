@@ -76,20 +76,20 @@ Page({
       message = 'EL:RRR'
       direction = 'left'
     }
+    if (app.globalData.isTry === false) {
+      self.writeBLE(message, direction)
+    } else {
+      self.beetleAni(direction)
+    }
+  },
+
+  writeBLE: function (message, direction) {
     wx.writeBLECharacteristicValue({
       deviceId: app.globalData.connectDev,
       serviceId: self.txService,
       characteristicId: self.txCharacter,
       value: str2buf(message),
       success: function (res) {
-        //A cooling down time, disable the buttons for a while
-        //or else it may damage the robot
-        self.operaCd = true
-        self.setData({ eleDisabled: true })
-        setTimeout(() => {
-          self.operaCd = false
-          self.setData({ eleDisabled: false })
-        }, 400)
         self.beetleAni(direction)
       },
       fail: function (res) {
@@ -100,6 +100,15 @@ Page({
   },
 
   beetleAni: function (direction) {
+    var self = this
+    //A cooling down time, disable the buttons for a while
+    //or else it may damage the robot
+    self.operaCd = true
+    self.setData({ eleDisabled: true })
+    setTimeout(() => {
+      self.operaCd = false
+      self.setData({ eleDisabled: false })
+    }, 400)
     if (direction === 'left')
       this.animation.rotate(-45).step()
     else if (direction === 'right')
@@ -107,7 +116,7 @@ Page({
     this.animation.rotate(0).step()
     this.setData({
       //export() 会清除之前的动画操作
-      animation: this.animation.export()
+      animation: self.animation.export()
     })
   },
 
