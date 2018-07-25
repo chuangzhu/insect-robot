@@ -1,7 +1,15 @@
 /* pages/credits/credits.wxss */
 
+page {
+  --line-distance: 0.6em;
+}
+
 #main {
-  padding: 30px;
+  padding: var(--line-distance) 30px;
+}
+
+.p {
+  margin-bottom: var(--line-distance);
 }
 
 .img {
@@ -9,7 +17,7 @@
   height: 100rpx;
 }
 
-.a {
-  color: #09bb07;
-  text-decoration: underline;
+.h1 {
+  font-size: 2em;
+  margin-top: 1em;
 }

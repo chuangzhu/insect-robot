@@ -1,14 +1,25 @@
 <!--pages/credits/credits.wxml-->
 <view id='main'>
 
-  <image class='img' src='../console/back.svg' />
-  <image class='img' src='../console/next.svg' />
-  <view>Icons made by <text class="a" bindtap="showLink" id="https://www.flaticon.com/authors/gregor-cresnar" >Gregor Cresnar</text> from <text class="a" bindtap="showLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="showLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text></view>
+  <view class='p'>这个项目是开源的，你可以在项目链接中获取所有代码和设计文件。也可以按照链接中的说明，自己制作一个这样的设备。</view>
+  <view class='p'>GitHub 链接：\n<text class="a" bindtap="clickLink" id="https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
 
-  <image class='img' src='../console/ladybug.svg' />
-  <view>Icons made by <text class="a" bindtap="showLink" id="http://www.freepik.com" >Freepik</text> from <text class="a" bindtap="showLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="showLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text></view>
+  <view class='h1 p'> 素材鸣谢 </view>
 
-  <image class='img' src='../console/flash.svg' />
-  <view>Icons made by <text class="a" bindtap="showLink" id="https://www.flaticon.com/authors/smashicons" >Smashicons</text> from <text class="a" bindtap="showLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="showLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text></view>
+  <view class='p'>
+    <image class='img' src='../console/back.svg' />
+    <image class='img' src='../console/next.svg' />
+    Icons made by <text class="a" bindtap="clickLink" id="https://www.flaticon.com/authors/gregor-cresnar" >Gregor Cresnar</text> from <text class="a" bindtap="clickLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="clickLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text>
+  </view>
+
+  <view class='p'>
+    <image class='img' src='../console/ladybug.svg' />
+    Icons made by <text class="a" bindtap="clickLink" id="http://www.freepik.com" >Freepik</text> from <text class="a" bindtap="clickLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="clickLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text>
+  </view>
+
+  <view class='p'>
+    <image class='img' src='../console/flash.svg' />
+    Icons made by <text class="a" bindtap="clickLink" id="https://www.flaticon.com/authors/smashicons" >Smashicons</text> from <text class="a" bindtap="clickLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="clickLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text>
+  </view>
 
 </view>

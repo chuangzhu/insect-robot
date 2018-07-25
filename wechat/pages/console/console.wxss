@@ -34,6 +34,10 @@
   background-color: #179816;
 }
 
+.ele-button.disabled {
+  background-color: #f7f7f7;
+}
+
 .ele-svg {
   padding-top: 50rpx;
   padding-bottom: 50rpx;
