@@ -1,12 +1,17 @@
 /* pages/credits/credits.wxss */
 
+page {
+  --to-upper: 45rpx;
+}
+
 #main {
-  padding: 30px;
+  padding: var(--to-upper) 30px;
 }
 
 .img {
   width: 100rpx;
   height: 100rpx;
+  margin-top: var(--to-upper);
 }
 
 .a {

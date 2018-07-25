@@ -1,6 +1,8 @@
 <!--pages/credits/credits.wxml-->
 <view id='main'>
 
+  <view><text>该项目的 GitHub 地址：</text> <br/> <text class="a" bindtap="showLink" id="https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
+
   <image class='img' src='../console/back.svg' />
   <image class='img' src='../console/next.svg' />
   <view>Icons made by <text class="a" bindtap="showLink" id="https://www.flaticon.com/authors/gregor-cresnar" >Gregor Cresnar</text> from <text class="a" bindtap="showLink" id="https://www.flaticon.com/" >www.flaticon.com</text> is licensed by <text class="a" bindtap="showLink" id="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</text></view>
