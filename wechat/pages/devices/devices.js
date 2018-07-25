@@ -50,6 +50,7 @@ Page({
     })
   },
 
+  /* 尝试使用控制台 */
   tryClick: () => {
     app.globalData.isTry = true
     wx.navigateTo({
@@ -79,10 +80,13 @@ Page({
   onPullDownRefresh: function () {
     var self = this
     wx.onBluetoothDeviceFound(function(res){
-      for (var item of res.devices)
+      for (var item of res.devices) {
+        var color
+        // 只有名称为 '$sect' 才获取颜色
         if (item.name == '$sect') {
-          var color = buf2hex(item.advertisData)
-          self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
+          color = buf2hex(item.advertisData)
+        } else color = 'ffffff' // 否则为白色
+        self.deviceList.push({ name: item.name, id: item.deviceId, color: color })
       }
       self.setData({ deviceList: self.deviceList })
       console.log(res.devices)
@@ -125,6 +129,17 @@ Page({
    * 选择设备
    */
   deviceClick: function (tap) {
+    app.globalData.isTry = false
+    for (var i of this.deviceList)
+      if ((i.id == tap.target.id) && (i.name != '$sect')){
+        wx.showModal({
+          title: '这不是可用的设备',
+          content: '可用的设备应该以 “$sect” 为名，并且显示为彩色',
+          showCancel: false,
+          confirmText: '知道了'
+        })
+        return /* 退出函数 */
+      }
     var self = this
     var id = tap.target.id
     console.log(id)
