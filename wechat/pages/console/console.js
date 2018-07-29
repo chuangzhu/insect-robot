@@ -18,7 +18,7 @@ Page({
    */
   data: {
     // 如果为 'disabled' 则显示禁用的样式'
-    eleStyle: ''
+    eleType: 'primary'
   },
 
   /**
@@ -130,10 +130,10 @@ Page({
     //A cooling down time, disable the buttons for a while
     //or else it may damage the robot
     self.operaCd = true
-    self.setData({ eleStyle: 'disabled' })
+    self.setData({ eleType: 'disabled' })
     setTimeout(() => {
       self.operaCd = false
-      self.setData({ eleStyle: '' })
+      self.setData({ eleType: 'primary' })
     }, 400)
     if (direction === 'left')
       this.animation.rotate(-45).step()
