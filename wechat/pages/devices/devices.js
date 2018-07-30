@@ -14,7 +14,6 @@ function buf2hex(buf) {
 }
 
 const lang = require('../../trans/en.js').devices
-wx.setNavigationBarTitle({ title: lang.title })
 
 Page({
 
@@ -31,6 +30,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({ title: lang.title })
     var self = this
     //不断尝试打开蓝牙
     this.blueInt = setInterval(function () {

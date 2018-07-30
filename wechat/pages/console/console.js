@@ -11,6 +11,8 @@ function str2buf(str) {
   return buf
 }
 
+const lang = require('../../trans/en.js').console
+
 Page({
 
   /**
@@ -25,16 +27,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({ title: lang.title })
     // 页面参数：尝试模式
-    if (options.try === 'true') {
-      this.isTry = true
-    } else {
-      this.isTry = false
-    }
+    this.isTry = (options.try === 'true') ? true : false
     // 页面参数：UUID
     this.id = options.id
     console.log(options.id)
-    var backgroundColor = options.color ? options.color : 'f8f8f8'
+    // 标题栏背景色，若未指定则为 #f8f8f8
+    var backgroundColor = options.color || 'f8f8f8'
     wx.setNavigationBarColor({
       frontColor: util.getForeColor(backgroundColor),
       backgroundColor: '#' + backgroundColor
@@ -83,7 +83,7 @@ Page({
   eleClick: function (button) {
     if (this.operaCd){
       wx.showToast({
-        title: '技能 CD 中',
+        title: lang.cdToast,
         icon: 'none'
       })
     } else {
@@ -118,7 +118,7 @@ Page({
         self.beetleAni(direction)
       },
       fail: function (res) {
-        wx.showToast({ title: '操作失败', icon: 'none' })
+        wx.showToast({ title: lang.writeFailToast, icon: 'none' })
         console.log(res)
       }
     })
