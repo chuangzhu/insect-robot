@@ -1,7 +1,9 @@
 // pages/devices/devices.js
 const app = getApp()
 const util = require('../../utils/util.js')
-const lang = app.globalData.trans.devices
+// 导入语言包，该小程序支持多语言
+// Import language pack, this program support multilanguage
+const trans = app.globalData.trans.devices
 
 function buf2str(buf) {
   return String.fromCharCode.apply(null, new Uint8Array(buf))
@@ -20,7 +22,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    lang: lang,
+    trans: trans,
     errDisplay: 'none',
     searchButtonDisabled: true
   },
@@ -29,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: lang.title })
+    wx.setNavigationBarTitle({ title: trans.title })
     var self = this
     //不断尝试打开蓝牙
     this.blueInt = setInterval(function () {
@@ -119,7 +121,7 @@ Page({
           },
           success: function () {
             self.setData({ errDisplay: 'none' })
-            wx.showToast({ title: lang.searchingToast, icon: 'loading' })
+            wx.showToast({ title: trans.searchingToast, icon: 'loading' })
             wx.startPullDownRefresh()
           }
         })
@@ -141,20 +143,20 @@ Page({
     // 选择了非可用设备时的提示
     if (dev.name != '$sect') {
       wx.showModal({
-        title: lang.unAvaDevModalTitle,
-        content: lang.unAvaDevModalContent,
+        title: trans.unAvaDevModalTitle,
+        content: trans.unAvaDevModalContent,
         showCancel: false,
-        confirmText: lang.unAvaDevModalConfirm
+        confirmText: trans.unAvaDevModalConfirm
       })
       return // 退出函数 
     }
     var self = this
-    wx.showToast({ title: lang.connectingToast, icon:'loading' })
+    wx.showToast({ title: trans.connectingToast, icon:'loading' })
     // 连接BLE
     wx.createBLEConnection({
       deviceId: dev.id,
       success: function(res) {
-        wx.showToast({ title: lang.connectedToast, icon: 'ok' })
+        wx.showToast({ title: trans.connectedToast, icon: 'ok' })
         // 停止自动刷新
         clearInterval(self.refreshInt)
         // 这里使用重定向，因为有返回键的时候极易误操作，滑动返回
@@ -163,7 +165,7 @@ Page({
         })
       },
       fail: function(res) {
-        wx.showToast({ title: lang.connectFailedToast, icon: 'none' })
+        wx.showToast({ title: trans.connectFailedToast, icon: 'none' })
         console.log(res)
       }
     })

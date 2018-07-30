@@ -1,6 +1,6 @@
 // pages/credits/credits.js
 const app = getApp()
-const lang = app.globalData.trans.credits
+const trans = app.globalData.trans.credits
 
 Page({
 
@@ -8,11 +8,11 @@ Page({
    * Initial data
    */
   data: {
-    lang: lang,
+    trans: trans,
   },
 
   onLoad: function () {
-    wx.setNavigationBarTitle({ title: lang.title })
+    wx.setNavigationBarTitle({ title: trans.title })
     var checked = {}
     checked[app.globalData.language] = 'true'
     this.setData({
@@ -28,18 +28,18 @@ Page({
       data: text.target.id,
       fail: function () {
         wx.showModal({
-          title: lang.copyFailTitle,
-          content: lang.copyFailInfo + text.target.id,
+          title: trans.copyFailTitle,
+          content: trans.copyFailInfo + text.target.id,
           showCancel: false,
-          confirmText: lang.copyConfirm
+          confirmText: trans.copyConfirm
         })
       },
       success: function () {
         wx.showModal({
-          title: lang.copySuccessTitle,
-          content: lang.copySuccessInfo + text.target.id,
+          title: trans.copySuccessTitle,
+          content: trans.copySuccessInfo + text.target.id,
           showCancel: false,
-          confirmText: lang.copyConfirm
+          confirmText: trans.copyConfirm
         })
       }
     })

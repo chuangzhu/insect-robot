@@ -1,8 +1,8 @@
 <!--pages/credits/credits.wxml-->
 <view id='main'>
 
-  <view class='p'> {{lang.openAnnounce}} </view>
-  <view class='p'> {{lang.ghLink}} <text class="a" bindtap="clickLink" id="https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
+  <view class='p'> {{trans.openAnnounce}} </view>
+  <view class='p'> {{trans.ghLink}} <text class="a" bindtap="clickLink" id="https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
 
   <view class='h1 p'> Languages </view>
   <radio-group bindchange='langChange'>
@@ -10,7 +10,7 @@
     <radio value='en' checked='{{checked.en}}'> English </radio>
   </radio-group>
 
-  <view class='h1 p'> {{lang.materialCredit}} </view>
+  <view class='h1 p'> {{trans.materialCredit}} </view>
 
   <view class='p'>
     <image class='img' src='../console/back.svg' />

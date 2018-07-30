@@ -1,7 +1,7 @@
 // pages/console/console.js
 const app = getApp()
 const util = require('../../utils/util.js')
-const lang = app.globalData.trans.console
+const trans = app.globalData.trans.console
 
 function str2buf(str) {
   var buf = new ArrayBuffer(str.length)
@@ -26,7 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: lang.title })
+    wx.setNavigationBarTitle({ title: trans.title })
     // 页面参数：尝试模式
     this.isTry = (options.try === 'true') ? true : false
     // 页面参数：UUID
@@ -82,7 +82,7 @@ Page({
   eleClick: function (button) {
     if (this.operaCd){
       wx.showToast({
-        title: lang.cdToast,
+        title: trans.cdToast,
         icon: 'none'
       })
     } else {
@@ -117,7 +117,7 @@ Page({
         self.beetleAni(direction)
       },
       fail: function (res) {
-        wx.showToast({ title: lang.writeFailToast, icon: 'none' })
+        wx.showToast({ title: trans.writeFailToast, icon: 'none' })
         console.log(res)
       }
     })
