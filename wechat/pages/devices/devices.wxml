@@ -1,9 +1,9 @@
 <!--pages/devices/devices.wxml-->
 <view class='error' style='display: {{errDisplay}};'>
-  <view class='error-text'>请在设置中打开蓝牙</view>
+  <view class='error-text'>{{lang.btWarn}}</view>
 </view>
 <view class='container'>
-  <text id='av-dev'>选择你的设备：</text>
+  <text id='av-dev'>{{lang.selectDev}}</text>
   <block wx:for='{{deviceList}}' wx:for-item='deviceItem' wx:key='*this'>
     <button
       bindtap='deviceClick'
@@ -12,12 +12,12 @@
       {{deviceItem.name}}
     </button>
   </block>
-  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>重新搜索</button>
+  <button id='search-ble' bindtap='searchButtonClick' disabled='{{searchButtonDisabled}}'>{{lang.searchBtn}}</button>
 </view>
 
 <view class='bottom-con'>
   <navigator url='../credits/credits' id='info-con'>
     <icon type='info' size='25' color='lightgray'/>
   </navigator>
-  <navigator class='a' id='link' url='../console/console?try=true'>尝试使用控制台</navigator>
+  <navigator class='a' id='link' url='../console/console?try=true'>{{lang.tryConsole}}</navigator>
 </view>

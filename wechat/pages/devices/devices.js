@@ -13,12 +13,16 @@ function buf2hex(buf) {
   return res
 }
 
+const lang = require('../../trans/en.js').devices
+wx.setNavigationBarTitle({ title: lang.title })
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    lang: lang,
     errDisplay: 'none',
     searchButtonDisabled: true
   },
@@ -116,7 +120,7 @@ Page({
           },
           success: function () {
             self.setData({ errDisplay: 'none' })
-            wx.showToast({ title: '搜索中...', icon: 'loading' })
+            wx.showToast({ title: lang.searchingToast, icon: 'loading' })
             wx.startPullDownRefresh()
           }
         })
@@ -135,22 +139,23 @@ Page({
       }
     }
     console.log(dev.id)
+    // 选择了非可用设备时的提示
     if (dev.name != '$sect') {
       wx.showModal({
-        title: '这不是可用的设备',
-        content: '可用的设备应该以 “$sect” 为名，并且显示为彩色',
+        title: lang.unAvaDevModalTitle,
+        content: lang.unAvaDevModalContent,
         showCancel: false,
-        confirmText: '知道了'
+        confirmText: lang.unAvaDevModalConfirm
       })
       return // 退出函数 
     }
     var self = this
-    wx.showToast({ title: '正在连接...', icon:'loading' })
+    wx.showToast({ title: lang.connectingToast, icon:'loading' })
     // 连接BLE
     wx.createBLEConnection({
       deviceId: dev.id,
       success: function(res) {
-        wx.showToast({ title: '连接成功', icon: 'ok' })
+        wx.showToast({ title: lang.connectedToast, icon: 'ok' })
         // 停止自动刷新
         clearInterval(self.refreshInt)
         // 这里使用重定向，因为有返回键的时候极易误操作，滑动返回
@@ -159,7 +164,7 @@ Page({
         })
       },
       fail: function(res) {
-        wx.showToast({ title: '连接失败', icon: 'none' })
+        wx.showToast({ title: lang.connectFailedToast, icon: 'none' })
         console.log(res)
       }
     })
