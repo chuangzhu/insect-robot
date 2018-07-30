@@ -38,5 +38,6 @@ module.exports = {
     copyConfirm: '好的',
     copySuccessTitle: '链接已复制到你的剪贴板',
     copySuccessInfo: '请在浏览器中粘贴访问，',
+    takeEffectNextStart: '下次启动时生效'
   }
 }

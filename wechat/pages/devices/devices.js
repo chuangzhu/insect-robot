@@ -1,6 +1,7 @@
 // pages/devices/devices.js
 const app = getApp()
 const util = require('../../utils/util.js')
+const lang = app.globalData.trans.devices
 
 function buf2str(buf) {
   return String.fromCharCode.apply(null, new Uint8Array(buf))
@@ -12,8 +13,6 @@ function buf2hex(buf) {
     res += ('00' + x.toString(16)).slice(-2) //complete to two hex digit.
   return res
 }
-
-const lang = require('../../trans/en.js').devices
 
 Page({
 

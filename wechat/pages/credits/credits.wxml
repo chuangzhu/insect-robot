@@ -4,6 +4,12 @@
   <view class='p'> {{lang.openAnnounce}} </view>
   <view class='p'> {{lang.ghLink}} <text class="a" bindtap="clickLink" id="https://github.com/genelocated/insect-robot">github.com/genelocated/insect-robot</text></view>
 
+  <view class='h1 p'> Languages </view>
+  <radio-group bindchange='langChange'>
+    <radio value='zh' checked='{{checked.zh}}'> 简体中文 </radio>
+    <radio value='en' checked='{{checked.en}}'> English </radio>
+  </radio-group>
+
   <view class='h1 p'> {{lang.materialCredit}} </view>
 
   <view class='p'>

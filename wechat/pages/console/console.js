@@ -1,6 +1,7 @@
 // pages/console/console.js
 const app = getApp()
 const util = require('../../utils/util.js')
+const lang = app.globalData.trans.console
 
 function str2buf(str) {
   var buf = new ArrayBuffer(str.length)
@@ -10,8 +11,6 @@ function str2buf(str) {
   }
   return buf
 }
-
-const lang = require('../../trans/en.js').console
 
 Page({
 

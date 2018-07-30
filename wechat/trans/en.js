@@ -37,5 +37,6 @@ module.exports = {
     copyConfirm: 'OK',
     copySuccessTitle: 'Link Copied',
     copySuccessInfo: 'Paste it in your browser, ',
+    takeEffectNextStart: 'Taking effect at next startup'
   }
 }
