@@ -1,28 +1,64 @@
 // pages/credits/credits.js
+const app = getApp()
+const trans = app.globalData.trans.credits
+
 Page({
 
   /**
    * Initial data
    */
-  data: {},
+  data: {
+    trans: trans,
+  },
 
+  onLoad: function () {
+    wx.setNavigationBarTitle({ title: trans.title })
+    var checked = {}
+    checked[app.globalData.language] = 'true'
+    this.setData({
+      checked: checked
+    })
+  },
+
+  /**
+   * 点击链接时 复制链接
+   */
   clickLink: function (text) {
     wx.setClipboardData({
       data: text.target.id,
       fail: function () {
         wx.showModal({
-          title: '链接复制失败',
-          content: '请检查微信的权限。这个链接是 ' + text.target.id,
+          title: trans.copyFailTitle,
+          content: trans.copyFailInfo + text.target.id,
           showCancel: false,
-          confirmText: '好的'
+          confirmText: trans.copyConfirm
         })
       },
       success: function () {
         wx.showModal({
-          title: '链接已复制到你的剪贴板',
-          content: '请在浏览器中粘贴访问，' + text.target.id,
+          title: trans.copySuccessTitle,
+          content: trans.copySuccessInfo + text.target.id,
           showCancel: false,
-          confirmText: '好的'
+          confirmText: trans.copyConfirm
+        })
+      }
+    })
+  },
+
+  /**
+   * 改变语言单选按钮
+   */
+  langChange: function (e) {
+    wx.setStorage({
+      key: 'language',
+      data: e.detail.value,
+      success: function () {
+        app.globalData.language = e.detail.value
+        wx.showToast({
+          // 用户选择了什么语言就显示什么语言的弹窗
+          title: require('../../utils/util.js')
+            .getTrans(e.detail.value).credits.takeEffectNextStart,
+          icon: 'none'
         })
       }
     })

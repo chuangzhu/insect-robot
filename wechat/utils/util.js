@@ -14,6 +14,25 @@ function getForeColor(backgroundColor) {
   return (gray > 127) ? '#000000' : '#ffffff'
 }
 
+/**
+ * 通过语言代码获取 trans 下的语言包
+ * Get language pack using langCode
+ * @param langCode
+ * 语言代码，诸如 zh、en
+ * Such as zh, en
+ */
+function getTrans(langCode) {
+  return require({
+    zh: '../trans/zh.js',
+    en: '../trans/en.js'
+  }[langCode] || '../trans/zh.js')
+  // 如果本地储存中 language 为 zh 则显示中文
+  // if 'language' in local storage is 'en', then display English
+  // 如果没有 language 储存，则默认显示中文
+  // if 'language' is not exist in local storage, then diaplay Chinese
+}
+
 module.exports = {
-  getForeColor: getForeColor
+  getForeColor: getForeColor,
+  getTrans: getTrans
 }

@@ -21,3 +21,7 @@ page {
   font-size: 2em;
   margin-top: 1em;
 }
+
+radio {
+  margin-right: 45rpx;
+}

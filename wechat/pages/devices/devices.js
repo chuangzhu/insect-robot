@@ -1,6 +1,9 @@
 // pages/devices/devices.js
 const app = getApp()
 const util = require('../../utils/util.js')
+// 导入语言包，该小程序支持多语言
+// Import language pack, this program support multilanguage
+const trans = app.globalData.trans.devices
 
 function buf2str(buf) {
   return String.fromCharCode.apply(null, new Uint8Array(buf))
@@ -19,6 +22,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    trans: trans,
     errDisplay: 'none',
     searchButtonDisabled: true
   },
@@ -27,6 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({ title: trans.title })
     var self = this
     //不断尝试打开蓝牙
     this.blueInt = setInterval(function () {
@@ -116,7 +121,7 @@ Page({
           },
           success: function () {
             self.setData({ errDisplay: 'none' })
-            wx.showToast({ title: '搜索中...', icon: 'loading' })
+            wx.showToast({ title: trans.searchingToast, icon: 'loading' })
             wx.startPullDownRefresh()
           }
         })
@@ -135,22 +140,23 @@ Page({
       }
     }
     console.log(dev.id)
+    // 选择了非可用设备时的提示
     if (dev.name != '$sect') {
       wx.showModal({
-        title: '这不是可用的设备',
-        content: '可用的设备应该以 “$sect” 为名，并且显示为彩色',
+        title: trans.unAvaDevModalTitle,
+        content: trans.unAvaDevModalContent,
         showCancel: false,
-        confirmText: '知道了'
+        confirmText: trans.unAvaDevModalConfirm
       })
       return // 退出函数 
     }
     var self = this
-    wx.showToast({ title: '正在连接...', icon:'loading' })
+    wx.showToast({ title: trans.connectingToast, icon:'loading' })
     // 连接BLE
     wx.createBLEConnection({
       deviceId: dev.id,
       success: function(res) {
-        wx.showToast({ title: '连接成功', icon: 'ok' })
+        wx.showToast({ title: trans.connectedToast, icon: 'ok' })
         // 停止自动刷新
         clearInterval(self.refreshInt)
         // 这里使用重定向，因为有返回键的时候极易误操作，滑动返回
@@ -159,7 +165,7 @@ Page({
         })
       },
       fail: function(res) {
-        wx.showToast({ title: '连接失败', icon: 'none' })
+        wx.showToast({ title: trans.connectFailedToast, icon: 'none' })
         console.log(res)
       }
     })

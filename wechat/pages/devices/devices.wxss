@@ -40,8 +40,3 @@ page {
   float: right;
   padding: var(--bottom-dis);
 }
-
-/* Reverse color when clicked */
-#info-con:active {
-  background-color: lightgray;
-}
